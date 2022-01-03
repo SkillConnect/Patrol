@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>All Tags | MoneyPatrol</title>
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/logo.png">
+    <link rel="manifest" href="../assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="../assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="../assets/js/config.js"></script>
+    <script src="../vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+    <link href="../vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
+    <link href="../assets/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
+    <link href="../assets/css/theme.min.css" rel="stylesheet" id="style-default">
+    <link href="../assets/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
+    <link href="../assets/css/user.css" rel="stylesheet" id="user-style-default">
+    <script>
+      var isRTL = JSON.parse(localStorage.getItem('isRTL'));
+      if (isRTL) {
+        var linkDefault = document.getElementById('style-default');
+        var userLinkDefault = document.getElementById('user-style-default');
+        linkDefault.setAttribute('disabled', true);
+        userLinkDefault.setAttribute('disabled', true);
+        document.querySelector('html').setAttribute('dir', 'rtl');
+      } else {
+        var linkRTL = document.getElementById('style-rtl');
+        var userLinkRTL = document.getElementById('user-style-rtl');
+        linkRTL.setAttribute('disabled', true);
+        userLinkRTL.setAttribute('disabled', true);
+      }
+    </script>
+  </head>
+
+  <body>
+    <main class="main" id="top">
+      <!-- Navbar -->
+      <div id="navbarPlaceholder"></div>
+      <!-- Navbar -->
+      
+      <div class="container mb-2 mb-lg-5" data-layout="container">
+        <script>
+          var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+          if (isFluid) {
+            var container = document.querySelector('.container');
+            container.classList.remove('container');
+            container.classList.add('container-fluid');
+          }
+        </script>
+
+        <div class="content mt-4">
+          <h5 class="block-title page-title text-center">All Tags</h5>
+          <div class="card overflow-hidden" style="min-height: 60vh">
+            <div class="card-body px-lg-5">
+              <!-- Dropdown -->
+              <div class="row justify-content-center mb-5">
+                <div class="col-lg-4 text-center mb-2">
+                  <div class="input-group input-group-sm">
+                    <label class="input-group-text mb-0">Time Period</label>
+                    <select class="form-select">
+                      <option value="1">Feb 2022</option>
+                      <option value="2">Jan 2022</option>
+                      <option value="3">Dec 2021</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                  <div class="input-group input-group-sm">
+                    <label class="input-group-text mb-0">Spend Share by Amount</label>
+                    <select class="form-select">
+                      <option value="1">Top 25</option>
+                      <option value="2">Category</option>
+                      <option value="3">Merchant</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <!-- Dropdown Ends -->
+
+              <div class="row my-4">
+                <div class="col-lg-6 px-3 mb-5">
+                  <div class="p-3 border card mb-4">
+                    <!-- Charts -->
+                    <div class="spend-share-amount" style="min-height: 300px;" data-echart-responsive="true"></div>
+                    <div class="spend-share-tags" style="min-height: 300px;" data-echart-responsive="true"></div>
+                    <!-- Charts Ends -->
+                  </div>
+                </div>
+                <div class="col-lg-6 px-lg-4">
+                  <!-- Table -->
+                  <div id="transactions-summary-table" data-list='{"valueNames":["tags", "number", "total"],"page":5,"pagination":true}'>
+                    <!-- Search -->
+                    <div class="row pl-2 mb-3">
+                      <div class="col-lg-4 text-start mb-2">
+                        <div class="input-group input-group-sm">
+                          <label class="input-group-text mb-0">Show</label>
+                          <select class="itemCount form-select">
+                            <option value="1">1</option>
+                            <option selected value="2">2</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-0 col-lg-2"></div>
+                      <div class="col-lg-6 float-end">
+                        <form>
+                          <div class="input-group">
+                            <input class="form-control form-control-sm shadow-none fuzzy-search" type="search" placeholder="Search" aria-label="search">
+                            <div class="input-group-text bg-transparent"><span class="fa fa-search fs--1 text-600"></span></div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <!-- Search Ends -->
+                    <div class="table-responsive scrollbar">
+                      <table class="table table-bordered table-hover text-center">
+                        <thead class="bg-200 text-900">
+                          <tr>
+                            <th class="sort" data-sort="tags">Tag</th>
+                            <th class="sort" data-sort="number"># of Txns</th>
+                            <th class="sort" data-sort="total">Total Amount</th>
+                          </tr>
+                        </thead>
+                        <tbody class="list">
+                          <tr>
+                            <td class="tags">Books</td>
+                            <td class="number">17</td>
+                            <td class="total">$12</td>
+                          </tr>
+                          <tr>
+                            <td class="tags">Clothes</td>
+                            <td class="number">6</td>
+                            <td class="total">$25</td>
+                          </tr>
+                          <tr>
+                            <td class="tags">Books</td>
+                            <td class="number">2</td>
+                            <td class="total">$13</td>
+                          </tr>
+                          <tr>
+                            <td class="tags">Food</td>
+                            <td class="number">12</td>
+                            <td class="total">$14</td>
+                          </tr>
+                          <tr>
+                            <td class="tags">Books</td>
+                            <td class="number">56</td>
+                            <td class="total">$15</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3">
+                      <button class="btn btn-sm btn-falcon-default me-1" type="button" title="Previous" data-list-pagination="prev"><span class="fas fa-chevron-left"></span></button>
+                      <ul class="pagination mb-0"></ul>
+                      <button class="btn btn-sm btn-falcon-default ms-1" type="button" title="Next" data-list-pagination="next"><span class="fas fa-chevron-right"> </span></button>
+                    </div>
+                  </div>
+                  <!-- Table Ends -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="../vendors/popper/popper.min.js"></script>
+    <script src="../vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="../vendors/anchorjs/anchor.min.js"></script>
+    <script src="../vendors/is/is.min.js"></script>
+    <script src="../vendors/echarts/echarts.min.js"></script>
+    <script src="../vendors/fontawesome/all.min.js"></script>
+    <script src="../vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="../vendors/list.js/list.min.js"></script>
+    <script src="../vendors/pulltorefresh/index.umd.min.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/custom/reports/tags.js"></script>
+  </body>
+</html>

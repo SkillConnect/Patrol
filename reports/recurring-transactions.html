@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>Recurring Transactions | MoneyPatrol</title>
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/logo.png">
+    <link rel="manifest" href="../assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="../assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="../assets/js/config.js"></script>
+    <script src="../vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+    <link href="../vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
+    <link href="../assets/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
+    <link href="../assets/css/theme.min.css" rel="stylesheet" id="style-default">
+    <link href="../assets/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
+    <link href="../assets/css/user.css" rel="stylesheet" id="user-style-default">
+    <script>
+      var isRTL = JSON.parse(localStorage.getItem('isRTL'));
+      if (isRTL) {
+        var linkDefault = document.getElementById('style-default');
+        var userLinkDefault = document.getElementById('user-style-default');
+        linkDefault.setAttribute('disabled', true);
+        userLinkDefault.setAttribute('disabled', true);
+        document.querySelector('html').setAttribute('dir', 'rtl');
+      } else {
+        var linkRTL = document.getElementById('style-rtl');
+        var userLinkRTL = document.getElementById('user-style-rtl');
+        linkRTL.setAttribute('disabled', true);
+        userLinkRTL.setAttribute('disabled', true);
+      }
+    </script>
+  </head>
+
+  <body>
+    <main class="main" id="top">
+      <!-- Navbar -->
+      <div id="navbarPlaceholder"></div>
+      <!-- Navbar -->
+      
+      <div class="container mb-2 mb-lg-5" data-layout="container">
+        <script>
+          var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+          if (isFluid) {
+            var container = document.querySelector('.container');
+            container.classList.remove('container');
+            container.classList.add('container-fluid');
+          }
+        </script>
+
+        <div class="content mt-4">
+          <h5 class="block-title page-title text-center">Recurring Transactions</h5>
+          <div class="card overflow-hidden">
+            <div class="card-body px-lg-5">
+
+              <!-- Recurring Bills -->
+              <h5 class="text-center mt-2 mb-4">Recurring Transactions</h5>
+              <div class="row mb-4">
+                <div class="col-lg-6">
+                  <div class="p-3 border card mb-4">
+                    <div class="recurring-transactions" style="min-height: 320px;" data-echart-responsive="true"></div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="table-responsive">
+                    <table class="table table-bordered mb-4">
+                      <thead class="bg-200 text-900">
+                        <tr>
+                          <th scope="col">Date</th>
+                          <th scope="col">Merchant</th>
+                          <th scope="col">Category</th>
+                          <th scope="col">Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Dec 29</td>
+                          <td>Mowry Plaza Pharmacy</td>
+                          <td>Pharmacy</td>
+                          <td>-$50.00</td>
+                        </tr>
+                        <tr>
+                          <td>Dec 29</td>
+                          <td>Mowry Plaza Pharmacy</td>
+                          <td>Pharmacy</td>
+                          <td>-$50.00</td>
+                        </tr>
+                        <tr>
+                          <td>Dec 29</td>
+                          <td>Mowry Plaza Pharmacy</td>
+                          <td>Pharmacy</td>
+                          <td>-$50.00</td>
+                        </tr>
+                        <tr>
+                          <td>Dec 29</td>
+                          <td>Mowry Plaza Pharmacy</td>
+                          <td>Pharmacy</td>
+                          <td>-$50.00</td>
+                        </tr>
+                        <tr>
+                          <td>Dec 29</td>
+                          <td>Mowry Plaza Pharmacy</td>
+                          <td>Pharmacy</td>
+                          <td>-$50.00</td>
+                        </tr>
+                        <tr>
+                          <td>No. Of Merchants:</td>
+                          <td>12</td>
+                          <td>Total:</td>
+                          <td>$745.00</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p class="fw-bold"><i class="fas fa-arrow-circle-right"></i> $745 charges in 12 Recurring Transactions in a month have been detected. </p>
+                </div>
+              </div>
+              <!-- Recurring Bills Ends -->
+
+              <h5 class="text-center mb-3">Repeat Merchants</h5>
+
+              <!-- Three boxes starts -->
+              <div class="row g-2 justify-content-center mb-5">
+                <div class="col-lg-3 mb-3 d-flex align-items-stretch">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto">
+                          <i class="fas fa-calendar-alt fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Time Range</div>
+                          <p class="card-text">Last 30 Days</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 mb-3 d-flex align-items-stretch">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto">
+                          <i class="fas fa-money-bill fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Top Spent</div>
+                          <p class="card-text">$2,499 in Debit</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 mb-3 d-flex align-items-stretch">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto">
+                          <i class="fas fa-chart-line fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Top Transactions</div>
+                          <p class="card-text">29 Txns in Groceries</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Three boxes ends -->
+
+              <div class="row my-4">
+                <div class="col-lg-6 px-3 mb-5">
+                  <!-- Bar Charts -->
+                  <div class="p-3 border card mb-4">
+                    <div class="row justify-content-center mb-4">
+                      <div class="col-6 text-center mb-2">
+                        <div class="input-group input-group-sm">
+                          <label class="input-group-text mb-0">Time Period</label>
+                          <select class="form-select">
+                            <option value="1">Feb 2022</option>
+                            <option value="2">Jan 2022</option>
+                            <option value="3">Dec 2021</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-6 text-center">
+                        <div class="input-group input-group-sm">
+                          <label class="input-group-text mb-0">Spend by Amount</label>
+                          <select class="form-select">
+                            <option value="1">Top 25</option>
+                            <option value="2">Category</option>
+                            <option value="3">Merchant</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="spend-share-amount mb-5" style="min-height: 300px;" data-echart-responsive="true"></div>
+                  </div>
+                  <!-- Bar Charts Ends -->
+
+                  <!-- Pie Charts -->
+                  <div class="p-3 border card mb-4">
+                    <div class="input-group input-group-sm my-3 mx-auto" style="max-width: 450px;">
+                      <label class="input-group-text mb-0">Spend by Amount</label>
+                      <select class="form-select">
+                        <option value="1">Top 25</option>
+                        <option value="2">Category</option>
+                        <option value="3">Merchant</option>
+                      </select>
+                    </div>
+                    <div class="spend-share-merchants" style="min-height: 300px;" data-echart-responsive="true"></div>
+                  </div>
+                  <!-- Pie Charts Ends -->
+                </div>
+                <div class="col-lg-6 px-lg-4">
+                  <!-- Table -->
+                  <div id="transactions-summary-table" data-list='{"valueNames":["tags", "number", "total"],"page":5,"pagination":true}'>
+                    <!-- Search -->
+                    <div class="row pl-2 mb-3">
+                      <div class="col-lg-4 text-start mb-2">
+                        <div class="input-group input-group-sm">
+                          <label class="input-group-text mb-0">Show</label>
+                          <select class="itemCount form-select">
+                            <option value="1">1</option>
+                            <option selected value="2">2</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-0 col-lg-2"></div>
+                      <div class="col-lg-6 float-end">
+                        <form>
+                          <div class="input-group">
+                            <input class="form-control form-control-sm shadow-none fuzzy-search" type="search" placeholder="Search" aria-label="search">
+                            <div class="input-group-text bg-transparent"><span class="fa fa-search fs--1 text-600"></span></div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <!-- Search Ends -->
+                    <div class="table-responsive scrollbar">
+                      <table class="table table-bordered table-hover text-center">
+                        <thead class="bg-200 text-900">
+                          <tr>
+                            <th class="sort" data-sort="tags">Tag</th>
+                            <th class="sort" data-sort="number"># of Txns</th>
+                            <th class="sort" data-sort="total">Total Amount</th>
+                          </tr>
+                        </thead>
+                        <tbody class="list">
+                          <tr>
+                            <td class="tags">Books</td>
+                            <td class="number">17</td>
+                            <td class="total">$12</td>
+                          </tr>
+                          <tr>
+                            <td class="tags">Clothes</td>
+                            <td class="number">6</td>
+                            <td class="total">$25</td>
+                          </tr>
+                          <tr>
+                            <td class="tags">Books</td>
+                            <td class="number">2</td>
+                            <td class="total">$13</td>
+                          </tr>
+                          <tr>
+                            <td class="tags">Food</td>
+                            <td class="number">12</td>
+                            <td class="total">$14</td>
+                          </tr>
+                          <tr>
+                            <td class="tags">Books</td>
+                            <td class="number">56</td>
+                            <td class="total">$15</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3">
+                      <button class="btn btn-sm btn-falcon-default me-1" type="button" title="Previous" data-list-pagination="prev"><span class="fas fa-chevron-left"></span></button>
+                      <ul class="pagination mb-0"></ul>
+                      <button class="btn btn-sm btn-falcon-default ms-1" type="button" title="Next" data-list-pagination="next"><span class="fas fa-chevron-right"> </span></button>
+                    </div>
+                  </div>
+                  <!-- Table Ends -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="../vendors/popper/popper.min.js"></script>
+    <script src="../vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="../vendors/anchorjs/anchor.min.js"></script>
+    <script src="../vendors/is/is.min.js"></script>
+    <script src="../vendors/echarts/echarts.min.js"></script>
+    <script src="../vendors/fontawesome/all.min.js"></script>
+    <script src="../vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="../vendors/list.js/list.min.js"></script>
+    <script src="../vendors/pulltorefresh/index.umd.min.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/custom/reports/recurring-transactions.js"></script>
+  </body>
+</html>

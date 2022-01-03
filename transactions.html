@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>Transactions Summary | MoneyPatrol</title>
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/logo.png">
+    <link rel="manifest" href="./assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="./assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="./assets/js/config.js"></script>
+    <script src="./vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+    <link href="./vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
+    <link href="./assets/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
+    <link href="./assets/css/theme.min.css" rel="stylesheet" id="style-default">
+    <link href="./assets/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
+    <link href="./assets/css/user.css" rel="stylesheet" id="user-style-default">
+    <script>
+      var isRTL = JSON.parse(localStorage.getItem('isRTL'));
+      if (isRTL) {
+        var linkDefault = document.getElementById('style-default');
+        var userLinkDefault = document.getElementById('user-style-default');
+        linkDefault.setAttribute('disabled', true);
+        userLinkDefault.setAttribute('disabled', true);
+        document.querySelector('html').setAttribute('dir', 'rtl');
+      } else {
+        var linkRTL = document.getElementById('style-rtl');
+        var userLinkRTL = document.getElementById('user-style-rtl');
+        linkRTL.setAttribute('disabled', true);
+        userLinkRTL.setAttribute('disabled', true);
+      }
+    </script>
+  </head>
+
+  <body>
+    <main class="main" id="top">
+      <!-- Navbar -->
+      <div id="navbarPlaceholder"></div>
+      <!-- Navbar -->
+      
+      <div class="container mb-2 mb-lg-5" data-layout="container">
+        <script>
+          var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+          if (isFluid) {
+            var container = document.querySelector('.container');
+            container.classList.remove('container');
+            container.classList.add('container-fluid');
+          }
+        </script>
+
+        <div class="content mt-4">
+          <h5 class="block-title page-title text-center"> Transaction Summary</h5>
+          <div class="card overflow-hidden">
+            <!-- Header starts -->
+            <div class="card-header bg-light">
+              <div class="row align-items-center">
+                <div class="col col-lg-2 mb-2">
+                  <h6>Account:</h6>
+                  <select class="form-select form-select-sm">
+                    <option>All</option>
+                    <option>Estimated Time</option>
+                    <option>Billable Time</option>
+                  </select>
+                </div>
+                <div class="col col-lg-2 mb-2">
+                  <h6>Merchant:</h6>
+                  <select class="form-select form-select-sm">
+                    <option>All</option>
+                    <option>Estimated Time</option>
+                    <option>Billable Time</option>
+                  </select>
+                </div>
+                <div class="col col-lg-2 mb-2">
+                  <h6>Category:</h6>
+                  <select class="form-select form-select-sm">
+                    <option>All</option>
+                    <option>Estimated Time</option>
+                    <option>Billable Time</option>
+                  </select>
+                </div>
+                <div class="col col-lg-2 mb-2">
+                  <h6>Time Period:</h6>
+                  <select class="form-select form-select-sm">
+                    <option>All</option>
+                    <option>Estimated Time</option>
+                    <option>Billable Time</option>
+                  </select>
+                </div>
+                <div class="col col-lg-2 mb-2">
+                  <h6>Type: </h6>
+                  <select class="form-select form-select-sm">
+                    <option>All</option>
+                    <option>Estimated Time</option>
+                    <option>Billable Time</option>
+                  </select>
+                </div>
+                <div class="col col-lg-2 mb-2">
+                  <h6>Status: </h6>
+                  <select class="form-select form-select-sm">
+                    <option>All</option>
+                    <option>Estimated Time</option>
+                    <option>Billable Time</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row mt-lg-2 mt-3" style="font-size: 0.75rem;">
+                <div class="col-lg-2 col-6 mb-2">
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#free-trial-modal"><i class="fas fa-shopping-bag"></i> Free Trial</a>
+                </div>
+                <div class="col-lg-2 col-6 mb-2">
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#manage-merchants-modal"><i class="fas fa-shopping-bag"></i> Manage Merchants</a>
+                </div>
+                <div class="col-lg-2 col-6 mb-2">
+                  <a href="" data-bs-toggle="modal" data-bs-target="#manage-categories-modal"><i class="fas fa-list"></i> Manage Categories</a>
+                </div>
+                <div class="col-lg-2 col-6 mb-2">
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#add-transaction-modal"><i class="fas fa-plus"></i> Add Transaction</a>
+                </div>
+                <div class="col-lg-2 col-6 mb-2">
+                  <a href="transaction-rules.html"><i class="fas fa-snowflake"></i> Category / Merchants / Tag Rule</a>
+                </div>
+                <div class="col-lg-2 col-6 mb-2">
+                  <a href="transactions.html"><i class="fas fa-redo"></i> Reset Filters</a>
+                </div>
+              </div>
+            </div>
+            <!-- Header ends -->
+
+            <!-- Table starts -->
+            <div class="card-body p-2">
+              <div id="transactions-summary-table" data-list='{"valueNames":["date","amount","merchant", "category", "institution", "tags", "type", "reviewed", "action"],"page":10,"pagination":true}'>
+                <!-- Search -->
+                <div class="row pl-2 my-3">
+                  <div class="col-lg-3 text-start mb-2">
+                    <div class="input-group input-group-sm">
+                      <label class="input-group-text mb-0">Show</label>
+                      <select class="itemCount form-select">
+                        <option value="1">1</option>
+                        <option selected value="2">2</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-0 col-lg-5"></div>
+                  <div class="col-lg-4 float-end">
+                    <form>
+                      <div class="input-group">
+                        <input class="form-control form-control-sm shadow-none fuzzy-search" type="search" placeholder="Search" aria-label="search">
+                        <div class="input-group-text bg-transparent"><span class="fa fa-search fs--1 text-600"></span></div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <!-- Search Ends -->
+                <div class="table-responsive scrollbar">
+                  <table class="table table-bordered table-hover overflow-hidden text-center align-middle">
+                    <thead class="bg-200 text-900 text-center ">
+                      <tr>
+                        <th class="text-nowrap" scope="col">Date <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#date-modal"></i></th>
+                        <th class="text-nowrap" scope="col">Amount <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#amount-modal"></i></th>
+                        <th class="text-nowrap" scope="col">Merchant <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#merchant-modal"></i></th>
+                        <th class="text-nowrap" scope="col">Category <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#category-modal"></i></th>
+                        <th class="text-nowrap" scope="col">Institution <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#institution-modal"></i></th>
+                        <th class="text-nowrap" scope="col">Tags <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#tags-modal"></i></th>
+                        <th class="text-nowrap" scope="col">Type <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#type-modal"></i></th>
+                        <th class="text-nowrap" scope="col">Reviewed? <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#reviewed-modal"></i></th>
+                        <th class="text-nowrap" scope="col">Action <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#action-modal"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody class="list">
+                      <tr>
+                        <td class="date">Dec 29</td>
+                        <td class="amount">-$24.00</td>
+                        <td class="merchant">Mowry Plaza Pharmacy</td>
+                        <td class="category">Pharmacy</td>
+                        <td class="institution">Discover Card</td>
+                        <td class="tags"><input class="form-control form-control-sm" type="text"></td>
+                        <td class="type">
+                          <select class="form-select form-select-sm">
+                            <option value="1">Expense</option>
+                            <option value="2">Income</option>
+                            <option value="3">Card Payment Made</option>
+                          </select>
+                        </td>
+                        <td class="text-danger reviewed">Not Reviewed</td>
+                        <td class="text-nowrap action">
+                          <i class="fa fa-check"></i> &nbsp;
+                          <i class="fa fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal"></i> &nbsp;
+                          <i class="fa fa-edit" data-bs-toggle="modal" data-bs-target="#add-memo-modal"></i> &nbsp;
+                          <i class="fa fa-code-branch" data-bs-toggle="modal" data-bs-target="#split-transaction-modal"></i> &nbsp;
+                          <i class="fa fa-trash" data-bs-toggle="modal" data-bs-target="#delete-modal"></i>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="date">Jan 31</td>
+                        <td class="amount">-$24.00</td>
+                        <td class="merchant">Health Insurance</td>
+                        <td class="category">LIC</td>
+                        <td class="institution">Mastercard Card</td>
+                        <td class="tags"><input class="form-control form-control-sm" type="text"></td>
+                        <td class="type">
+                          <select class="form-select form-select-sm">
+                            <option value="1">Expense</option>
+                            <option value="2">Income</option>
+                            <option value="3">Card Payment Made</option>
+                          </select>
+                        </td>
+                        <td class="text-danger reviewed">Not Reviewed</td>
+                        <td class="text-nowrap action">
+                          <i class="fa fa-check"></i> &nbsp;
+                          <i class="fa fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal"></i> &nbsp;
+                          <i class="fa fa-edit" data-bs-toggle="modal" data-bs-target="#add-memo-modal"></i> &nbsp;
+                          <i class="fa fa-code-branch" data-bs-toggle="modal" data-bs-target="#split-transaction-modal"></i> &nbsp;
+                          <i class="fa fa-trash" data-bs-toggle="modal" data-bs-target="#delete-modal"></i>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="d-flex justify-content-center mt-3">
+                  <button class="btn btn-sm btn-falcon-default me-1" type="button" title="Previous" data-list-pagination="prev"><span class="fas fa-chevron-left"></span></button>
+                  <ul class="pagination mb-0"></ul>
+                  <button class="btn btn-sm btn-falcon-default ms-1" type="button" title="Next" data-list-pagination="next"><span class="fas fa-chevron-right"> </span></button>
+                </div>
+              </div>
+            </div>
+            <!-- Table ends -->
+          </div>
+        </div>
+
+
+
+        <!-- Info Modals -->
+        <div class="modal fade" id="date-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body">
+                <div class="text-center fw-bold pt-2">Date</div>
+                <div class="px-4 py-3">
+                  This is the date that the Financial Institution has provided along with the other transaction details. 
+                  In most cases, this is the date on which the transaction was performed. 
+                  In some cases, this could be the date when the transaction actually got Posted.
+                </div>
+                <button class="btn btn-primary float-end" type="button" data-bs-dismiss="modal">OK </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="amount-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body">
+                <div class="text-center fw-bold pt-2">Amount</div>
+                <div class="px-4 py-3">
+                  This is the Amount for the transaction. A negative (-) sign indicates that this was a Debit transaction. 
+                  A positive (+) sign indicates that this was a Credit transaction.
+                </div>
+                <button class="btn btn-primary float-end" type="button" data-bs-dismiss="modal">OK </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="merchant-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body">
+                <div class="text-center fw-bold pt-2">Merchant</div>
+                <div class="px-4 py-3">
+                  This is the name of the Merchant that the Financial Insitution has shared. 
+                  Sometimes, there is additional meta data (description) shared in the Merchant name. 
+                  If you want to clean up the Merchant name, please click on the Edit icon from the Action column.
+
+                </div>
+                <button class="btn btn-primary float-end" type="button" data-bs-dismiss="modal">OK </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="category-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body">
+                <div class="text-center fw-bold pt-2">Category</div>
+                <div class="px-4 py-3">
+                  The Category for a transaction is assigned to create a meaningful grouping of transactions. 
+                  If a Category has been incorrectly assigned to a transaction and you want to change it or 
+                  if you want to add a new category, please click on the Edit icon from the Action column.
+                </div>
+                <button class="btn btn-primary float-end" type="button" data-bs-dismiss="modal">OK </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="institution-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body">
+                <div class="text-center fw-bold pt-2">Institution</div>
+                <div class="px-4 py-3">
+                  This is the Financial Institution associated with the transaction. 
+                  This field also has the Account Number in brackets to indicate the account associated with the transaction.
+                </div>
+                <button class="btn btn-primary float-end" type="button" data-bs-dismiss="modal">OK </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="tags-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body">
+                <div class="text-center fw-bold pt-2">Tags</div>
+                <div class="px-4 py-3">
+                  You can use this field to add custom groupins for a transaction. For example, if you want to track 
+                  your Expenses for your vacation, you can add specific tags to the related transactions. 
+                  You can add one or multiple tags. Once you type in the tag name, press Enter to save the Tag. 
+                  You can also use the Reports section from the top navigation bar to generate report specific to your Tags.
+                </div>
+                <button class="btn btn-primary float-end" type="button" data-bs-dismiss="modal">OK </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="type-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body">
+                <div class="text-center fw-bold pt-2">Type</div>
+                <div class="px-4 py-3">
+                  The Type field indicated the Transaction Type. Based on the other details of the transaction, the Type is auto assigned. 
+                  If a Type has been incorrectly assigned to a transaction and you want to change it, please click on the Edit icon from the Action column.
+                </div>
+                <button class="btn btn-primary float-end" type="button" data-bs-dismiss="modal">OK </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="reviewed-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body">
+                <div class="text-center fw-bold pt-2">REVIEWED?</div>
+                <div class="px-4 py-3">
+                  By default, all transactions are marked as NOT REVIEWED. 
+                  The REVIEWED status indicates that you have REVIEWED all the details of the transaction. 
+                  You can mark a transaction as 'REVIEWED' by clicking on the tick mark option from the Action column. 
+                  You can also change status by clicking on the actual NOT REVIEWED text link which will open a pop-up that will allow you to change status. 
+                  From this pop-up, you can also mark a transaction as REVIEW LATER.
+                </div>
+                <button class="btn btn-primary float-end" type="button" data-bs-dismiss="modal">OK </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="action-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body">
+                <div class="text-center fw-bold pt-2">Action</div>
+                <div class="px-4 py-3">
+                  This column has three options: TICK MARK icon, EDIT icon and DELETE icon. 
+                  TICK MARK option is to mark a transaction as REVIEWED. EDIT option is to modify details of the transaction. 
+                  DELETE option is to delete the transaction - once deleted, a transaction is permanently deleted from the system and it will not be retrieved.
+                </div>
+                <button class="btn btn-primary float-end" type="button" data-bs-dismiss="modal">OK </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Info Modals ends -->
+
+
+        <!-- Add Transaction -->
+        <div class="modal fade" id="add-transaction-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Add Transaction</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <form>
+                    <div class="mb-1">
+                      <label class="form-label">Date:</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-1">
+                      <label class="form-label">Institution:</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-1">
+                      <label class="form-label">Amount:</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-1">
+                      <label class="col-form-label" for="type">Merchant:</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Select Merchant</option>
+                        <option value="1">Google LLC GSuite</option>
+                        <option value="2">Microsoft Azure</option>
+                      </select>
+                    </div>
+                    <div class="mb-1">
+                      <label class="col-form-label" for="type">Category:</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Select Category</option>
+                        <option value="1">Credit</option>
+                        <option value="2">Deposit</option>
+                      </select>
+                    </div>
+                    <div class="mb-1">
+                      <label class="col-form-label" for="type">Reviewed:</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option value="0" selected>Reviewed Later</option>
+                        <option value="1">Reviewed</option>
+                        <option value="2">Not Reviewed</option>
+                      </select>
+                    </div>
+                    <div class="mb-1">
+                      <label class="col-form-label" for="type">Type:</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Select Type</option>
+                        <option value="1">Investments</option>
+                        <option value="2">Expense</option>
+                      </select>
+                    </div>
+                    <div class="mb-1">
+                      <label class="form-label">Tags:</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-2">
+                      <label class="form-label">Memo</label>
+                      <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Save </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Add Transaction Ends -->
+        <!-- Edit Transaction -->
+        <div class="modal fade" id="edit-transaction-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-header">
+                <h5 class="text-white mx-auto">Edit Transaction</h5>
+              </div>
+              <div class="modal-body p-0">
+                <div class="p-4 pb-0">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Date:</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Institution:</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Amount:</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                      <label class="col-form-label" for="type">Merchant:</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Select Merchant</option>
+                        <option value="1">Google LLC GSuite</option>
+                        <option value="2">Microsoft Azure</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label class="col-form-label" for="type">Category:</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Select Category</option>
+                        <option value="1">Credit</option>
+                        <option value="2">Deposit</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label class="col-form-label" for="type">Reviewed:</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option value="0" selected>Reviewed Later</option>
+                        <option value="1">Reviewed</option>
+                        <option value="2">Not Reviewed</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label class="col-form-label" for="type">Type:</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Select Type</option>
+                        <option value="1">Investments</option>
+                        <option value="2">Expense</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Tags:</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Memo</label>
+                      <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Apply Changes </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Edit Transaction Ends -->
+        <!-- Add Memo -->
+        <div class="modal fade" id="add-memo-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Add Memo</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Memo</label>
+                      <textarea class="form-control" rows="4"></textarea>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Apply Changes </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Add Memo Ends -->
+        <!-- Split -->
+        <div class="modal fade" id="split-transaction-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Split Transaction</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <div class="row mb-3">
+                    <div class="col-6">
+                      <label class="form-label">Category</label>
+                      <input class="form-control" type="text" value="Credit" disabled>
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label">Merchant</label>
+                      <input class="form-control" type="text" value="Interest" disabled>
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label">Institution</label>
+                      <input class="form-control" type="text" value="Fidelity" disabled>
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label">Amount</label>
+                      <input class="form-control" type="text" value="0.31" disabled>
+                    </div>
+                  </div>
+                  <hr>
+                  <h6>For First Transaction</h6>
+                  <div class="row mb-3">
+                    <div class="col-6">
+                      <label class="form-label">Amount</label>
+                      <input class="form-control" type="text" value="0.31">
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label">Tag</label>
+                      <input class="form-control" type="text">
+                    </div>
+                  </div>
+                  <hr>
+                  <h6>For Second Transaction</h6>
+                  <div class="row mb-5">
+                    <div class="col-6">
+                      <label class="form-label">Amount</label>
+                      <input class="form-control" type="text" value="0">
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label">Tag</label>
+                      <input class="form-control" type="text">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Split </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Split Ends -->
+        <!-- Delete Transaction Modal -->
+        <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-4">
+                Are you sure you want to Delete this transaction?
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Delete </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Delete Transaction Modal Ends -->
+
+
+        <!-- Free Trial -->
+        <div class="modal fade" id="free-trial-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 900px;">
+            <div class="modal-content position-relative">
+              <div class="modal-body text-center p-lg-5" style="background-color: #031c4a;color: white">
+                <h5 class="mb-3" style="color: white">Start your 15 day FREE TRIAL to gain full access to all features. Start monitoring your Finances
+                  and Creating Budgets with a snap.
+                </h5>
+                <p>"Our users have reported an average of $5K+ positive impact on their personal finances."</p>
+                <div class="row justify-content-center mt-4">
+                  <div class="col-lg-4 mb-3"><a class="btn btn-primary" href="accounts.html">Visit Accounts</a></div>
+                  <div class="col-lg-4 mb-3"><button class="btn btn-primary">Subscribe to our free trial</button></div>
+                  <div class="col-lg-4 mb-3"><a class="btn btn-primary" href="settings.html">Visit Settings</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Free Trial Ends -->
+        <!-- Manage Merchants -->
+        <div class="modal fade" id="manage-merchants-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Manage Merchants</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <p><i class="fas fa-info-circle"></i> If you want to edit existing Merchant name, please use 'edit' option next to merchant name.</p>
+                  <p><i class="fas fa-info-circle"></i> If you want to add a new merchant name then click on 'Add new merchant'. </p>
+                  <p><i class="fas fa-info-circle"></i> When you delete a merchant name, all transactions associated with this merchant will have merchant name as 'NA'.</p>
+                  <div class="text-end my-4">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-merchant-modal"><i class="fas fa-plus-circle"></i> Add New Merchant</button>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-hover text-center">
+                      <thead class="bg-200 text-900">
+                        <tr>
+                          <th scope="col">List of Existing Merchants</th>
+                          <th scope="col">Merchant</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1&1 Internet</td>
+                          <td>
+                            <i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-merchant-modal"></i>
+                            <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-merchant-modal"></i>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Manage Merchants Ends -->
+        <!-- Add Merchant -->
+        <div class="modal fade" id="add-merchant-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Add Merchant</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Merchant  Name:</label>
+                      <input type="text" class="form-control"></input>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Add Merchant</button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Add Merchant Ends -->
+        <!-- Edit Merchant -->
+        <div class="modal fade" id="edit-merchant-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Edit Merchant</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Merchant:</label>
+                      <input type="text" class="form-control" value="Current Name" readonly></input>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Change To:</label>
+                      <input type="text" class="form-control"></input>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Apply Changes </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Edit Merchant Ends -->
+        <!-- Delete Merchant Modal -->
+        <div class="modal fade" id="delete-merchant-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-4">
+                Are you sure you want to delete this merchant? Once deleted, all transactions associated with this merchant will have merchant name as 'NA'?
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Yes </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">No</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Delete Merchant Modal Ends -->
+
+
+        <!-- Manage Categories -->
+        <div class="modal fade" id="manage-categories-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Manage Merchants</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <p><i class="fas fa-info-circle"></i> If you want to merge multiple categories into one single category, 
+                    please use the "Add Category Rule" option. For example, if you want to merge "Restaurant" category into "Food" category, 
+                    you can use the "Add Category Rule" option to create a rule that will move all transactions from category "Restaurant" to category "Food".</p>
+                  <p><i class="fas fa-info-circle"></i> When you delete a category, all transactions associated with this category will have category name as 'Uncategorized'.</p>
+                  <div class="text-end my-4">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-categories-modal"><i class="fas fa-plus-circle"></i> Add New Category</button>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-hover text-center">
+                      <thead class="bg-200 text-900">
+                        <tr>
+                          <th scope="col">List of Existing Categories</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1&1 Internet</td>
+                          <td>
+                            <i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-categories-modal"></i>
+                            <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-categories-modal"></i>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Manage Categories Ends -->
+        <!-- Add Categories -->
+        <div class="modal fade" id="add-categories-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Add Category</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Category  Name:</label>
+                      <input type="text" class="form-control"></input>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Save</button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Add Categories Ends -->
+        <!-- Edit Categories -->
+        <div class="modal fade" id="edit-categories-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Edit Category</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Category:</label>
+                      <input type="text" class="form-control" value="Current Name" readonly></input>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Change To:</label>
+                      <input type="text" class="form-control"></input>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Apply Changes </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Edit Categories Ends -->
+        <!-- Delete Categories Modal -->
+        <div class="modal fade" id="delete-categories-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-4">
+                Are you sure you want to delete this merchant? Once deleted, all transactions associated with this merchant will have merchant name as 'NA'?
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Yes </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">No</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Delete Categories Modal Ends -->
+      </div>
+    </main>
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="./vendors/popper/popper.min.js"></script>
+    <script src="./vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="./vendors/anchorjs/anchor.min.js"></script>
+    <script src="./vendors/is/is.min.js"></script>
+    <script src="./vendors/echarts/echarts.min.js"></script>
+    <script src="./vendors/fontawesome/all.min.js"></script>
+    <script src="./vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="./vendors/list.js/list.min.js"></script>
+    <script src="./vendors/pulltorefresh/index.umd.min.js"></script>
+    <script src="./assets/js/theme.js"></script>
+  </body>
+</html>

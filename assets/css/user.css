@@ -1,0 +1,151 @@
+/* General */
+body {
+    background-color: #031c4a;
+    font-size: 0.9rem;
+}
+.dark body, .dark .mobileNav { background-color: #232e3c; }
+svg:hover { cursor: pointer; }
+.modal { background-color: #031c4aa1; } /* Pop-up background-color: ; */
+.modal-body .rounded-top-lg, .modal-header { background-color: #031c4a !important; }
+.dark .modal-body .rounded-top-lg h5 { color: #ffffff8c !important; }
+.rounded-top-lg { border-radius:  0.3rem 0.3rem 0 0 !important; }
+.form-select { padding-right: 2.5rem !important; }
+
+/* General */
+
+/* Border around notification dot */
+.notification-indicator::before {
+    border: 2px solid #031c4a;
+}
+.card-hover-zoom { width: 100% !important; }
+.card-hover-zoom p { font-size: 1.2rem; }
+
+.card-hover-zoom:hover p, .card-hover-zoom:hover svg {
+    transform: scale(1.25);
+    transition: transform 0.5s;
+}
+
+/* Navbar Starts */
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link:focus {
+    color: #fff;
+    /* color: #fbc830; */
+}
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #fff;
+    padding-bottom: 5px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    width: fit-content;
+}
+.navbar-light .navbar-nav .dropdown .nav-link:hover {
+    border-bottom-style: none;
+}
+#navbarContainer{ position: sticky; top: 0; background-color: #031c4a; z-index: 1000;transition-duration: 0.25s; }
+.dark #navbarContainer{ background-color: #232e3c; }
+
+.dark .navbar-nav .nav-link, .dark .block-title {color: #ffffff8c; }
+
+/* Mobile Nav (Bottom) Starts */
+.mobileNav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    background-color: #031c4a;
+    display: flex;
+    overflow-x: auto;
+    border-top: 1px solid #3a4266;
+}
+.dark .mobileNav { border-top: 1px solid rgb(107, 107, 107); }
+.mobileNavLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #fff;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.1s ease-in-out;
+}
+.mobileNavLink:hover{
+    color: #fbc830;
+    text-decoration: none;
+}
+.mobileNavIcon {
+    font-size: 18px;
+}
+/* Navbar Ends */
+
+/* Navbar Mobile Modal */
+#more-menu-modal .modal-content, #reports-menu-modal .modal-content {
+    border-radius: calc(0.375rem - 0px);
+    border-color: rgba(252, 252, 252, 0.65);
+}
+#more-menu-modal .modal-body, #reports-menu-modal .modal-body{
+    background-color: #031c4a;
+    border-radius: calc(0.375rem - 0px);
+    border-color: rgba(252, 252, 252, 0.65);
+}
+.dark #more-menu-modal .modal-body, .dark #reports-menu-modal .modal-body{
+    background-color: #121e2d;
+}
+#more-menu-modal .modal-body a, #reports-menu-modal .modal-body a { color: #fff; }
+#more-menu-modal .modal-body a:hover, #reports-menu-modal .modal-body a:hover{
+    color: #fbc830;
+}
+/* Navbar Mobile Modal Ends */
+
+/* Dashboard */
+.block-title {
+    line-height: 2rem;
+    margin-bottom: 15px;
+    color: #fff;
+    text-transform: uppercase;
+}
+.page-title {
+    margin-bottom: 30px;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: #2c7be5;
+}
+.db-snap-box:hover {
+    background-color: #031c4a;
+    cursor: pointer;
+}
+.db-snap-box:hover h6 { color: #fff !important; }
+.db-snap-box:hover p {
+    color: #fff !important;
+    transform: scale(1.4);
+    transition: transform 1s;
+}
+#review-transaction{
+    border-color: #e99a2b;
+    color: white;
+    border-width: 2px;
+}
+#review-transaction:hover{
+    border-color: white;
+    background-color: none;
+}
+
+#notification-alert { background: none; color: #e99a2b; height: 2rem; }
+@media only screen and (max-width: 700px) {
+    #notification-alert { height: 4rem; }
+}
+/* Dashboard */
+
+/* Transactions Page */
+tr .tags { width: 80px; }
+tr .tags input{ width: 75px; }
+tr .type { width: 210px; }
+tr .type select{ width: 200px; }
+tr .tags input, tr .type select { border: 1px solid var(--falcon-input-border-color); }
+/* Transactions Page */

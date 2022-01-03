@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>Budgets | MoneyPatrol</title>
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/logo.png">
+    <link rel="manifest" href="./assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="./assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="./assets/js/config.js"></script>
+    <script src="./vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+    <link href="./vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
+    <link href="./assets/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
+    <link href="./assets/css/theme.min.css" rel="stylesheet" id="style-default">
+    <link href="./assets/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
+    <link href="./assets/css/user.css" rel="stylesheet" id="user-style-default">
+    <script>
+      var isRTL = JSON.parse(localStorage.getItem('isRTL'));
+      if (isRTL) {
+        var linkDefault = document.getElementById('style-default');
+        var userLinkDefault = document.getElementById('user-style-default');
+        linkDefault.setAttribute('disabled', true);
+        userLinkDefault.setAttribute('disabled', true);
+        document.querySelector('html').setAttribute('dir', 'rtl');
+      } else {
+        var linkRTL = document.getElementById('style-rtl');
+        var userLinkRTL = document.getElementById('user-style-rtl');
+        linkRTL.setAttribute('disabled', true);
+        userLinkRTL.setAttribute('disabled', true);
+      }
+    </script>
+  </head>
+
+  <body>
+    <main class="main" id="top">
+      <!-- Navbar -->
+      <div id="navbarPlaceholder"></div>
+      <!-- Navbar -->
+      
+      <div class="container mb-2 mb-lg-5" data-layout="container">
+        <script>
+          var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+          if (isFluid) {
+            var container = document.querySelector('.container');
+            container.classList.remove('container');
+            container.classList.add('container-fluid');
+          }
+        </script>
+
+        <div class="content mt-4">
+          <h5 class="block-title page-title text-center">Budget Usage & Insights</h5>
+          <div class="card overflow-hidden">
+            <div class="card-body px-lg-5">
+              <!-- Four boxes starts -->
+              <div class="row g-2 mb-4">
+                <div class="col-lg-3 mb-2 d-flex align-items-stretch">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto">
+                          <i class="fas fa-calendar-alt fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Time Range</div>
+                          <p class="card-text">Feb 01 to Feb 08</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 mb-2 d-flex align-items-stretch">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto">
+                          <i class="fas fa-money-bill fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Most Used</div>
+                          <p class="card-text">Shopping</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 mb-2 d-flex align-items-stretch">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto">
+                          <i class="fas fa-chart-pie fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Budget Usage</div>
+                          <p class="card-text">0% in 9 Budgets</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 my-auto text-center">
+                  <button class="btn btn-dark rounded-pill mb-2" data-bs-toggle="modal" data-bs-target="#expense-modal"><i class="fas fa-plus-circle"></i> Create Expense Budget</button>
+                  <button class="btn btn-dark rounded-pill mb-2" data-bs-toggle="modal" data-bs-target="#savings-modal"><i class="fas fa-plus-circle"></i> Create Savings Budget</button>
+                </div>
+              </div>
+              <!-- Four boxes ends -->
+
+              <!-- Expense Budgets -->
+              <h5 class="text-center mb-4">Expense Budgets</h5>
+              <div class="row justify-content-center mb-4">
+                <div class="col-lg-4 text-center mb-3">
+                  <div class="input-group input-group-sm">
+                    <label class="input-group-text mb-0">Budget for</label>
+                    <select class="form-select">
+                      <option value="1">Feb 2022</option>
+                      <option value="2">Jan 2022</option>
+                      <option value="3">Dec 2021</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                  <div class="input-group input-group-sm">
+                    <label class="input-group-text mb-0">Show</label>
+                    <select class="form-select">
+                      <option value="1">All</option>
+                      <option value="2">Category</option>
+                      <option value="3">Merchant</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col mb-3">
+                  <div class="p-3 border card">
+                    <!-- Bar Chart -->
+                    <div class="expense-budget" style="min-height: 320px;" data-echart-responsive="true"></div>
+                    <!-- Bar Chart Ends -->
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="p-3 border card">
+                    <div class="card-body row">
+                      <div class="col-lg-6 mb-lg-0">
+                        <!-- Pie Chart -->
+                        <div class="budget-summary" style="min-height: 280px;" data-echart-responsive="true"></div>
+                        <!-- Pie Chart -->
+                      </div>
+                      <div class="col-lg-6">
+                        <!-- Table -->
+                        <div class="table-responsive mb-4">
+                          <table class="table table-hover table-bordered mb-0">
+                            <thead class="bg-200 text-900">
+                              <tr>
+                                <th scope="col">Budgeted</th>
+                                <th scope="col">Spent</th>
+                                <th scope="col">Available</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>$480.89</td>
+                                <td>$480.89</td>
+                                <td>$480.89</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <!-- Table Ends -->
+
+                        <!-- Card -->
+                        <div class="card border border-primary">
+                          <div class="card-body">
+                            <div class="card-title"> You have EXCEEDED your budgets for: </div>
+                            <p class="card-text">None, Good Job! <i class="fas fa-thumbs-up"></i></p>
+                          </div>
+                        </div>
+                        <!-- Card Ends -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Expense Budgets Ends -->
+
+              <!-- Budget Summary Table -->
+              <h5 class="text-center mb-4">Budget Summary</h5>
+              <div class="table-responsive mb-4">
+                <table class="table table-hover table-bordered text-center">
+                  <thead class="bg-200 text-900">
+                    <tr>
+                      <th scope="col">Title</th>
+                      <th scope="col">Budgeted</th>
+                      <th scope="col">Spent</th>
+                      <th scope="col">Remaining</th>
+                      <th scope="col">Used</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Modify</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Alameda County Water</td>
+                      <td>$480.89</td>
+                      <td>$1</td>
+                      <td>$479</td>
+                      <td>0%</td>
+                      <td><i class="fas fa-circle text-success"></i></td>
+                      <td>
+                        <i class="fas fa-pencil-alt"></i> &nbsp;
+                        <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-modal"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Replublic Services</td>
+                      <td>$165.89</td>
+                      <td>$1</td>
+                      <td>$479</td>
+                      <td>0%</td>
+                      <td><i class="fas fa-circle text-success"></i></td>
+                      <td>
+                        <i class="fas fa-pencil-alt"></i> &nbsp;
+                        <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-modal"></i>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Budget Summary Table Ends -->
+
+              <!-- Dropdown -->
+              <div class="input-group input-group-sm mx-auto mb-4" style="max-width: 400px;">
+                <label class="input-group-text mb-0">Budget Usage in</label>
+                <select class="form-select">
+                  <option value="">Last 1 month</option>
+                  <option value="">Last 3 months</option>
+                  <option value="">Last 6 months</option>
+                </select>
+              </div>
+              <!-- Table -->
+              <div class="table-responsive mb-4">
+                <table class="table table-hover table-bordered">
+                  <thead class="bg-200 text-900">
+                    <tr>
+                      <th scope="col">Merchant</th>
+                      <th scope="col">Due By</th>
+                      <th scope="col">Category</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Alameda County Water</td>
+                      <td>Feb-16</td>
+                      <td>Utilities</td>
+                      <td>$480.89</td>
+                    </tr>
+                    <tr>
+                      <td>Replublic Services</td>
+                      <td>Feb-18</td>
+                      <td>Utilities</td>
+                      <td>$165.89</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Table Ends -->
+
+              <!-- Savings Budget -->
+              <h5 class="text-center mb-4">Savings Budgets</h5>
+              <div class="row mb-5">
+                <div class="col-lg-6">
+                  <div class="p-3 border card mb-4 mb-lg-0">
+                    <!-- Bar Chart -->
+                    <div class="savings-budget" style="min-height: 320px;" data-echart-responsive="true"></div>
+                    <!-- Bar Chart Ends -->
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <!-- Table -->
+                  <div class="table-responsive">
+                    <table class="table table-hover table-bordered mb-0">
+                      <thead class="bg-200 text-900">
+                        <tr>
+                          <th scope="col">Merchant</th>
+                          <th scope="col">Due By</th>
+                          <th scope="col">Category</th>
+                          <th scope="col">Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Alameda County Water</td>
+                          <td>Feb-16</td>
+                          <td>Utilities</td>
+                          <td>$480.89</td>
+                        </tr>
+                        <tr>
+                          <td>Replublic Services</td>
+                          <td>Feb-18</td>
+                          <td>Utilities</td>
+                          <td>$165.89</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- Table Ends -->
+                </div>
+              </div>
+              <!-- Savings Budget Ends -->
+
+              <!-- Weekly Budget -->
+              <h5 class="text-center mb-4">Weekly Budgets</h5>
+              <div class="row mb-5">
+                <div class="col-lg-6">
+                  <div class="p-3 border card mb-4 mb-lg-0">
+                    <!-- Bar Chart -->
+                    <div class="weekly-budget" style="min-height: 320px;" data-echart-responsive="true"></div>
+                    <!-- Bar Chart Ends -->
+                  </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                  <button class="btn btn-dark rounded-pill mb-3" data-bs-toggle="modal" data-bs-target="#expense-modal"><i class="fas fa-plus-circle"></i> Create Budget</button>
+                  <!-- Table -->
+                  <div class="table-responsive mb-4">
+                    <table class="table table-hover table-bordered">
+                      <thead class="bg-200 text-900">
+                        <tr>
+                          <th scope="col">Title</th>
+                          <th scope="col">Budgeted</th>
+                          <th scope="col">Spent</th>
+                          <th scope="col">Remaining</th>
+                          <th scope="col">Used</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Modify</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Alameda County Water</td>
+                          <td>$480.89</td>
+                          <td>$1</td>
+                          <td>$479</td>
+                          <td>0%</td>
+                          <td><i class="fas fa-circle text-success"></i></td>
+                          <td>
+                            <i class="fas fa-pencil-alt"></i> &nbsp;
+                            <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-modal"></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Replublic Services</td>
+                          <td>$165.89</td>
+                          <td>$1</td>
+                          <td>$479</td>
+                          <td>0%</td>
+                          <td><i class="fas fa-circle text-success"></i></td>
+                          <td>
+                            <i class="fas fa-pencil-alt"></i> &nbsp;
+                            <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-modal"></i>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- Table Ends -->
+                </div>
+              </div>
+              <!-- Weekly Budget Ends -->
+
+              <!-- Yearly Budget -->
+              <h5 class="text-center mb-4">Yearly Budgets</h5>
+              <div class="row mb-5">
+                <div class="col-lg-6">
+                  <div class="p-3 border card mb-4 mb-lg-0">
+                    <!-- Bar Chart -->
+                    <div class="yearly-budget" style="min-height: 320px;" data-echart-responsive="true"></div>
+                    <!-- Bar Chart Ends -->
+                  </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                  <button class="btn btn-dark rounded-pill mb-3" data-bs-toggle="modal" data-bs-target="#expense-modal"><i class="fas fa-plus-circle"></i> Create Budget</button>
+                  <!-- Table -->
+                  <div class="table-responsive mb-4">
+                    <table class="table table-hover table-bordered mb-0">
+                      <thead class="bg-200 text-900">
+                        <tr>
+                          <th scope="col">Title</th>
+                          <th scope="col">Budgeted</th>
+                          <th scope="col">Spent</th>
+                          <th scope="col">Remaining</th>
+                          <th scope="col">Used</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Modify</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Alameda County Water</td>
+                          <td>$480.89</td>
+                          <td>$1</td>
+                          <td>$479</td>
+                          <td>0%</td>
+                          <td><i class="fas fa-circle text-success"></i></td>
+                          <td>
+                            <i class="fas fa-pencil-alt"></i> &nbsp;
+                            <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-modal"></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Replublic Services</td>
+                          <td>$165.89</td>
+                          <td>$1</td>
+                          <td>$479</td>
+                          <td>0%</td>
+                          <td><i class="fas fa-circle text-success"></i></td>
+                          <td>
+                            <i class="fas fa-pencil-alt"></i> &nbsp;
+                            <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-modal"></i>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- Table Ends -->
+                </div>
+              </div>
+              <!-- Yearly Budget Ends -->
+
+              <!-- Zero-Sum Budgeting -->
+              <h5 class="text-center mb-4">Zero-Sum Budgeting</h5>
+              <div class="row mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                  <div class="p-3 border card">
+                    <!-- Bar chart -->
+                    <div class="zero-sum-budget-bar" style="min-height: 320px;" data-echart-responsive="true"></div>
+                    <!-- Bar chart ends -->
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="p-3 border card">
+                    <!-- Doughnut chart -->
+                    <div class="zero-sum-budget-doughnut" style="min-height: 320px;" data-echart-responsive="true"></div>
+                    <!-- Doughnut chart ends -->
+                  </div>
+                </div>
+              </div>
+              <!-- Zero-Sum Budgeting Ends-->
+
+              <!-- Advance Table starts -->
+              <h5 class="text-center mb-4">Budgeted vs Non-Budgeted Transaction List</h5>
+              <div id="transactions-summary-table" data-list='{"valueNames":["date","amount","merchant", "category", "institution", "type", "budgeted", "verified", "action"],"page":10,"pagination":true}'>
+                <div class="row pl-2 my-3">
+                  <div class="col-lg-4 mb-2">
+                    <div class="input-group input-group-sm ">
+                      <label class="input-group-text mb-0">Show</label>
+                      <select class="itemCount form-select">
+                        <option value="1">1</option>
+                        <option selected value="2">2</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-4"></div>
+                  <div class="col-lg-4 float-end">
+                    <form>
+                      <div class="input-group">
+                        <input class="form-control form-control-sm shadow-none fuzzy-search" type="search" placeholder="Search" aria-label="search">
+                        <div class="input-group-text bg-transparent"><span class="fa fa-search fs--1 text-600"></span></div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="table-responsive scrollbar">
+                  <table class="table table-bordered table-hover text-center overflow-hidden">
+                    <thead class="bg-200 text-900">
+                      <tr>
+                        <th class="text-nowrap" scope="col">Date <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#date-modal"></i></th>
+                        <th class="text-nowrap" scope="col">Amount <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#amount-modal"></i></th>
+                        <th class="text-nowrap" scope="col">Merchant <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#merchant-modal"></i></th>
+                        <th class="text-nowrap" scope="col">Category <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#category-modal"></i></th>
+                        <th class="text-nowrap" scope="col">Institution <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#institution-modal"></i></th>
+                        <th class="text-nowrap" scope="col">Type <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#type-modal"></i></th>
+                        <th class="text-nowrap" scope="col">Budgeted <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#budgeted-modal"></i></th>
+                        <th class="text-nowrap" scope="col">Verified? <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#verified-modal"></i></th>
+                        <th class="text-nowrap" scope="col">Action <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#action-modal"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody class="list">
+                      <tr>
+                        <td class="text-nowrap date">Dec 29</td>
+                        <td class="text-nowrap amount">-$24.00</td>
+                        <td class="text-nowrap merchant">Mowry Plaza Pharmacy</td>
+                        <td class="text-nowrap category">Pharmacy</td>
+                        <td class="text-nowrap institution">Discover Card</td>
+                        <td class="text-nowrap type">
+                          <select class="form-select form-select-sm">
+                            <option value="1">Expense</option>
+                            <option value="2">Income</option>
+                            <option value="3">Card Payment Made</option>
+                            <option value="4">Mortagage Payment Received</option>
+                          </select>
+                        </td>
+                        <td class="text-nowrap budgeted text-success text-center"><i class="fas fa-check-circle"></i></td>
+                        <td class="text-nowrap text-danger verified">Not Verified</td>
+                        <td class="text-nowrap action">
+                          <i class="fa fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal"></i> &nbsp;
+                          <i class="fa fa-code-branch" data-bs-toggle="modal" data-bs-target="#split-transaction-modal"></i> &nbsp;
+                          <i class="fa fa-trash" data-bs-toggle="modal" data-bs-target="#delete-modal"></i>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="text-nowrap date">Jan 31</td>
+                        <td class="text-nowrap amount">-$24.00</td>
+                        <td class="text-nowrap merchant">Health Insurance</td>
+                        <td class="text-nowrap category">LIC</td>
+                        <td class="text-nowrap institution">Mastercard Card</td>
+                        <td class="text-nowrap type">
+                          <select  class="form-select form-select-sm">
+                            <option value="1">Expense</option>
+                            <option value="2">Income</option>
+                            <option value="3">Card Payment Made</option>
+                            <option value="4">Mortagage Payment Received</option>
+                          </select>
+                        </td>
+                        <td class="text-nowrap budgeted text-danger text-center"><i class="fas fa-times-circle"></i></td>
+                        <td class="text-nowrap text-success verified">Verified</td>
+                        <td class="text-nowrap action">
+                          <i class="fa fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal"></i> &nbsp;
+                          <i class="fa fa-code-branch" data-bs-toggle="modal" data-bs-target="#split-transaction-modal"></i> &nbsp;
+                          <i class="fa fa-trash" data-bs-toggle="modal" data-bs-target="#delete-modal"></i>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="d-flex justify-content-center mt-3">
+                  <button class="btn btn-sm btn-falcon-default me-1" type="button" title="Previous" data-list-pagination="prev"><span class="fas fa-chevron-left"></span></button>
+                  <ul class="pagination mb-0"></ul>
+                  <button class="btn btn-sm btn-falcon-default ms-1" type="button" title="Next" data-list-pagination="next"><span class="fas fa-chevron-right"> </span></button>
+                </div>
+              </div>
+              <!-- Advance Table ends -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Create New Expense Budget Modal Starts -->
+        <div class="modal fade" id="expense-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white" id="modalExampleDemoLabel">Create New Expense Budget</h5>
+                </div>
+                <div class="p-4">
+                  <!-- Tabs -->
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item"><a class="nav-link active" id="category-tab" data-bs-toggle="tab" href="#tab-category" role="tab" aria-controls="tab-home" aria-selected="true">Category</a></li>
+                    <li class="nav-item"><a class="nav-link" id="merchant-tab" data-bs-toggle="tab" href="#tab-merchant" role="tab" aria-controls="tab-profile" aria-selected="false">Merchant</a></li>
+                    <li class="nav-item"><a class="nav-link" id="tag-tab" data-bs-toggle="tab" href="#tab-tag" role="tab" aria-controls="tab-contact" aria-selected="false">Tag</a></li>
+                  </ul>
+                  <div class="tab-content border-x border-bottom p-3" id="myTabContent">
+                    <div class="tab-pane fade show active" id="tab-category" role="tabpanel" aria-labelledby="category-tab">
+                      <form>
+                        <div class="mb-3">
+                          <label class="col-form-label" for="type">Category:</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Select Category</option>
+                            <option value="1">Refund</option>
+                            <option value="2">Google</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label class="col-form-label" for="type">Frequency:</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option value="1">Monthly</option>
+                            <option value="2">Debts</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label class="col-form-label" for="amount">Amount:</label>
+                          <input class="form-control" id="amount" type="text" />
+                        </div>
+                      </form>
+                    </div>
+                    <div class="tab-pane fade" id="tab-merchant" role="tabpanel" aria-labelledby="merchant-tab">
+                      <form>
+                        <div class="mb-3">
+                          <label class="col-form-label" for="type">Merchant:</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Select Merchant</option>
+                            <option value="1">Refund</option>
+                            <option value="2">Google</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label class="col-form-label" for="type">Frequency:</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option value="1">Monthly</option>
+                            <option value="2">Debts</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label class="col-form-label" for="amount">Amount:</label>
+                          <input class="form-control" id="amount" type="text" />
+                        </div>
+                      </form>
+                    </div>
+                    <div class="tab-pane fade" id="tab-tag" role="tabpanel" aria-labelledby="tag-tab">
+                      <form>
+                        <div class="mb-3">
+                          <label class="col-form-label" for="type">Tag:</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Select Tag</option>
+                            <option value="1">Refund</option>
+                            <option value="2">Google</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label class="col-form-label" for="type">Frequency:</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option value="1">Monthly</option>
+                            <option value="2">Debts</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label class="col-form-label" for="amount">Amount:</label>
+                          <input class="form-control" id="amount" type="text" />
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <!-- Tabs -->
+                  <div class="alert alert-primary" role="alert"><i class="fas fa-info-circle"></i> To Create a Custom Category/Merchant Budget, Choose 'Add New'</div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+                <button class="btn btn-primary" type="button">Create Budget </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Create New Expense Budget Ends -->
+        <!-- Create New Savings Budget Modal Starts -->
+        <div class="modal fade" id="savings-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white" id="modalExampleDemoLabel">Create New Savings Budget</h5>
+                </div>
+                <div class="p-4">
+                  <p>Note: Savings Budgets can be created based on Tags that have been assigned for the transactions. 
+                    Savings Budgets will only apply to Credit (money coming in) transactions with those specific Tags. 
+                    Please select an already assigned Tag from the list or Add a New tag which will be assigned to transactions.
+                  </p>
+                  <form>
+                    <div class="mb-3">
+                      <label class="col-form-label" for="description">Name:</label>
+                      <input class="form-control" id="description" type="text" />
+                    </div>
+                    <div class="mb-3">
+                      <label class="col-form-label" for="type">Tag:</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Select Type</option>
+                        <option value="1">Assets</option>
+                        <option value="2">Debts</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label class="col-form-label" for="amount">Amount:</label>
+                      <input class="form-control" id="amount" type="text" />
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+                <button class="btn btn-primary" type="button">Create Budget </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Create New Savings Budget Modal Ends -->
+        <!-- Edit Transaction -->
+        <div class="modal fade" id="edit-transaction-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Edit Transaction</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <form>
+                    <div class="mb-1">
+                      <label class="form-label">Date:</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-1">
+                      <label class="form-label">Institution:</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-1">
+                      <label class="form-label">Amount:</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-1">
+                      <label class="col-form-label" for="type">Merchant:</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Select Merchant</option>
+                        <option value="1">Google LLC GSuite</option>
+                        <option value="2">Microsoft Azure</option>
+                      </select>
+                    </div>
+                    <div class="mb-1">
+                      <label class="col-form-label" for="type">Category:</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Select Category</option>
+                        <option value="1">Credit</option>
+                        <option value="2">Deposit</option>
+                      </select>
+                    </div>
+                    <div class="mb-1">
+                      <label class="col-form-label" for="type">Reviewed:</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option value="0" selected>Reviewed Later</option>
+                        <option value="1">Reviewed</option>
+                        <option value="2">Not Reviewed</option>
+                      </select>
+                    </div>
+                    <div class="mb-1">
+                      <label class="col-form-label" for="type">Type:</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Select Type</option>
+                        <option value="1">Investments</option>
+                        <option value="2">Expense</option>
+                      </select>
+                    </div>
+                    <div class="mb-1">
+                      <label class="form-label">Tags:</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-2">
+                      <label class="form-label">Memo</label>
+                      <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Apply Changes </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Edit Transaction Ends -->
+        <!-- Split -->
+        <div class="modal fade" id="split-transaction-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Split Transaction</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <div class="row mb-3">
+                    <div class="col-6">
+                      <label class="form-label">Category</label>
+                      <input class="form-control" type="text" value="Credit" disabled>
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label">Merchant</label>
+                      <input class="form-control" type="text" value="Interest" disabled>
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label">Institution</label>
+                      <input class="form-control" type="text" value="Fidelity" disabled>
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label">Amount</label>
+                      <input class="form-control" type="text" value="0.31" disabled>
+                    </div>
+                  </div>
+                  <hr>
+                  <h6>For First Transaction</h6>
+                  <div class="row mb-3">
+                    <div class="col-6">
+                      <label class="form-label">Amount</label>
+                      <input class="form-control" type="text" value="0.31">
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label">Tag</label>
+                      <input class="form-control" type="text">
+                    </div>
+                  </div>
+                  <hr>
+                  <h6>For Second Transaction</h6>
+                  <div class="row mb-5">
+                    <div class="col-6">
+                      <label class="form-label">Amount</label>
+                      <input class="form-control" type="text" value="0">
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label">Tag</label>
+                      <input class="form-control" type="text">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Split </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Split Ends -->
+        <!-- Delete Transaction Modal -->
+        <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-4">
+                Are you sure you want to Delete this?
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Delete </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Delete Transaction Modal Ends -->
+      </div>
+    </main>
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="./vendors/popper/popper.min.js"></script>
+    <script src="./vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="./vendors/anchorjs/anchor.min.js"></script>
+    <script src="./vendors/is/is.min.js"></script>
+    <script src="./vendors/echarts/echarts.min.js"></script>
+    <script src="./vendors/fontawesome/all.min.js"></script>
+    <script src="./vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="./vendors/list.js/list.min.js"></script>
+    <script src="./vendors/pulltorefresh/index.umd.min.js"></script>
+    <script src="./assets/js/theme.js"></script>
+    <script src="./assets/custom/budgets.js"></script>
+  </body>
+</html>

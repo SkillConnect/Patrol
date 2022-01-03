@@ -1,0 +1,395 @@
+<!-- Navbar Starts -->
+<div class="container-fluid" id="navbarContainer" data-layout="container">
+  <nav class="navbar navbar-light navbar-top navbar-expand-lg">
+    <a class="navbar-brand me-1 me-sm-3" href="../index.html">
+      <div class="d-flex align-items-center"><img class="me-2" src="../assets/img/logo.png" alt="" width="40" /></div>
+    </a>
+    <!-- Main Navbar -->
+    <div class="collapse navbar-collapse scrollbar" id="navbarStandard">
+      <ul class="navbar-nav" data-top-nav-dropdowns="data-top-nav-dropdowns">
+        <li class="nav-item"><a class="nav-link" href="../index.html">DASHBOARD</a></li>
+        <li class="nav-item"><a class="nav-link" href="../transactions.html">TRANSACTIONS</a></li>
+        <li class="nav-item"><a class="nav-link" href="../balances.html">BALANCES</a></li>
+        <li class="nav-item"><a class="nav-link" href="../flow.html">FLOW</a></li>
+        <li class="nav-item"><a class="nav-link" href="../budgets.html">BUDGETS</a></li>
+        <li class="nav-item"><a class="nav-link" href="../debts.html">DEBTS</a></li>
+        <li class="nav-item"><a class="nav-link" href="../bills.html">BILLS</a></li>
+        <li class="nav-item"><a class="nav-link" href="../investments.html">INVESTMENTS</a></li>
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="documentations">REPORTS</a>
+          <div class="dropdown-menu dropdown-menu-card border-0 mt-0" aria-labelledby="documentations">
+            <div class="bg-white dark__bg-1000 rounded-3 py-2">
+              <a class="dropdown-item link-600 fw-medium" href="./tags.html">Tags</a>
+              <a class="dropdown-item link-600 fw-medium" href="./categories.html">Categories</a>
+              <a class="dropdown-item link-600 fw-medium" href="./merchants.html">Merchants</a>
+              <a class="dropdown-item link-600 fw-medium" href="./recurring-transactions.html">Recurring Transactions</a>
+              <a class="dropdown-item link-600 fw-medium" href="./large-transactions.html">Large Transactions</a>
+              <a class="dropdown-item link-600 fw-medium" href="./weekly-monthly.html">Weekly/Monthly Report</a>
+              <a class="dropdown-item link-600 fw-medium" href="./cash-available.html">Cash Available</a>
+              <a class="dropdown-item link-600 fw-medium" href="./credit-usage.html">Credit Usage</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="../score.html">SCORE</a></li>
+        <li class="nav-item"><a class="nav-link position-relative" href="../accounts.html">ACCOUNTS
+          <span class="position-absolute top-0 start-99 translate-middle badge rounded-pill bg-warning text-dark" data-bs-toggle="tooltip" title="Action required: It seems 2 of your accounts have not been connected in last 7 days.">2</span>
+         </a>
+        </li>
+      </ul>
+    </div>
+    <!-- Main Navbar Ends -->
+
+    <!-- Right Icons Bar -->
+    <ul class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center">
+      <li class="nav-item d-none d-xl-block">
+        <div class="theme-control-toggle fa-icon-wait px-2">
+          <input class="form-check-input ms-0 theme-control-toggle-input" id="themeControlToggle" type="checkbox" data-theme-control="theme" value="dark">
+          <label class="mb-0 theme-control-toggle-label theme-control-toggle-light" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Switch to light theme" aria-label="Switch to light theme"><span class="fas fa-sun fs-0"></span></label>
+          <label class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Switch to dark theme" aria-label="Switch to dark theme"><span class="fas fa-moon fs-0"></span></label>
+        </div>
+      </li>
+      <li class="nav-item dropdown d-none d-xl-block" style="cursor: pointer;">
+        <a class="nav-link px-0" data-bs-toggle="collapse" data-bs-target="#refresh-accounts" aria-expanded="false">
+          <span class="fas fa-sync-alt" data-fa-transform="shrink-7" style="font-size: 33px;"></span>
+        </a>
+      </li>
+      <li class="nav-item dropdown d-none d-xl-block">
+        <a class="nav-link px-0" href="../transaction-calendar.html" data-bs-toggle="tooltip" data-bs-original-title="Transactions Calendar"><span class="fas fa-calendar-alt" data-fa-transform="shrink-7" style="font-size: 33px;"></span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-xl-block">
+        <a class="nav-link px-0" href="../tasks.html" data-bs-toggle="tooltip" data-bs-original-title="Tasks"><span class="fas fa-list" data-fa-transform="shrink-7" style="font-size: 33px;"></span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-xl-block">
+        <a class="nav-link px-0" href="../documents.html" data-bs-toggle="tooltip" data-bs-original-title="Documents"><span class="fas fa-paperclip" data-fa-transform="shrink-7" style="font-size: 33px;"></span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link notification-indicator notification-indicator-warning px-0 fa-icon-wait" id="navbarDropdownNotification" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hide-on-body-scroll="data-hide-on-body-scroll">
+          <span class="fas fa-bell" data-fa-transform="shrink-6" style="font-size: 33px;"></span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-end dropdown-menu-card dropdown-menu-notification" aria-labelledby="navbarDropdownNotification">
+          <div class="card card-notification shadow-none">
+            <div class="card-header">
+              <div class="row justify-content-between align-items-center">
+                <div class="col-auto">
+                  <h6 class="card-header-title mb-0">Notifications</h6>
+                </div>
+                <div class="col-auto ps-0 ps-sm-3"><a class="card-link fw-normal" href="#!">Mark all as read</a></div>
+              </div>
+            </div>
+            <div class="scrollbar-overlay os-host os-theme-dark os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-transition os-host-overflow os-host-overflow-y" style="max-height:19rem"><div class="os-resize-observer-host observed"><div class="os-resize-observer" style="left: 0px; right: auto;"></div></div><div class="os-size-auto-observer observed" style="height: calc(100% + 1px); float: left;"><div class="os-resize-observer"></div></div><div class="os-content-glue" style="margin: 0px; height: 515px; width: 317px;"></div><div class="os-padding"><div class="os-viewport os-viewport-native-scrollbars-invisible os-viewport-native-scrollbars-overlaid" style="overflow-y: scroll;"><div class="os-content" style="padding: 0px; height: auto; width: 100%;">
+              <div class="list-group list-group-flush fw-normal fs--1">
+                <div class="list-group-title border-bottom">NEW</div>
+                <div class="list-group-item">
+                  <a class="notification notification-flush notification-unread" href="#!">
+                    <div class="notification-avatar">
+                      <div class="avatar avatar-2xl me-3">
+                        <img class="rounded-circle" src="../assets/img/notification/1.png" alt="">
+                      </div>
+                    </div>
+                    <div class="notification-body">
+                      <p class="mb-1"><strong>Emma Watson</strong> replied to your comment : "Hello world 😍"</p>
+                      <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">💬</span>Just now</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list-group-item">
+                  <a class="notification notification-flush notification-unread" href="#!">
+                    <div class="notification-avatar">
+                      <div class="avatar avatar-2xl me-3">
+                        <div class="avatar-name rounded-circle"><span>AB</span></div>
+                      </div>
+                    </div>
+                    <div class="notification-body">
+                      <p class="mb-1"><strong>Albert Brooks</strong> reacted to <strong>Mia Khalifa's</strong> status</p>
+                      <span class="notification-time"><svg class="svg-inline--fa fa-gratipay fa-w-16 me-2 text-danger" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="gratipay" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm114.6 226.4l-113 152.7-112.7-152.7c-8.7-11.9-19.1-50.4 13.6-72 28.1-18.1 54.6-4.2 68.5 11.9 15.9 17.9 46.6 16.9 61.7 0 13.9-16.1 40.4-30 68.1-11.9 32.9 21.6 22.6 60 13.8 72z"></path></svg><!-- <span class="me-2 fab fa-gratipay text-danger"></span> Font Awesome fontawesome.com -->9hr</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list-group-title border-bottom">EARLIER</div>
+                <div class="list-group-item">
+                  <a class="notification notification-flush" href="#!">
+                    <div class="notification-avatar">
+                      <div class="avatar avatar-2xl me-3">
+                        <img class="rounded-circle" src="../assets/img/notification/2.png" alt="">
+                      </div>
+                    </div>
+                    <div class="notification-body">
+                      <p class="mb-1">The forecast today shows a low of 20℃ in California. See today's weather.</p>
+                      <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">🌤️</span>1d</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list-group-item">
+                  <a class="border-bottom-0 notification-unread  notification notification-flush" href="#!">
+                    <div class="notification-avatar">
+                      <div class="avatar avatar-xl me-3">
+                        <img class="rounded-circle" src="../assets/img/notification/1.png" alt="">
+
+                      </div>
+                    </div>
+                    <div class="notification-body">
+                      <p class="mb-1"><strong>University of Oxford</strong> created an event : "Causal Inference Hilary 2019"</p>
+                      <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">✌️</span>1w</span>
+
+                    </div>
+                  </a>
+
+                </div>
+                <div class="list-group-item">
+                  <a class="border-bottom-0 notification notification-flush" href="#!">
+                    <div class="notification-avatar">
+                      <div class="avatar avatar-xl me-3">
+                        <img class="rounded-circle" src="../assets/img/notification/3.png" alt="">
+
+                      </div>
+                    </div>
+                    <div class="notification-body">
+                      <p class="mb-1"><strong>James Cameron</strong> invited to join the group: United Nations International Children's Fund</p>
+                      <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">🙋‍</span>2d</span>
+
+                    </div>
+                  </a>
+
+                </div>
+              </div>
+            </div></div></div><div class="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable os-scrollbar-auto-hidden"><div class="os-scrollbar-track os-scrollbar-track-off"><div class="os-scrollbar-handle" style="transform: translate(0px, 0px); width: 100%;"></div></div></div><div class="os-scrollbar os-scrollbar-vertical os-scrollbar-auto-hidden"><div class="os-scrollbar-track os-scrollbar-track-off"><div class="os-scrollbar-handle" style="transform: translate(0px, 0px); height: 59.0291%;"></div></div></div><div class="os-scrollbar-corner"></div></div>
+            <div class="card-footer text-center border-top"><a class="card-link d-block" href="../user-alerts.html">View all</a></div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item dropdown d-none d-xl-block">
+        <a class="nav-link px-0" href="../settings.html" data-bs-toggle="tooltip" data-bs-original-title="Settings"><span class="fas fa-cog" data-fa-transform="shrink-7" style="font-size: 33px;"></span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-xl-block">
+        <a class="nav-link px-0" href="#!" data-bs-toggle="tooltip" data-bs-original-title="Log out"><span class="fas fa-sign-out-alt" data-fa-transform="shrink-7" style="font-size: 33px;"></span></a>
+      </li>
+      <!-- Nine Dots -->
+      <li class="nav-item dropdown d-xl-none ms-2 pe-2 pe-lg-0">
+        <a class="nav-link fa-icon-wait" id="navbarDropdownMenu" role="button" data-hide-on-body-scroll="data-hide-on-body-scroll" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="nine-dots"></span></a>
+        <div class="dropdown-menu dropdown-menu-end dropdown-menu-card" aria-labelledby="navbarDropdownMenu">
+        <div class="card shadow-none">
+            <div class="scrollbar-overlay navbar-dropdown-dots os-host os-theme-dark os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-scrollbar-vertical-hidden os-host-transition"><div class="os-resize-observer-host observed"><div class="os-resize-observer" style="left: 0px; right: auto;"></div></div><div class="os-size-auto-observer observed" style="height: calc(100% + 1px); float: left;"><div class="os-resize-observer"></div></div><div class="os-content-glue" style="margin: 0px;"></div><div class="os-padding"><div class="os-viewport os-viewport-native-scrollbars-invisible os-viewport-native-scrollbars-overlaid"><div class="os-content" style="padding: 0px; height: 100%; width: 100%;">
+            <div class="card-body px-3">
+                <div class="row text-center gx-0 gy-0">
+                <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" data-bs-toggle="collapse" data-bs-target="#refresh-accounts" onclick="window.scrollTo(0,0)"><i class="fas fa-sync-alt fa-2x"></i>
+                    <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Account <br> Refresh</p>
+                    </a>
+                </div>
+                <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="../transaction-calendar.html"><i class="fas fa-calendar-alt fa-2x"></i>
+                    <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Calendar</p>
+                    </a></div>
+                <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="../tasks.html"><i class="fas fa-list fa-2x"></i>
+                    <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Tasks</p>
+                    </a></div>
+                <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="../documents.html"><i class="fas fa-paperclip fa-2x"></i>
+                    <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Documents</p>
+                    </a></div>
+                <div class="col-4">
+                    <a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none">
+                    <div class="theme-control-toggle fa-icon-wait ms-3">
+                        <input class="form-check-input theme-control-toggle-input" id="themeControlToggle" type="checkbox" data-theme-control="theme" value="dark">
+                        <label class="mb-0 theme-control-toggle-label theme-control-toggle-light" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Switch to light theme" aria-label="Switch to light theme"><span class="fas fa-sun fs-0"></span></label>
+                        <label class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Switch to dark theme" aria-label="Switch to dark theme"><span class="fas fa-moon fs-0"></span></label>
+                    </div>
+                    <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Dark Mode</p>
+                    </a>
+                </div>
+                <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="../settings.html"><i class="fas fa-cog fa-2x"></i>
+                    <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Settings</p>
+                    </a></div>
+                <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!"><i class="fas fa-sign-out-alt fa-2x"></i>
+                    <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Sign Out</p>
+                    </a></div>
+                </div>
+            </div>
+            </div></div></div><div class="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable os-scrollbar-auto-hidden"><div class="os-scrollbar-track os-scrollbar-track-off"><div class="os-scrollbar-handle" style="transform: translate(0px, 0px);"></div></div></div><div class="os-scrollbar os-scrollbar-vertical os-scrollbar-unusable os-scrollbar-auto-hidden"><div class="os-scrollbar-track os-scrollbar-track-off"><div class="os-scrollbar-handle" style="transform: translate(0px, 0px);"></div></div></div><div class="os-scrollbar-corner"></div></div>
+        </div>
+        </div>
+      </li>
+      <!-- Nine Dots End -->
+    </ul>
+    <!-- Right Icons Bar Ends -->
+  </nav>
+</div>
+<!-- Navbar Ends -->
+
+<!-- Mobile Bottom Nav -->
+<nav class="mobileNav d-lg-none" style="z-index: 1000;">
+  <a href="../index.html" class="mobileNavLink">
+    <i class="fas fa-chart-area mobileNavIcon"></i>
+    <span class="nav__text">Dashboard</span>
+  </a>
+  <a href="../bills.html" class="mobileNavLink">
+    <i class="fas fa-clock mobileNavIcon"></i>
+    <span class="nav__text">Bills</span>
+  </a>
+  <a href="../budgets.html" class="mobileNavLink">
+    <i class="fas fa-balance-scale mobileNavIcon"></i>
+    <span class="nav__text">Budgets</span>
+  </a>
+  <a href="../transactions.html" class="mobileNavLink">
+    <i class="fas fa-money-check mobileNavIcon"></i>
+    <span class="nav__text">Transactions</span>
+  </a>
+  <a class="mobileNavLink" type="button" data-bs-toggle="modal" data-bs-target="#more-menu-modal">
+    <i class="fas fa-grip-horizontal mobileNavIcon"></i>
+    <span class="nav__text">More</span>
+  </a>
+</nav>
+<!-- Mobile Bottom Nav -->
+
+<!-- More menu modal starts -->
+<div class="modal fade" id="more-menu-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered " role="document" style="max-width: 500px">
+    <div class="modal-content position-relative">
+      <div class="modal-body border">
+        <div class="card-body px-3">
+          <div class="row text-center gx-0 gy-0">
+            <div class="col-6 mb-4">
+              <a class="d-block px-2 py-3 rounded-3 text-center text-decoration-none" href="../balances.html">
+                <i class="fas fa-dollar-sign fa-2x mb-2"></i>
+                <p class="mb-0 fw-medium text-truncate fs--4">Balances</p>
+              </a>
+            </div>
+            <div class="col-6 mb-4">
+              <a class="d-block px-2 py-3 rounded-3 text-center text-decoration-none" href="../flow.html">
+                <i class="fas fa-exchange-alt fa-2x mb-2"></i>
+                <p class="mb-0 fw-medium text-truncate fs--4">Flow</p>
+              </a>
+            </div>
+
+            <div class="col-6 mb-4">
+              <a class="d-block px-2 py-3 rounded-3 text-center text-decoration-none" href="../debts.html">
+                <i class="fas fa-credit-card fa-2x mb-2"></i>
+                <p class="mb-0 fw-medium text-truncate fs--4">Debts</p>
+              </a>
+            </div>
+            <div class="col-6 mb-4">
+              <a class="d-block px-2 py-3 rounded-3 text-center text-decoration-none" href="../investments.html">
+                <i class="fas fa-chart-line fa-2x mb-2"></i>
+                <p class="mb-0 fw-medium text-truncate fs--4">Investments</p>
+              </a>
+            </div>
+
+            <div class="col-6 mb-4">
+              <a class="d-block px-2 py-3 rounded-3 text-center text-decoration-none" href="../accounts.html">
+                <i class="fas fa-university fa-2x mb-2"></i>
+                <p class="mb-0 fw-medium text-truncate fs--4">Accounts</p>
+              </a>
+            </div>
+            <div class="col-6 mb-4">
+              <a class="d-block px-2 py-3 rounded-3 text-center text-decoration-none" href="../score.html">
+                <i class="fas fa-chart-bar fa-2x mb-2"></i>
+                <p class="mb-0 fw-medium text-truncate fs--4">Credit Score</p>
+              </a>
+            </div>
+
+            <div class="col-6">
+              <a class="d-block px-2 py-3 rounded-3 text-center text-decoration-none" data-bs-toggle="modal" data-bs-target="#reports-menu-modal">
+                <i class="far fa-file fa-2x mb-2"></i>
+                <p class="mb-0 fw-medium text-truncate fs--4">Reports &nbsp;<i class="fas fa-caret-right"></i></p>
+              </a>
+            </div>
+            <div class="col-6">
+              <a class="d-block px-2 py-3 rounded-3 text-center text-decoration-none" data-bs-dismiss="modal">
+                <i class="fas fa-sync-alt fa-2x mb-2" data-bs-toggle="collapse" data-bs-target="#refresh-accounts" onclick="window.scrollTo(0,0)"></i>
+                <p class="mb-0 fw-medium text-truncate fs--4" data-bs-toggle="collapse" data-bs-target="#refresh-accounts" onclick="window.scrollTo(0,0)">Account Refresh</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-secondary" type="button"  data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- More menu modal ends -->
+
+<!-- Reports menu modal starts -->
+<div class="modal fade" id="reports-menu-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered " role="document" style="max-width: 500px">
+    <div class="modal-content position-relative">
+      <div class="modal-body border border-200">
+        <div class="card-body px-3">
+          <div class="row text-center gx-0 gy-0">
+            <div class="col-6 mb-4">
+              <a class="d-block px-2 py-3 rounded-3 text-center text-decoration-none" href="./tags.html">
+                <i class="fas fa-tags fa-2x mb-2"></i>
+                <p class="mb-0 fw-medium text-truncate fs--4">Tags</p>
+              </a>
+            </div>
+            <div class="col-6 mb-4">
+              <a class="d-block px-2 py-3 rounded-3 text-center text-decoration-none" href="./categories.html">
+                <i class="fas fa-boxes fa-2x mb-2"></i>
+                <p class="mb-0 fw-medium text-truncate fs--4">Categories</p>
+              </a>
+            </div>
+
+            <div class="col-6 mb-4">
+              <a class="d-block px-2 py-3 rounded-3 text-center text-decoration-none" href="./merchants.html">
+                <i class="fas fa-people-carry fa-2x mb-2"></i>
+                <p class="mb-0 fw-medium text-truncate fs--4">Merchants</p>
+              </a>
+            </div>
+            <div class="col-6 mb-4">
+              <a class="d-block px-2 py-3 rounded-3 text-center text-decoration-none" href="./recurring-transactions.html">
+                <i class="fas fa-redo fa-2x mb-2"></i>
+                <p class="mb-0 fw-medium text-truncate fs--4">Recurring Transactions</p>
+              </a>
+            </div>
+
+            <div class="col-6 mb-4">
+              <a class="d-block px-2 py-3 rounded-3 text-center text-decoration-none" href="./large-transactions.html">
+                <i class="fas fa-money-check fa-2x mb-2"></i>
+                <p class="mb-0 fw-medium text-truncate fs--4">Large Transactions</p>
+              </a>
+            </div>
+            <div class="col-6 mb-4">
+              <a class="d-block px-2 py-3 rounded-3 text-center text-decoration-none" href="./weekly-monthly.html">
+                <i class="fas fa-chart-bar fa-2x mb-2"></i>
+                <p class="mb-0 fw-medium text-truncate fs--4">Weekly / Monthly</p>
+              </a>
+            </div>
+
+            <div class="col-6">
+              <a class="d-block px-2 py-3 rounded-3 text-center text-decoration-none" href="./cash-available.html">
+                <i class="fas fa-money-bill fa-2x mb-2"></i>
+                <p class="mb-0 fw-medium text-truncate fs--4">Cash Available</p>
+              </a>
+            </div>
+            <div class="col-6">
+              <a class="d-block px-2 py-3 rounded-3 text-center text-decoration-none" href="./credit-usage.html">
+                <i class="fas fa-chart-line fa-2x mb-2"></i>
+                <p class="mb-0 fw-medium text-truncate fs--4">Credit Usage</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#more-menu-modal">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Reports menu modal ends -->
+
+<!-- Refresh Accounts -->
+<div class="container collapse mt-3" id="refresh-accounts">
+  <div class="alert alert-info border-2 d-flex align-items-center" role="alert">
+    <div class="bg-info me-3 icon-item"><span class="fas fa-sync-alt text-white fs-2"></span></div>
+    <div class="row flex-1">
+      <div class="col-lg-6 mb-3 mb-lg-1">
+        Gathering and Analysing your latest Accounts and Transactions.
+      </div>
+      <div class="col-lg-6">
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Refresh Accounts ends -->

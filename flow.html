@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>Flow | MoneyPatrol</title>
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/logo.png">
+    <link rel="manifest" href="./assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="./assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="./assets/js/config.js"></script>
+    <script src="./vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+    <link href="./vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
+    <link href="./assets/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
+    <link href="./assets/css/theme.min.css" rel="stylesheet" id="style-default">
+    <link href="./assets/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
+    <link href="./assets/css/user.css" rel="stylesheet" id="user-style-default">
+    <script>
+      var isRTL = JSON.parse(localStorage.getItem('isRTL'));
+      if (isRTL) {
+        var linkDefault = document.getElementById('style-default');
+        var userLinkDefault = document.getElementById('user-style-default');
+        linkDefault.setAttribute('disabled', true);
+        userLinkDefault.setAttribute('disabled', true);
+        document.querySelector('html').setAttribute('dir', 'rtl');
+      } else {
+        var linkRTL = document.getElementById('style-rtl');
+        var userLinkRTL = document.getElementById('user-style-rtl');
+        linkRTL.setAttribute('disabled', true);
+        userLinkRTL.setAttribute('disabled', true);
+      }
+    </script>
+  </head>
+
+  <body>
+    <main class="main" id="top">
+      <!-- Navbar -->
+      <div id="navbarPlaceholder"></div>
+      <!-- Navbar -->
+      
+      <div class="container mb-2 mb-lg-5" data-layout="container">
+        <script>
+          var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+          if (isFluid) {
+            var container = document.querySelector('.container');
+            container.classList.remove('container');
+            container.classList.add('container-fluid');
+          }
+        </script>
+
+        <div class="content mt-4">
+          <h5 class="block-title page-title text-center">Flow</h5>
+          <div class="card overflow-hidden">
+            <div class="card-body px-lg-5">
+              <!-- Dropdown starts -->
+              <div class="input-group input-group-sm mb-4 mx-auto" style="max-width: 450px;">
+                <label class="input-group-text mb-0">Flow for</label>
+                <select class="form-select">
+                  <option>Last 3 months</option>
+                  <option>6 months</option>
+                  <option>1 year</option>
+                </select>
+              </div>
+              <!-- Dropdown ends -->              
+              <!-- Three boxes starts -->
+              <div class="row justify-content-center g-2 mb-5">
+                <div class="col-lg-auto mb-2 d-flex align-items-stretch">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto">
+                          <i class="fas fa-arrow-circle-down fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Income (Jan)</div>
+                          <p class="card-text">$6,238</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-auto mb-2 d-flex align-items-stretch">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto">
+                          <i class="fas fa-arrow-circle-up fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Expenses (Jan)</div>
+                          <p class="card-text">$4,580</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-auto mb-2 d-flex align-items-stretch">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto p-2">
+                          <i class="fas fa-money-bill-alt fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Cash-flow (Jan)</div>
+                          <p class="card-text">$1,025</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Three boxes ends -->
+              <!-- Bar charts starts -->
+              <div class="row mb-4">
+                <div class="col-lg-6 mb-3">
+                  <div class="p-3 border card">
+                    <div class="flow-left" style="min-height: 320px;" data-echart-responsive="true"></div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="p-3 border card">
+                    <div class="flow-right" style="min-height: 320px;" data-echart-responsive="true"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Bar charts ends -->
+              <!-- Table starts -->
+              <div class="table-responsive mb-4">
+                <table class="table table-bordered">
+                  <thead class="bg-200 text-900">
+                    <tr>
+                      <th scope="col">Date</th>
+                      <th scope="col">Merchant</th>
+                      <th scope="col">Category</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Dec 29</td>
+                      <td>Mowry Plaza Pharmacy</td>
+                      <td>Pharmacy</td>
+                      <td>-$50.00</td>
+                      <td>POSTED</td>
+                    </tr>
+                    <tr>
+                      <td>Dec 29</td>
+                      <td>Mowry Plaza Pharmacy</td>
+                      <td>Pharmacy</td>
+                      <td>-$50.00</td>
+                      <td>POSTED</td>
+                    </tr>
+                    <tr>
+                      <td>Dec 29</td>
+                      <td>Mowry Plaza Pharmacy</td>
+                      <td>Pharmacy</td>
+                      <td>-$50.00</td>
+                      <td>POSTED</td>
+                    </tr>
+                    <tr>
+                      <td>Dec 29</td>
+                      <td>Mowry Plaza Pharmacy</td>
+                      <td>Pharmacy</td>
+                      <td>-$50.00</td>
+                      <td>POSTED</td>
+                    </tr>
+                    <tr>
+                      <td>Dec 29</td>
+                      <td>Mowry Plaza Pharmacy</td>
+                      <td>Pharmacy</td>
+                      <td>-$50.00</td>
+                      <td>POSTED</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Table ends -->
+
+
+              <h5 class="text-center mb-4">Recent Expenses and Income</h5>
+              <!-- Dropdown starts -->
+              <div class="row justify-content-center">
+                <div class="col-lg-4">
+                  <div class="input-group input-group-sm mb-4 mx-auto" style="max-width: 450px;">
+                    <label class="input-group-text mb-0">Time Period</label>
+                    <select class="form-select">
+                      <option>Last 3 months</option>
+                      <option>6 months</option>
+                      <option>1 year</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="input-group input-group-sm mb-4 mx-auto" style="max-width: 450px;">
+                    <label class="input-group-text mb-0">Time Period</label>
+                    <select class="form-select">
+                      <option>All</option>
+                      <option>6 months</option>
+                      <option>1 year</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <!-- Dropdown ends -->
+              <!-- Horizontal bar chart starts -->
+              <div class="p-3 border card mb-5">
+                <div class="flow-recent-expenses" style="min-height: 320px;" data-echart-responsive="true"></div>
+              </div>
+              <!-- Horizontal bar chart ends -->
+              <!-- Three boxes starts -->
+              <div class="row justify-content-center g-2 mb-5">
+                <div class="col-lg-auto mb-2">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto">
+                          <i class="fas fa-calendar-alt fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Date Range</div>
+                          <p class="card-text">Jan 07 to Feb 06</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-auto mb-2">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-3 my-auto">
+                          <i class="fas fa-money-bill-alt fa-2x"></i>
+                        </div>
+                        <div class="col-9">
+                          <div class="card-title">Number of Txns</div>
+                          <p class="card-text">49</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-auto mb-2">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto p-2">
+                          <i class="far fa-credit-card fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Total out-flow</div>
+                          <p class="card-text">$1,025</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Three boxes ends -->
+
+
+              <!-- Dropdown starts -->
+              <div class="input-group input-group-sm mb-4 mx-auto" style="max-width: 450px;">
+                <label class="input-group-text mb-0">Time Period</label>
+                <select class="form-select">
+                  <option>Last 3 months</option>
+                  <option>6 months</option>
+                  <option>1 year</option>
+                </select>
+              </div>
+              <!-- Dropdown ends -->
+              <!-- Bar charts starts -->
+              <div class="row mb-4">
+                <div class="col-lg-6 mb-2">
+                  <div class="p-3 border card mb-4">
+                    <h5 class="text-center">Merchant Insights</h5>
+                    <div class="input-group input-group-sm mx-auto my-3" style="max-width: 450px;">
+                      <label class="input-group-text mb-0">Spend by Amount</label>
+                      <select class="form-select">
+                        <option>Top 25</option>
+                        <option>6 months</option>
+                        <option>1 year</option>
+                      </select>
+                    </div>
+                    <div class="flow-merchant-insights" style="min-height: 700px;" data-echart-responsive="true"></div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="p-3 border card mb-4">
+                    <!-- Bar Chart -->
+                    <h5 class="text-center">Category Insights</h5>
+                    <div class="input-group input-group-sm mx-auto my-3" style="max-width: 450px;">
+                      <label class="input-group-text mb-0">Spend by Amount</label>
+                      <select class="form-select">
+                        <option>Top 25</option>
+                        <option>6 months</option>
+                        <option>1 year</option>
+                      </select>
+                    </div>
+                    <div class="flow-category-insights" style="min-height: 320px;" data-echart-responsive="true"></div>
+                    <!-- Bar Chart ends -->
+
+                    <!-- Pie Chart starts -->
+                    <div class="input-group input-group-sm mx-auto my-3" style="max-width: 450px;">
+                      <label class="input-group-text mb-0">Spend Share by Category</label>
+                      <select class="form-select">
+                        <option>Top 25</option>
+                        <option>6 months</option>
+                        <option>1 year</option>
+                      </select>
+                    </div>
+                    <div class="flow-spend-share-category" style="min-height: 320px;" data-echart-responsive="true"></div>
+                    <!-- Pie Chart ends -->
+                  </div>
+                </div>
+              </div>
+              <!-- Bar charts ends -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="./vendors/popper/popper.min.js"></script>
+    <script src="./vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="./vendors/anchorjs/anchor.min.js"></script>
+    <script src="./vendors/is/is.min.js"></script>
+    <script src="./vendors/echarts/echarts.min.js"></script>
+    <script src="./vendors/fontawesome/all.min.js"></script>
+    <script src="./vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="./vendors/list.js/list.min.js"></script>
+    <script src="./vendors/dayjs/dayjs.min.js"></script>
+    <script src="./vendors/pulltorefresh/index.umd.min.js"></script>
+    <script src="./assets/js/theme.js"></script>
+    <script src="./assets/custom/flow.js"></script>
+  </body>
+</html>

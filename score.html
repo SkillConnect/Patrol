@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>Credit Score | MoneyPatrol</title>
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/logo.png">
+    <link rel="manifest" href="./assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="./assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="./assets/js/config.js"></script>
+    <script src="./vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+    <link href="./vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
+    <link href="./assets/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
+    <link href="./assets/css/theme.min.css" rel="stylesheet" id="style-default">
+    <link href="./assets/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
+    <link href="./assets/css/user.css" rel="stylesheet" id="user-style-default">
+    <script>
+      var isRTL = JSON.parse(localStorage.getItem('isRTL'));
+      if (isRTL) {
+        var linkDefault = document.getElementById('style-default');
+        var userLinkDefault = document.getElementById('user-style-default');
+        linkDefault.setAttribute('disabled', true);
+        userLinkDefault.setAttribute('disabled', true);
+        document.querySelector('html').setAttribute('dir', 'rtl');
+      } else {
+        var linkRTL = document.getElementById('style-rtl');
+        var userLinkRTL = document.getElementById('user-style-rtl');
+        linkRTL.setAttribute('disabled', true);
+        userLinkRTL.setAttribute('disabled', true);
+      }
+    </script>
+  </head>
+
+  <body>
+    <main class="main" id="top">
+      <!-- Navbar -->
+      <div id="navbarPlaceholder"></div>
+      <!-- Navbar -->
+      
+      <div class="container mb-2 mb-lg-5" data-layout="container">
+        <script>
+          var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+          if (isFluid) {
+            var container = document.querySelector('.container');
+            container.classList.remove('container');
+            container.classList.add('container-fluid');
+          }
+        </script>
+
+        <div class="content mt-4">
+          <h5 class="block-title page-title text-center">Equifax Credit Score</h5>
+          <div class="card overflow-hidden">
+            <div class="card-body text-center">
+              <img src="./assets/img/creditScore/creditScore.png" style="max-height: 30vh;" class="mt-4">
+              <h4 class="my-5">
+                <a class="btn rounded-pill btn-primary" data-bs-toggle="modal" data-bs-target="#info-modal" href="#!">
+                  Start Tracking your Equifax Credit Score
+                </a>
+              </h4>
+              <div class="mx-auto my-5" style="max-width: 600px;">
+                <p class="text-start">
+                  <i class="fa fa-check"></i> &nbsp;Track and Monitor Equifax Credit Score <br><br>
+                  <i class="fa fa-check"></i> &nbsp;Track and Monitor Equifax Credit Score <br><br>
+                  <i class="fa fa-check"></i> &nbsp;Get detailed Equifax Credit Report <br><br>
+                  <i class="fa fa-check"></i> &nbsp;Get updated Credit Score every Month <br><br>
+                  <i class="fa fa-check"></i> &nbsp;Receive notification when your Credit Score is updated <br><br>
+                  <i class="fa fa-check"></i> &nbsp;See Vantage Score with top 4 factors <br><br>
+                  <i class="fa fa-check"></i> &nbsp;Understand the reported open Accounts, Debts and Loans on your file
+                </p>
+              </div>
+              <img src="./assets/img/creditScore/powered-by.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Important Note -->
+      <div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content position-relative">
+            <div class="modal-body p-0">
+              <div class="p-4 pb-0 text-center">
+                <i class="fas fa-info-circle fa-4x"></i>
+                <h4 class="my-3">Please Note</h4>
+                <p id="info-modal-body" class="text-start">
+                  To get your credit score from Equifax, your identity needs to be verified.<br><br> 
+                  In the phone number field, please enter the cell number issued by your cell phone service provider.
+                  VOIP numbers from services such as Google Voice will not be recognized for identity verification by Equifax.<br><br> 
+                  If your phone number is not recognized by Equifax, then you will have to answer a quiz to verify your identity
+                </p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#name-modal">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Important Note Ends -->
+      <!-- Name Modal -->
+      <div class="modal fade" id="name-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+          <div class="modal-content border-0 position-relative">
+            <div class="modal-header text-center">
+              <h5 class="mb-1 text-white">Authenticate Identity (Step 1 of 2)</h5>
+            </div>
+            <div class="modal-body p-0">
+              <div class="p-4 pb-0">
+                <form>
+                  <div class="mb-3">
+                    <label class="form-label">First Name:</label>
+                    <input type="text" class="form-control">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Last Name:</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#authenticate-modal">Continue </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Name Modal ends -->
+      <!-- Authenticate Modal -->
+      <div class="modal fade" id="authenticate-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+          <div class="modal-content position-relative">
+            <div class="modal-header text-center">
+              <h5 class="mb-1 text-white">Authenticate Identity (Step 2 of 2)</h5>
+            </div>
+            <div class="modal-body text-center">
+              <iframe src="score.html" frameborder="0"></iframe>
+              <img src="./assets//img/creditScore/powered-by.svg" class="my-2">
+            </div>
+            <div class="modal-footer text-center">
+              <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              <a class="btn btn-primary" type="button" href="score-loggedin.html">Continue</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Authenticate Modal ends -->
+    </main>
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="./vendors/popper/popper.min.js"></script>
+    <script src="./vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="./vendors/anchorjs/anchor.min.js"></script>
+    <script src="./vendors/is/is.min.js"></script>
+    <script src="./vendors/echarts/echarts.min.js"></script>
+    <script src="./vendors/fontawesome/all.min.js"></script>
+    <script src="./vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="./vendors/list.js/list.min.js"></script>
+    <script src="./vendors/pulltorefresh/index.umd.min.js"></script>
+    <script src="./assets/js/theme.js"></script>
+  </body>
+</html>

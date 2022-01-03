@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>User Settings | MoneyPatrol</title>
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/logo.png">
+    <link rel="manifest" href="./assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="./assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="./assets/js/config.js"></script>
+    <script src="./vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+    <link href="./vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
+    <link href="./assets/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
+    <link href="./assets/css/theme.min.css" rel="stylesheet" id="style-default">
+    <link href="./assets/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
+    <link href="./assets/css/user.css" rel="stylesheet" id="user-style-default">
+    <script>
+      var isRTL = JSON.parse(localStorage.getItem('isRTL'));
+      if (isRTL) {
+        var linkDefault = document.getElementById('style-default');
+        var userLinkDefault = document.getElementById('user-style-default');
+        linkDefault.setAttribute('disabled', true);
+        userLinkDefault.setAttribute('disabled', true);
+        document.querySelector('html').setAttribute('dir', 'rtl');
+      } else {
+        var linkRTL = document.getElementById('style-rtl');
+        var userLinkRTL = document.getElementById('user-style-rtl');
+        linkRTL.setAttribute('disabled', true);
+        userLinkRTL.setAttribute('disabled', true);
+      }
+    </script>
+  </head>
+
+  <body>
+    <main class="main" id="top">
+      <!-- Navbar -->
+      <div id="navbarPlaceholder"></div>
+      <!-- Navbar -->
+      
+      <div class="container mb-2 mb-lg-5" data-layout="container">
+        <script>
+          var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+          if (isFluid) {
+            var container = document.querySelector('.container');
+            container.classList.remove('container');
+            container.classList.add('container-fluid');
+          }
+        </script>
+
+        <div class="content mt-4">
+          <h5 class="block-title page-title text-center">Settings</h5>
+          <div class="card overflow-hidden">
+            <div class="card-body">
+              <div class="row">
+                <!-- Account details -->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                  <div class="card">
+                    <div class="card-body text-center">
+                      <br>
+                      <img src="./assets/img/round_logo.png" style="max-width: 200px" class="mb-4">
+                      <h5 class="mb-2"> <i class="fas fa-envelope"></i> demo@account.com</h5>
+                      <p> <i class="fas fa-mobile-alt"></i> 1234566778 <a href="#"><i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-contact-modal"></i></a></p>
+                      <button class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#feedback-modal">Send Feedback</button>
+
+                      <div class="card text-start">
+                        <div class="card-header bg-500 text-white">Last Login</div>
+                        <div class="card-body">
+                          <p><i class="fas fa-clock"></i> Wed Jan 26 03:04:49 UTC 2022 </p>
+                          <p><i class="fas fa-tv"></i> 50.204.66.177 </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Account details ends -->
+
+                <!-- Setting Tabs -->
+                <div class="col-lg-8">
+                  <div class="card">
+                    <div class="card-body">
+                      <ul class="nav nav-pills px-lg-3" id="pill-myTab" role="tablist">
+                        <li class="nav-item"><a class="nav-link active" id="pill-billing-tab" data-bs-toggle="tab" href="#pill-tab-billing" role="tab" aria-controls="pill-tab-billing" aria-selected="true">Billing</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pill-account-tab" data-bs-toggle="tab" href="#pill-tab-account" role="tab" aria-controls="pill-tab-account" aria-selected="false">Account</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pill-alerts-tab" data-bs-toggle="tab" href="#pill-tab-alerts" role="tab" aria-controls="pill-tab-alerts" aria-selected="false">Alerts</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pill-security-tab" data-bs-toggle="tab" href="#pill-tab-security" role="tab" aria-controls="pill-tab-security" aria-selected="false">Security</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pill-invites-tab" data-bs-toggle="tab" href="#pill-tab-invites" role="tab" aria-controls="pill-tab-invites" aria-selected="false">Invites</a></li>
+                        <li class="nav-item"><a class="nav-link" id="pill-support-tab" data-bs-toggle="tab" href="#pill-tab-support" role="tab" aria-controls="pill-tab-support" aria-selected="false">Support</a></li>
+                      </ul>
+                      <div class="tab-content p-lg-3 mt-3" id="pill-myTabContent">
+                        <div class="tab-pane fade show active" id="pill-tab-billing" role="tabpanel" aria-labelledby="billing-tab">
+                          <div class="card mb-4">
+                            <div class="card-header bg-300">Subscription</div>
+                            <div class="card-body">
+                              <i class="fa fa-info-circle"></i> Congratulations! You are now part of MoneyPatrol beta user Free Membership Plan.
+                            </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-header bg-300">Card Payment Details</div>
+                            <div class="card-body">
+                              <i class="fa fa-info-circle"></i> No Card Payment Added!
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="pill-tab-account" role="tabpanel" aria-labelledby="account-tab">
+                          <div class="card mb-4">
+                            <div class="card-header bg-300">Granted Access</div>
+                            <div class="card-body">
+                              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#grant-access-modal">Grant New Access</button> <br><br>
+                              <i class="fa fa-info-circle"></i> You can grant access to check your financial data to you friends, partners or financial advisors/coaches.
+                              <br><br>
+                              They can <br>
+                              &emsp;- View your financial insights <br>
+                              &emsp;- Transactional summaries <br>
+                              &emsp;- Monitor Inflow-Ouflow
+                              <br><br>
+                              They can't <br>
+                              &emsp;- Access your credentials <br>
+                              &emsp;- Modify/Add accounts <br>
+    
+                              <div class="table-responsive mt-4">
+                                <table class="table table-hover table-bordered">
+                                  <thead class="bg-200 text-900">
+                                    <tr> 
+                                      <th>EMAIL</th>
+                                      <th>ACCESS LEVEL</th>
+                                      <th>LAST CHECKED</th>
+                                      <th>ACTION</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td colspan="4" class="text-center">You are not sharing your account with anyone.</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+    
+                          <div class="card mb-4">
+                            <div class="card-header bg-300">Owned Access</div>
+                            <div class="card-body table-responsive">
+                              <table class="table table-hover table-bordered mt-4">
+                                <thead class="bg-200 text-900">
+                                  <tr> 
+                                    <th>EMAIL</th>
+                                    <th>ACCESS LEVEL</th>
+                                    <th>LAST CHECKED</th>
+                                    <th>ACTION</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td colspan="4" class="text-center">No one is sharing their account with you.</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+    
+                          <div class="card mb-4">
+                            <div class="card-header bg-300">Delete Account</div>
+                            <div class="card-body">
+                              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-account-modal">Delete Account</button> <br><br>
+                              <i class="fa fa-info-circle"></i> Once you delete your account, you won't be able to access your personal and financial data again. 
+                              It will not be possible to undo this action. If you want to use MoneyPatrol again in the future, you will have to create a new account. 
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="pill-tab-alerts" role="tabpanel" aria-labelledby="alerts-tab">
+                          <div class="card mb-4">
+                            <div class="card-header bg-300">Text & Email Alerts Preferences</div>
+                            <div class="card-body">
+                              <div class="row mb-3">
+                                <div class="col-8 col-lg-4 mb-3 mb-lg-0">
+                                  <h5>Send Text Alerts</h5>
+                                </div>
+                                <div class="col-4 col-lg-2 text-center">
+                                  <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" style="transform: scale(1.5);"/>
+                                  </div>
+                                </div>
+                                <div class="col-8 col-lg-4">
+                                  <h5>Send Email Alerts</h5>
+                                </div>
+                                <div class="col-4 col-lg-2">
+                                  <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" checked="" style="transform: scale(1.5);"/>
+                                  </div>
+                                </div>
+                              </div>
+    
+                              Below is a list of alerts sent by MoneyPatrol. It is highly recommended that you enable all alerts to stay informed about the 
+                              transactions, patterns, reminders and insights about your finances. These alerts will help you stay aware of the goings-on of 
+                              your finances and, in some cases, will also help you detect fraud and suspicious transactions.
+                              <br><br>
+                              If you want to completely disable all text and email alerts, just uncheck all the text and email alerts from the below table. Also, 
+                              if you make any changes to your selections, please make sure to Save the changes. 
+                            </div>
+                          </div>
+    
+                          <div class="card mb-4">
+                            <div class="card-header bg-300">Configure Text & Email Alerts</div>
+                            <div class="card-body table-responsive" id="configure-alerts">
+
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="pill-tab-security" role="tabpanel" aria-labelledby="security-tab">
+                          <div class="card mb-4">
+                            <div class="card-body">
+                              <div class="row">
+                                <div class="col-lg-6"><h5> Enable Dual Factor Authentication </h5></div>
+                                <div class="col">
+                                  <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" style="transform: scale(1.5);"/>
+                                  </div>
+                                </div>
+                              </div>
+                              <br>
+                              <i class="fas fa-info-circle"></i> Two-factor authentication is an optional security feature to verify that it's 
+                              really you when you log into your MoneyPatrol account! This makes your account more secure. 
+                            </div>
+                          </div>
+    
+                          <div class="card">
+                            <div class="card-header bg-300">Change Password</div>
+                            <div class="card-body">
+                              <div class="form-floating mb-3">
+                                <input type="password" class="form-control" id="currentPassword">
+                                <label for="currentPassword">Current Password</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="password" class="form-control" id="newPassword1">
+                                <label for="newPassword1">New Password</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="password" class="form-control" id="newPassword2">
+                                <label for="newPassword2">Confirm Password</label>
+                              </div>
+                              <button class="btn btn-primary">Change Password</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="pill-tab-invites" role="tabpanel" aria-labelledby="invites-tab">
+                          <div class="card mb-4">
+                            <div class="card-header bg-300">Invite Friends</div>
+                            <div class="card-body">
+                              <div class="row mb-4">
+                                <div class="col-12 col-lg-6">
+                                  <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#invite-modal">Invite Friend</button>
+                                </div>
+                                <div class="col-12 col-lg-6 mt-2 mt-lg-0">
+                                  <button class="btn btn-primary w-100" style="cursor:default;">Successful Inivtations: 0</button>
+                                </div>
+                              </div>
+                              <i class="fa fa-info-circle"></i> We'll send an invitation email to you friend. 
+                              Also you'll be able to see your progress of your invitation and total successful invitation.
+    
+                              <div class="table-responsive mt-3">
+                                <table class="table table-hover table-bordered mt-4">
+                                  <thead class="bg-200 text-900">
+                                    <tr> 
+                                      <th>EMAIL</th>
+                                      <th>REGISTERED</th>
+                                      <th>ACCOUNT ADDED</th>
+                                      <th>MEMBERSHIP</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody class="text-center">
+                                    <tr>
+                                      <td>kbgaikwad796@gmail.com</td>
+                                      <td>-</td>
+                                      <td>-</td>
+                                      <td>-</td>
+                                    </tr>
+                                    <tr>
+                                      <td>nitishkuma1.sonu@gmail.com</td>
+                                      <td>-</td>
+                                      <td>-</td>
+                                      <td>-</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="pill-tab-support" role="tabpanel" aria-labelledby="support-tab">
+                          <div class="card mb-4">
+                            <form class="p-3">
+                              <div class="mb-3">
+                                <textarea class="form-control" rows="10" placeholder="Please write your query here and then submit this form."></textarea>
+                              </div>
+                              <button class="btn btn-primary">Submit Query</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Setting Tabs Ends -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Edit Contact Modal -->
+        <div class="modal fade" id="edit-contact-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Edit Contact Number</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Contact Number:</label>
+                      <input type="text" class="form-control">
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#verify-mobile-modal">Verify Mobile </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Edit Contact Modal ends -->
+        <!-- Verify Contact Modal -->
+        <div class="modal fade" id="verify-mobile-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Mobile Verification</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Authentication Code:</label>
+                      <input type="text" class="form-control">
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Submit </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Verify Contact Modal ends -->
+        <!-- Feedback Modal -->
+        <div class="modal fade" id="feedback-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Help us understand your concern</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <form>
+                    <div class="mb-3">
+                      <textarea class="form-control" rows="5" placeholder="Feedback about this page."></textarea>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Send Feedback </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Feedback Modal ends -->
+        <!-- Grant New Access Modal -->
+        <div class="modal fade" id="grant-access-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Grant New Access</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Email:</label>
+                      <input type="email" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                      <label class="col-form-label" for="type">Access Level:</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Select Access</option>
+                        <option value="1">Basic</option>
+                        <option value="2">Advance</option>
+                      </select>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#verify-mobile-modal">Continue </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Grant New Access Modal ends -->
+        <!-- Delete Account Modal -->
+        <div class="modal fade" id="delete-account-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Confirm Action</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <b>
+                    Are you sure you want to delete this Profile? If you delete your Profile, 
+                    all your transactions as well as your Account with this product will be deleted. <br><br>
+                    To authenticate your action, we need to verify your identity via dual factor authentication. <br><br>
+                  </b>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#verify-mobile-modal">Continue </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Delete Account Modal ends -->
+        <!-- Configure Expense Threshold Modal -->
+        <div class="modal fade" id="expense-threshold-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Configure Expense Threshold</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <i class="fas fa-info-circle"></i> MoneyParol will send you text and email alerts about transactions only 
+                  when you have a transaction amount is above configured limit. 
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Amount:</label>
+                      <input type="text" class="form-control" placeholder="Amount">
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Save </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Configure Expense Threshold Modal ends -->
+        <!-- Configure Income Threshold Modal -->
+        <div class="modal fade" id="income-threshold-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Configure Income Threshold</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <i class="fas fa-info-circle"></i> MoneyParol will send you text and email alerts about transactions only 
+                  when you have a transaction amount is above configured limit. 
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Amount:</label>
+                      <input type="text" class="form-control" placeholder="Amount">
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Save </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Configure Income Threshold Modal ends -->
+        <!-- Invite Modal -->
+        <div class="modal fade" id="invite-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Invite Friend</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Email:</label>
+                      <input type="email" class="form-control">
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Invite </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Invite Modal ends -->    
+        <!-- Info Modal -->
+        <div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="p-4 pb-0 text-center">
+                  <i class="fas fa-info-circle fa-4x"></i>
+                  <h4 class="my-3">Please Note</h4>
+                  <p id="info-modal-body" class="text-start">
+                    NOTE: The actual body comes from settings.js depending on which (i) triggred the modal
+                  </p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button" data-bs-dismiss="modal">OK</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Info Modal ends -->             
+      </div>
+    </main>
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="./vendors/popper/popper.min.js"></script>
+    <script src="./vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="./vendors/anchorjs/anchor.min.js"></script>
+    <script src="./vendors/is/is.min.js"></script>
+    <script src="./vendors/echarts/echarts.min.js"></script>
+    <script src="./vendors/fontawesome/all.min.js"></script>
+    <script src="./vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="./vendors/list.js/list.min.js"></script>
+    <script src="./vendors/pulltorefresh/index.umd.min.js"></script>
+    <script src="./assets/js/theme.js"></script>
+    <script src="./assets/custom/settings.js"></script>
+  </body>
+</html>
