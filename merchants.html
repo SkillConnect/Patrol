@@ -5,31 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <title>Categories Insights | MoneyPatrol</title>
+    <title>Merchants Insights | MoneyPatrol</title>
 
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/logo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/logo.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/logo.png">
-    <link rel="manifest" href="../assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="../assets/img/favicons/mstile-150x150.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="${resourcesUrl}/UI2.0/assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="${resourcesUrl}/UI2.0/assets/img/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="${resourcesUrl}/UI2.0/assets/img/logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="${resourcesUrl}/UI2.0/assets/img/logo.png">
+    <link rel="manifest" href="${resourcesUrl}/UI2.0/assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="${resourcesUrl}/UI2.0/assets/img/favicons/mstile-150x150.png">
     <meta name="theme-color" content="#ffffff">
-    <script src="../assets/js/config.js"></script>
-    <script src="../vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
+    <script src="${resourcesUrl}/UI2.0/assets/js/config.js"></script>
+    <script src="${resourcesUrl}/UI2.0/vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
 
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
-    <link href="../vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
-    <link href="../assets/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
-    <link href="../assets/css/theme.min.css" rel="stylesheet" id="style-default">
-    <link href="../assets/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
-    <link href="../assets/css/user.css" rel="stylesheet" id="user-style-default">
+    <link href="${resourcesUrl}/UI2.0/vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
+    <link href="${resourcesUrl}/UI2.0/assets/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
+    <link href="${resourcesUrl}/UI2.0/assets/css/theme.min.css" rel="stylesheet" id="style-default">
+    <link href="${resourcesUrl}/UI2.0/assets/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
+    <link href="${resourcesUrl}/UI2.0/assets/css/user.css" rel="stylesheet" id="user-style-default">
     <script>
       var isRTL = JSON.parse(localStorage.getItem('isRTL'));
       if (isRTL) {
@@ -64,7 +64,7 @@
         </script>
 
         <div class="content mt-4">
-          <h5 class="block-title page-title text-center">All Categories - Txns and Trends</h5>
+          <h5 class="block-title page-title text-center">All Merchants - Txns and Trends</h5>
           <div class="card overflow-hidden" style="min-height: 60vh">
             <div class="card-body px-lg-5">
               <!-- Four boxes starts -->
@@ -92,7 +92,7 @@
                           <i class="fas fa-shopping-bag fa-2x"></i>
                         </div>
                         <div class="col-10">
-                          <div class="card-title">Total Categories</div>
+                          <div class="card-title">Total Merchants</div>
                           <p class="card-text">29</p>
                         </div>
                       </div>
@@ -132,7 +132,7 @@
               </div>
               <!-- Four boxes ends -->
 
-              <div class="row mb-5">
+              <div class="row mb-4">
                 <div class="col-lg-6 px-3 mb-2">
                   <div class="row justify-content-center mb-4">
                     <div class="col-6 text-center mb-2">
@@ -156,21 +156,22 @@
                       </div>
                     </div>
                   </div>
+
                   <div class="p-3 border card mb-4">
                     <!-- Charts -->
                     <div class="spend-share-amount" style="min-height: 300px;" data-echart-responsive="true"></div>
-                    <div class="spend-share-categories" style="min-height: 300px;" data-echart-responsive="true"></div>
+                    <div class="spend-share-merchants" style="min-height: 300px;" data-echart-responsive="true"></div>
                     <!-- Charts Ends -->
                   </div>
                 </div>
                 <div class="col-lg-6 px-lg-4">
                   <!-- Table -->
-                  <div id="categories1" data-list='{"valueNames":["category","number","amount", "share"],"page":5,"pagination":true}'>
+                  <div id="merchants1" data-list='{"valueNames":["merchants","number","amount", "share"],"page":5,"pagination":true}'>
                     <div class="table-responsive scrollbar">
                       <table class="table table-bordered table-striped fs--1 mb-0">
                         <thead class="bg-200 text-900">
                           <tr>
-                            <th class="sort" data-sort="category">Category</th>
+                            <th class="sort" data-sort="merchants">Merchants</th>
                             <th class="sort" data-sort="number"># of Transactions</th>
                             <th class="sort" data-sort="amount">Total Amount</th>
                             <th class="sort" data-sort="share">Share (%)</th>
@@ -178,91 +179,91 @@
                         </thead>
                         <tbody class="list">
                           <tr>
-                            <td class="category">Anna</td>
+                            <td class="merchants">Anna</td>
                             <td class="number">anna@example.com</td>
                             <td class="amount">18</td>
                             <td class="share">15%</td>
                           </tr>
                           <tr>
-                            <td class="category">Homer</td>
+                            <td class="merchants">Homer</td>
                             <td class="number">homer@example.com</td>
                             <td class="amount">35</td>
                             <td class="share">15%</td>
                           </tr>
                           <tr>
-                            <td class="category">Oscar</td>
+                            <td class="merchants">Oscar</td>
                             <td class="number">oscar@example.com</td>
                             <td class="amount">52</td>
                             <td class="share">15%</td>
                           </tr>
                           <tr>
-                            <td class="category">Emily</td>
+                            <td class="merchants">Emily</td>
                             <td class="number">emily@example.com</td>
                             <td class="amount">30</td>
                             <td class="share">15%</td>
                           </tr>
                           <tr>
-                            <td class="category">Jara</td>
+                            <td class="merchants">Jara</td>
                             <td class="number">jara@example.com</td>
                             <td class="amount">25</td>
                             <td class="share">15%</td>
                           </tr>
                           <tr>
-                            <td class="category">Clark</td>
+                            <td class="merchants">Clark</td>
                             <td class="number">clark@example.com</td>
                             <td class="amount">39</td>
                             <td class="share">15%</td>
                           </tr>
                           <tr>
-                            <td class="category">Jennifer</td>
+                            <td class="merchants">Jennifer</td>
                             <td class="number">jennifer@example.com</td>
                             <td class="amount">52</td>
                             <td class="share">15%</td>
                           </tr>
                           <tr>
-                            <td class="category">Tony</td>
+                            <td class="merchants">Tony</td>
                             <td class="number">tony@example.com</td>
                             <td class="amount">30</td>
                             <td class="share">15%</td>
                           </tr>
                           <tr>
-                            <td class="category">Tom</td>
+                            <td class="merchants">Tom</td>
                             <td class="number">tom@example.com</td>
                             <td class="amount">25</td>
                             <td class="share">15%</td>
                           </tr>
                           <tr>
-                            <td class="category">Michael</td>
+                            <td class="merchants">Michael</td>
                             <td class="number">michael@example.com</td>
                             <td class="amount">39</td>
                             <td class="share">15%</td>
                           </tr>
                           <tr>
-                            <td class="category">Antony</td>
+                            <td class="merchants">Antony</td>
                             <td class="number">antony@example.com</td>
                             <td class="amount">39</td>
                             <td class="share">15%</td>
                           </tr>
                           <tr>
-                            <td class="category">Raymond</td>
+                            <td class="merchants">Raymond</td>
                             <td class="number">raymond@example.com</td>
                             <td class="amount">52</td>
                             <td class="share">15%</td>
                           </tr>
                           <tr>
-                            <td class="category">Marie</td>
+                            <td class="merchants">Marie</td>
                             <td class="number">marie@example.com</td>
                             <td class="amount">30</td>
                             <td class="share">15%</td>
                           </tr>
                           <tr>
-                            <td class="category">Cohen</td>
+                            <td class="merchants">Cohen</td>
                             <td class="number">cohen@example.com</td>
                             <td class="amount">25</td>
                             <td class="share">15%</td>
                           </tr>
                           <tr>
-                            <td class="category">Rowen</td>
+                            <td class="merchants">Rowen</td>
                             <td class="number">rowen@example.com</td>
                             <td class="amount">39</td>
                             <td class="share">15%</td>
@@ -314,7 +315,7 @@
                           <i class="fas fa-shopping-bag fa-2x"></i>
                         </div>
                         <div class="col-10">
-                          <div class="card-title">Total Categories</div>
+                          <div class="card-title">Total Merchants</div>
                           <p class="card-text">29</p>
                         </div>
                       </div>
@@ -330,7 +331,7 @@
                         </div>
                         <div class="col-10">
                           <div class="card-title">Top Spent</div>
-                          <p class="card-text">$2,499 in Investments</p>
+                          <p class="card-text">$2,499 in Debit</p>
                         </div>
                       </div>
                     </div>
@@ -355,7 +356,7 @@
               <!-- Four boxes ends -->
 
               <!-- Table -->
-              <div id="categories2" data-list='{"valueNames":["category","3","2","1","total"],"page":2,"pagination":true}'>
+              <div id="merchants2" data-list='{"valueNames":["merchants","3","2","1","total"],"page":2,"pagination":true}'>
                 <div class="row pl-3 my-3">
                   <div class="col-lg-3 mb-3">
                     <h6>Time Period:</h6>
@@ -368,7 +369,7 @@
                   </div>
                   <div class="col-lg-3 col-0 mb-3"></div>
                   <div class="col-lg-3 mb-2">
-                    <h6>Show Transactions</h6>
+                    <h6>Show Merchants</h6>
                     <select class="form-select itemCount">
                       <option value="1">1</option>
                       <option value="2" selected>2</option>
@@ -384,7 +385,7 @@
                   <table class="table table-bordered table-striped fs--1 mb-0">
                     <thead class="bg-200 text-900">
                       <tr>
-                        <th class="sort" data-sort="category">Category</th>
+                        <th class="sort" data-sort="merchants">Merchants</th>
                         <th class="sort" data-sort="3">Dec-2021</th>
                         <th class="sort" data-sort="2">Jan-2022</th>
                         <th class="sort" data-sort="1">Feb-2022</th>
@@ -393,28 +394,28 @@
                     </thead>
                     <tbody class="list">
                       <tr>
-                        <td class="category">Investments</td>
+                        <td class="merchants">Investments</td>
                         <td class="3">$3,641 (1)</td>
                         <td class="2">$89</td>
                         <td class="1">$9 (1)</td>
                         <td class="total">$650</td>
                       </tr>
                       <tr>
-                        <td class="category">Credit</td>
+                        <td class="merchants">Credit</td>
                         <td class="3">$3,641 (1)</td>
                         <td class="2">$89</td>
                         <td class="1">$9 (1)</td>
                         <td class="total">$3,650</td>
                       </tr>
                       <tr>
-                        <td class="category">Debit</td>
+                        <td class="merchants">Debit</td>
                         <td class="3">$3 (1)</td>
                         <td class="2">$819</td>
                         <td class="1">$129 (1)</td>
                         <td class="total">$3478</td>
                       </tr>
                       <tr>
-                        <td class="category">Investments</td>
+                        <td class="merchants">Investments</td>
                         <td class="3">$3,641 (1)</td>
                         <td class="2">$89</td>
                         <td class="1">$900 (1)</td>
@@ -439,17 +440,17 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="../vendors/popper/popper.min.js"></script>
-    <script src="../vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="../vendors/anchorjs/anchor.min.js"></script>
-    <script src="../vendors/is/is.min.js"></script>
-    <script src="../vendors/echarts/echarts.min.js"></script>
-    <script src="../vendors/fontawesome/all.min.js"></script>
-    <script src="../vendors/lodash/lodash.min.js"></script>
+    <script src="${resourcesUrl}/UI2.0/vendors/popper/popper.min.js"></script>
+    <script src="${resourcesUrl}/UI2.0/vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="${resourcesUrl}/UI2.0/vendors/anchorjs/anchor.min.js"></script>
+    <script src="${resourcesUrl}/UI2.0/vendors/is/is.min.js"></script>
+    <script src="${resourcesUrl}/UI2.0/vendors/echarts/echarts.min.js"></script>
+    <script src="${resourcesUrl}/UI2.0/vendors/fontawesome/all.min.js"></script>
+    <script src="${resourcesUrl}/UI2.0/vendors/lodash/lodash.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="../vendors/list.js/list.min.js"></script>
-    <script src="../vendors/pulltorefresh/index.umd.min.js"></script>
-    <script src="../assets/js/theme.js"></script>
-    <script src="../assets/custom/reports/categories.js"></script>
+    <script src="${resourcesUrl}/UI2.0/vendors/list.js/list.min.js"></script>
+    <script src="${resourcesUrl}/UI2.0/vendors/pulltorefresh/index.umd.min.js"></script>
+    <script src="${resourcesUrl}/UI2.0/assets/js/theme.js"></script>
+    <script src="${resourcesUrl}/UI2.0/assets/custom/reports/merchants.js"></script>
   </body>
 </html>
