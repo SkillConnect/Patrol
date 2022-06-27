@@ -389,7 +389,7 @@
                   <div class="card-body h-100">
                     <!-- Four boxes starts -->
                     <div class="row g-2 mt-3">
-                      <div class="col-6 mb-1">
+                      <div class="col-6 mb-1 d-flex align-items-stretch">
                         <div class="card card-hover-zoom text-white bg-primary">
                           <div class="card-body text-center">
                             <div class="card-title">Credit Limit</div>
@@ -397,7 +397,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-6 mb-lg-1">
+                      <div class="col-6 mb-lg-1 d-flex align-items-stretch">
                         <div class="card card-hover-zoom text-white bg-primary">
                           <div class="card-body text-center">
                             <div class="card-title">Credit Loan</div>
@@ -405,7 +405,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-6">
+                      <div class="col-6 d-flex align-items-stretch">
                         <div class="card card-hover-zoom text-white bg-primary">
                           <div class="card-body text-center">
                             <div class="card-title">Credit Available</div>
@@ -413,7 +413,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-6">
+                      <div class="col-6 d-flex align-items-stretch">
                         <div class="card card-hover-zoom text-white bg-primary">
                           <div class="card-body text-center">
                             <div class="card-title">Credit Usage</div>
@@ -1009,13 +1009,13 @@
             <!-- Recent Transactions Ends -->
 
             <!-- Balance Sheet -->
-            <div class="col-lg-6 mb-4">
+            <div class="mb-4">
               <div class="row">
                 <div class="col-8">
                   <h5 class="block-title"><i class="fas fa-th-list"></i> Balance Sheet</h5>
                 </div>
                 <div class="col-4 text-end">
-                  <h5 class="text-white">
+                  <h5 style="color: #d8e2ef;">
                     <i class="fas fa-plus-circle" type="button" data-bs-toggle="modal" data-bs-target="#add-new-assets-modal"></i>
                     <i class="fas fa-info-circle" type="button" data-bs-toggle="modal" data-bs-target="#balance-sheet-info-modal"></i>
                   </h5>
@@ -1023,44 +1023,177 @@
               </div>
               <div class="card overflow-hidden">
                 <div class="card-body text-1000 ">
-                  <div class="alert bg-200" role="alert" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                  <div class="alert bg-100 mb-0" role="alert" data-bs-toggle="collapse" data-bs-target="#netWorthCollapse" aria-expanded="false">
                     <div class="row">
                       <div class="col">Net Worth</div>
                       <div class="col text-end"><span class="text-success">$172,297</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
                     </div>
                   </div>
-                  <div class="collapse" id="collapseExample">
-                    <div class="border p-card rounded">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</div>
+                  <div class="collapse" id="netWorthCollapse">
+                    <div class="border border-top-0 p-card">
+                      <table class="table table-bordered table-hover text-center mb-0">
+                        <thead class="bg-200 text-900">
+                          <tr>
+                            <th>Date</th><th>Merchant</th><th>Category</th><th>Amount</th><th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
 
-                  <div class="alert bg-200" role="alert">
+                  <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#checkingAccountCollapse" aria-expanded="false">
                     <div class="row">
                       <div class="col">Checking Accounts</div>
                       <div class="col text-end"><span class="text-success">$4039</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
                     </div>
                   </div>
-                  <div class="alert bg-200" role="alert">
+                  <div class="collapse" id="checkingAccountCollapse">
+                    <div class="border border-top-0 p-card">
+                      <table class="table table-bordered table-hover text-center mb-0">
+                        <thead class="bg-200 text-900">
+                          <tr>
+                            <th>Date</th><th>Merchant</th><th>Category</th><th>Amount</th><th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#investmentAccountCollapse" aria-expanded="false">
                     <div class="row">
                       <div class="col">Investment Accounts</div>
                       <div class="col text-end"><span class="text-success">$108</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
                     </div>
                   </div>
-                  <div class="alert bg-200" role="alert">
+                  <div class="collapse" id="investmentAccountCollapse">
+                    <div class="border border-top-0 p-card">
+                      <table class="table table-bordered table-hover text-center mb-0">
+                        <thead class="bg-200 text-900">
+                          <tr>
+                            <th>Date</th><th>Merchant</th><th>Category</th><th>Amount</th><th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#otherAssetsCollapse" aria-expanded="false">
                     <div class="row">
                       <div class="col">Home, Vehicle & Other Assets</div>
                       <div class="col text-end"><span class="text-success">$744,018</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
                     </div>
                   </div>
-                  <div class="alert bg-200" role="alert">
+                  <div class="collapse" id="otherAssetsCollapse">
+                    <div class="border border-top-0 p-card">
+                      <table class="table table-bordered table-hover text-center mb-0">
+                        <thead class="bg-200 text-900">
+                          <tr>
+                            <th>Date</th><th>Merchant</th><th>Category</th><th>Amount</th><th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#creditLoansCollapse" aria-expanded="false">
                     <div class="row">
                       <div class="col">Credit Loans</div>
                       <div class="col text-end"><span class="text-danger">-$1536</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
                     </div>
                   </div>
-                  <div class="alert bg-200" role="alert">
+                  <div class="collapse" id="creditLoansCollapse">
+                    <div class="border border-top-0 p-card">
+                      <table class="table table-bordered table-hover text-center mb-0">
+                        <thead class="bg-200 text-900">
+                          <tr>
+                            <th>Date</th><th>Merchant</th><th>Category</th><th>Amount</th><th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#otherLoansCollapse" aria-expanded="false">
                     <div class="row">
                       <div class="col">Mortgage, Other debts & Loans</div>
                       <div class="col text-end"><span class="text-danger">-$562,487</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
+                    </div>
+                  </div>
+                  <div class="collapse" id="otherLoansCollapse">
+                    <div class="border border-top-0 p-card">
+                      <table class="table table-bordered table-hover text-center mb-0">
+                        <thead class="bg-200 text-900">
+                          <tr>
+                            <th>Date</th><th>Merchant</th><th>Category</th><th>Amount</th><th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </div>
@@ -1249,7 +1382,7 @@
             <!-- Budgets Ends -->
 
             <!-- Credit Limit Starts -->
-            <div class="col-lg-6 mb-4">
+            <div class="mb-4">
               <h5 class="block-title"><i class="fas fa-money-bill"></i> Credit Limit and Usage</h5>
               <div class="card overflow-hidden">
                 <div class="card-header bg-light">
@@ -1269,8 +1402,8 @@
                 </div>
                 <div class="card-body h-100">
                   <!-- Four boxes starts -->
-                  <div class="row g-2">
-                    <div class="col-6 mb-1">
+                  <div class="row g-2 mt-3">
+                    <div class="col-6 mb-1 d-flex align-items-stretch">
                       <div class="card card-hover-zoom text-white bg-primary">
                         <div class="card-body text-center">
                           <div class="card-title">Credit Limit</div>
@@ -1278,7 +1411,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-6 mb-lg-1">
+                    <div class="col-6 mb-lg-1 d-flex align-items-stretch">
                       <div class="card card-hover-zoom text-white bg-primary">
                         <div class="card-body text-center">
                           <div class="card-title">Credit Loan</div>
@@ -1286,7 +1419,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 d-flex align-items-stretch">
                       <div class="card card-hover-zoom text-white bg-primary">
                         <div class="card-body text-center">
                           <div class="card-title">Credit Available</div>
@@ -1294,7 +1427,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 d-flex align-items-stretch">
                       <div class="card card-hover-zoom text-white bg-primary">
                         <div class="card-body text-center">
                           <div class="card-title">Credit Usage</div>
@@ -1306,8 +1439,8 @@
                   <!-- Four boxes ends -->
 
                   <!-- Gauge chart starts -->
-                  <div class="dashboard-credit-limit" style="min-height: 400px; z-index: -1;" data-echart-responsive="true"></div>
-                  <div class="row fs--1 fw-semi-bold text-500 g-0 px-3" style="margin-top: -150px;">
+                  <div class="dashboard-credit-limit mt-5" style="min-height: 400px; z-index: -1;" data-echart-responsive="true"></div>
+                  <div class="row fs--1 fw-semi-bold text-500 g-0 px-3 mb-5" style="margin-top: -150px;">
                     <div class="col-lg-3 col-6"><span class="dot" style="background-color: #8DB3F8;"></span><span>Excellent (0-10%)</span></div>
                     <div class="col-lg-3 col-6"><span class="dot" style="background-color: #5A8FF6;"></span><span>Good (11-30%)</span></div>
                     <div class="col-lg-3 col-6"><span class="dot" style="background-color: #2A6EF4;"></span><span>High (31-60%)</span></div>
@@ -1320,7 +1453,7 @@
                 </div>
               </div>
             </div>
-            <!-- Credit Limit Ends -->
+            <!-- Credit Limit Ends -->  
 
             <!-- Credit Score Starts -->
             <div class="col-lg-6 mb-4">

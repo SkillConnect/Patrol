@@ -10491,6 +10491,7 @@ fetch('navbar.html')
     let theme = localStorage.getItem('theme')
     if (theme === 'dark')
       document.getElementById('themeControlToggle').setAttribute('checked', true)
+    identifyCurrentPage()
 })
 
 // Pull To Refresh
@@ -10511,4 +10512,12 @@ window.onscroll = function() {
     document.getElementById("navbarContainer").style.top = "-75px";
   }
   prevScrollpos = currentScrollPos;
+}
+
+// Current Page
+function identifyCurrentPage() {
+  const pageName = window.location.pathname.split('/').pop();
+  var elements = document.querySelectorAll(`a.nav-link[href="${pageName}"]`);
+  console.log(pageName, elements, elements[0])
+  elements[0].classList.add('current');
 }

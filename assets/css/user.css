@@ -6,7 +6,10 @@ body {
 .dark body, .dark .mobileNav { background-color: #232e3c; }
 svg:hover { cursor: pointer; }
 .modal { background-color: #031c4aa1; } /* Pop-up background-color: ; */
+.dark .modal { background-color: #232e3c94; } /* Pop-up background-color: ; */
 .modal-body .rounded-top-lg, .modal-header { background-color: #031c4a !important; }
+.dark .modal-body .rounded-top-lg, .modal-header { background-color: #0B1727 !important; }
+.dark .modal-body, .dark .modal-footer { background-color: #121E2D !important; }
 .dark .modal-body .rounded-top-lg h5 { color: #ffffff8c !important; }
 .rounded-top-lg { border-radius:  0.3rem 0.3rem 0 0 !important; }
 .form-select { padding-right: 2.5rem !important; }
@@ -40,6 +43,14 @@ svg:hover { cursor: pointer; }
 .navbar-light .navbar-nav .dropdown .nav-link:hover {
     border-bottom-style: none;
 }
+
+.current {
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    text-decoration-thickness: 2px;
+    width: fit-content;
+}
+
 #navbarContainer{ position: sticky; top: 0; background-color: #031c4a; z-index: 1000;transition-duration: 0.25s; }
 .dark #navbarContainer{ background-color: #232e3c; }
 
@@ -118,6 +129,10 @@ svg:hover { cursor: pointer; }
 }
 .db-snap-box:hover {
     background-color: #031c4a;
+    cursor: pointer;
+}
+.dark .db-snap-box:hover {
+    background-color: #0B1727;
     cursor: pointer;
 }
 .db-snap-box:hover h6 { color: #fff !important; }

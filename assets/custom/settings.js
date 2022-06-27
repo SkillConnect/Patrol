@@ -57,7 +57,6 @@ var rowTemplate = `
 `
 
 function repeatRows() {
-    console.log('runnin')
     rows = ''
     Object.keys(alertConfigs).forEach(id => {
         rows += rowTemplate.format(alertConfigs[id], id)
@@ -80,3 +79,13 @@ String.prototype.format = function () {
 }
 
 docReady(repeatRows);
+
+function switchTab() {
+    const triggerElementId = window.location.hash
+    let tabTriggerEl = document.querySelector(triggerElementId)
+    if (!tabTriggerEl) { tabTriggerEl = document.querySelector('#pill-billing-tab') }
+    const tab = new bootstrap.Tab(tabTriggerEl)
+    tab.show()
+}
+
+switchTab()
