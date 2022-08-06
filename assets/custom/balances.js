@@ -60,7 +60,7 @@ var balancesBar = function balancesBar() {
           boundaryGap: true,
           axisLabel: {
             formatter: function formatter(value) {
-              return value; //.substring(0, 3);
+              return value.substring(0, 15);
             },
             show: true,
             color: utils.getGrays()["500"],

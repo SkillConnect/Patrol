@@ -84,7 +84,9 @@ var dashboardInsightsSpendByMerchantsChartInit = function dashboardInsightsSpend
             boundaryGap: true,
             axisLabel: {
               formatter: function formatter(value) {
-                return value;
+                return value.length > 15 ? 
+                  value.slice(0, 12) + '...' :
+                  value;
               },
               show: true,
               color: utils.getGrays()['500'],
@@ -123,7 +125,7 @@ var dashboardInsightsSpendByMerchantsChartInit = function dashboardInsightsSpend
           }],
           grid: {
             right: '3%',
-            left: '20%',
+            left: '25%',
             bottom: '10%',
             top: '5%'
           }
@@ -131,6 +133,7 @@ var dashboardInsightsSpendByMerchantsChartInit = function dashboardInsightsSpend
       };
   
       echartSetOption(chart, userOptions, getDefaultOptions);
+      chart.on('click', params => insightsMerchants(params));
     }
 };
 /* -------------------------------------------------------------------------- */
@@ -363,12 +366,13 @@ var dashboardTrendsDailySpendInit = function dashboardTrendsDailySpendInit() {
       };
   
       echartSetOption(chart, userOptions, getDefaultOptions);
+      chart.on('click', params => trendsDailySpendModal(params));
     }
 };
 /* -------------------------------------------------------------------------- */
 
 /* -------------------------------------------------------------------------- */
-/* Echarts Line Chart - Dashboard/Trends/MonthkyFlow                          */
+/* Echarts Line Chart - Dashboard/Trends/MonthlyFlow                          */
 var dashboardTrendsMonthlyFlowInit = function dashboardTrendsMonthlyFlowInit() {
     const $monthlyFlowChart = document.querySelector(`${view} .dashboard-trends-monthlyFlow`);
   
@@ -473,6 +477,7 @@ var dashboardTrendsMonthlyFlowInit = function dashboardTrendsMonthlyFlowInit() {
       });
   
       echartSetOption(chart, userOptions, getDefaultOptions);
+      chart.on('click', params => trendsMonthlyModal(params));
     }
 };
 /* -------------------------------------------------------------------------- */
@@ -538,8 +543,9 @@ var dashboardBudgetChartInit = function dashboardBudgetChartInit() {
           },
           axisLabel: {
             formatter: function formatter(value) {
-              if (value.length <= 18) {return value}
-              return value.substring(0,15).concat("...");
+              return value.length > 15 ? 
+                value.slice(0, 12) + '...' :
+                value;
             },
             color: utils.getGrays()['500']
           },
@@ -568,7 +574,7 @@ var dashboardBudgetChartInit = function dashboardBudgetChartInit() {
         }],
         grid: {
           right: 15,
-          left: (screen.width < 992) ? '35%' : '20%',
+          left: (screen.width < 992) ? '35%' : '25%',
           bottom: '10%',
           top: 5
         }
@@ -576,6 +582,7 @@ var dashboardBudgetChartInit = function dashboardBudgetChartInit() {
     };
 
     echartSetOption(chart, userOptions, getDefaultOptions);
+    chart.on('click', params => budgets(params));
   }
 };
 /* -------------------------------------------------------------------------- */
@@ -741,7 +748,7 @@ var balanceSheetCharts = function balanceSheetCharts() {
             boundaryGap: true,
             axisLabel: {
               formatter: function formatter(value) {
-                return value;
+                return value.slice(0, 25);
               },
               show: true,
               color: utils.getGrays()['500'],

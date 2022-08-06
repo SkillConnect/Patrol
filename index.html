@@ -220,8 +220,8 @@
                       </thead>
                       <tbody>
                         <tr><td>Dec 29</td>
-                          <td><a href="data-insights/merchants.html">Mowry Plaza Pharmacy</a></td>
-                          <td><a href="data-insights/categories.html">Pharmacy</td><td>-$50.00</td>
+                          <td><a href="dataInsights/merchants.html">Mowry Plaza Pharmacy</a></td>
+                          <td><a href="dataInsights/categories.html">Pharmacy</td><td>-$50.00</td>
                           <td>POSTED</td>
                         </tr>
                         <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
@@ -841,7 +841,7 @@
                       <tbody>
                         <tr>
                           <td>Shopping</td>
-                          <td><a href="data-insights/merchants.html">$50.00</a></td>
+                          <td><a href="dataInsights/merchants.html">$50.00</a></td>
                           <td>38%</td>
                         </tr>
                         <tr>
@@ -1836,30 +1836,19 @@
           </div>
         </div>
         <!-- Balance Sheet Info modal Ends -->
-        <!-- Snapshot Modal Starts -->
-        <div class="modal fade" id="snapshotDetailsModal" tabindex="-1">
+        <!-- Common Modal Starts -->
+        <div class="modal fade" id="commonModal" tabindex="-1">
           <div class="modal-dialog modal-dialog-centered" style="max-width: 700px">
             <div class="modal-content">
-              <div class="modal-header bg-light ps-card pe-5 border-bottom-0">
-                <div> <h5 class="modal-title mb-0"> ${title} </h5> </div>
+              <div class="modal-header bg-dark ps-card pe-5 border-bottom-0">
+                <div> <h5 class="modal-title text-white mb-0"> 
+                  <!-- Replaced by Js-->
+                  <!-- ${title}  -->
+                </h5> </div>
               </div>
               <div class="modal-body">
-                <div class="table-responsive">
-                  <table class="table table-bordered table-hover">
-                    <thead class="table-light">
-                      <tr>
-                        <th scope="col">Date</th>
-                        <th scope="col">Merchant</th>
-                        <th scope="col">Category</th>
-                        <th scope="col">Institution</th>
-                        <th scope="col">Amount</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr>
-                    </tbody>
-                  </table>
-                </div>
+                <!-- Body, replaced by Js -->
+                {}
               </div>
               <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
@@ -1867,7 +1856,7 @@
             </div>
           </div>
         </div>
-        <!-- Snapshot Modal Ends -->
+        <!-- Common Modal Ends -->
       </div>
     </main>
 
@@ -1889,6 +1878,7 @@
     <script src="./vendors/masonry/masonry.min.js"></script>
     <script src="./vendors/pulltorefresh/index.umd.min.js"></script>
     <script src="./assets/js/theme.js"></script>
+    <script src="./assets/custom/modals.js"></script>
     <script src="./assets/custom/dashboard.js"></script>
     <script src="./assets/custom/transaction-calendar.js"></script>
   </body>

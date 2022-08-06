@@ -53,7 +53,7 @@ var spendShareByTransaction = function spendShareByTransaction() {
             boundaryGap: true,
             axisLabel: {
               formatter: function formatter(value) {
-                return value;
+                return value.slice(0, 25);
               },
               show: true,
               color: utils.getGrays()['500'],
