@@ -100,6 +100,9 @@ var spendShareByAmount = function spendShareByAmount() {
       };
   
       echartSetOption(chart, userOptions, getDefaultOptions);
+      chart.on('click', function(params) {
+        window.open(`../data-insights/tags.html?tag=${params.name}`)
+      });
     }
 };
 /* -------------------------------------------------------------------------- */

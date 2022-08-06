@@ -1,5 +1,5 @@
 var events = [{
-  start: "2022-02-20",
+  start: "2022-08-20",
   title: "Reminder 1",
   reminder: {
     frequency: "Weekly",
@@ -7,7 +7,7 @@ var events = [{
   },
   className: 'bg-soft-primary'
 },{
-  start: "2022-02-04",
+  start: "2022-08-04",
   title: "Reminder 2",
   reminder: {
     frequency: "Monthly",

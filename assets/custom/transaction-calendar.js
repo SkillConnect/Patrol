@@ -1,5 +1,5 @@
 var events = [{
-  start: "2022-02-20",
+  start: "2022-08-20",
   title: "Income",
   transactions: [{
     institution: "Discover Card (All Account Types) : DMC - (xxxx9324)",
@@ -17,7 +17,7 @@ var events = [{
   total: "$100",
   className: 'bg-soft-primary'
 },{
-  start: "2022-02-04",
+  start: "2022-08-04",
   title: "Expense",
   transactions: [{
     institution: "Discover Card (All Account Types) : DMC - (xxxx9324)",

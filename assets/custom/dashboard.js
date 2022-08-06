@@ -682,9 +682,128 @@ var dashboardCreditLimitChartInit = function dashboardCreditLimitChartInit() {
 };
 /* -------------------------------------------------------------------------- */
 
+/* -------------------------------------------------------------------------- */
+/* Echarts Horizontal Bar Chart - Balance Sheet/                              */
+var balanceSheetCharts = function balanceSheetCharts() {
+
+  charts = ['.checking-accounts', '.savings-accounts', '.investment-accounts', '.credit-loans']
+
+  charts.forEach(chartName => {
+    var $horizontalBarChartEl = document.querySelector(chartName);
+
+    if ($horizontalBarChartEl) {
+      // Get options from data attribute
+      var userOptions = utils.getData($horizontalBarChartEl, 'options');
+      var chart = window.echarts.init($horizontalBarChartEl);
+      var months = ['New Bazaar', 'Mowry Plaza', 'Chaat House', 'Shopify', 'Profile Net', 'Holister', 'Safewway', 'CityView Plaza', 'Butter Amusements', 'Wandering Waffle'];
+      var data = [1272, 1301, 1402, 1216, 1086, 1236, 1219, 1330, 1367, 1416];
+  
+      var getDefaultOptions = function getDefaultOptions() {
+        return {
+          tooltip: {
+            trigger: 'axis',
+            padding: [7, 10],
+            backgroundColor: utils.getGrays()['100'],
+            borderColor: utils.getGrays()['300'],
+            textStyle: {
+              color: utils.getColors().dark
+            },
+            borderWidth: 1,
+            formatter: tooltipFormatter,
+            transitionDuration: 0,
+            axisPointer: {
+              type: 'none'
+            }
+          },
+          xAxis: {
+            type: 'value',
+            boundaryGap: false,
+            axisLine: {
+              show: true,
+              lineStyle: {
+                color: utils.getGrays()['300']
+              }
+            },
+            axisTick: {
+              show: true
+            },
+            axisLabel: {
+              color: utils.getGrays()['500']
+            },
+            splitLine: {
+              show: false
+            },
+            min: 600
+          },
+          yAxis: {
+            type: 'category',
+            data: months,
+            boundaryGap: true,
+            axisLabel: {
+              formatter: function formatter(value) {
+                return value;
+              },
+              show: true,
+              color: utils.getGrays()['500'],
+              margin: 15
+            },
+            splitLine: {
+              show: true,
+              lineStyle: {
+                color: utils.getGrays()['200']
+              }
+            },
+            axisTick: {
+              show: false
+            },
+            axisLine: {
+              lineStyle: {
+                color: utils.getGrays()['300']
+              }
+            }
+          },
+          series: [{
+            type: 'bar',
+            name: 'Total',
+            data: data,
+            lineStyle: {
+              color: utils.getColor('primary')
+            },
+            itemStyle: {
+              color: utils.getColor('primary'),
+              barBorderRadius: [0, 3, 3, 0]
+            },
+            showSymbol: false,
+            symbol: 'circle',
+            smooth: false,
+            hoverAnimation: true
+          }],
+          grid: {
+            right: '3%',
+            left: '20%',
+            bottom: '10%',
+            top: '5%'
+          }
+        };
+      };
+  
+      echartSetOption(chart, userOptions, getDefaultOptions);
+    }
+  });
+};
+/* -------------------------------------------------------------------------- */
+
+var closeAllCollapses = () => {
+  const collapseElementList = document.querySelectorAll('.collapse')
+  const collapseList = [...collapseElementList].map(collapseEl => new bootstrap.Collapse(collapseEl, {toggle: false}))
+  collapseList.map(el => el.hide())
+}
+
 docReady(dashboardInsightsSpendByMerchantsChartInit);
 docReady(dashboardInsightsSpendByCategoryInit);
 docReady(dashboardTrendsDailySpendInit);
 docReady(dashboardTrendsMonthlyFlowInit);
 docReady(dashboardBudgetChartInit);
 docReady(dashboardCreditLimitChartInit);
+docReady(balanceSheetCharts);
+docReady(closeAllCollapses);
