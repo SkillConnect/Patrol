@@ -118,6 +118,7 @@ var creditUsage = function creditUsage() {
     };
 
     echartSetOption(chart, userOptions, getDefaultOptions);
+    chart.on('click', params => insightsMerchants(params));
   }
 };
 /* -------------------------------------------------------------------------- */
@@ -325,6 +326,7 @@ var cardPaymentHistory = function cardPaymentHistory() {
     };
 
     echartSetOption(chart, userOptions, getDefaultOptions);
+    chart.on('click', params => insightsMerchants(params));
   }
 };
 /* -------------------------------------------------------------------------- */

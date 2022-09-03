@@ -184,10 +184,72 @@
           </div>
           <!-- Temp Widgets ends -->
 
-          <!-- Desktop View -->
-          <div class="row mb-3 d-none d-lg-flex desktop-view">
+          <!-- Main Content -->
+          <div class="row mb-3 d-none d-lg-flex">
             <!-- Left Column -->
             <div class="col-6">
+              <!-- Snapshot -->
+              <div class="mb-4">
+                <h5 class="block-title"><i class="fas fa-chart-area"></i> Snapshot</h5>
+                <div class="card overflow-hidden">
+                  <div class="card-header bg-light">
+                    <div class="row align-items-center">
+                      <div class="col-6 col-lg-3">
+                        <h5>Account</h5>
+                      </div>
+                      <div class="col-6 col-lg-4 pe-card">
+                        <select class="form-select form-select-sm">
+                          <option>All</option>
+                          <option>Estimated Time</option>
+                          <option>Billable Time</option>
+                        </select>
+                      </div>
+                      <div class="col-12 col-lg-5 d-grid mt-3 mt-lg-0">
+                        <button class="btn btn-secondary btn-block">Current Month</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body p-3">
+                    <div class="row g-0 text-center">
+                      <div class="col-6 col-md-3 border-200 border-bottom border-end py-4 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
+                        <h6 class="pb-1 text-700">Expenses </h6>
+                        <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
+                      </div>
+                      <div class="col-6 col-md-3 border-200 border-md-200 border-bottom border-md-end py-4 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
+                        <h6 class="pb-1 text-700">Income </h6>
+                        <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
+                      </div>
+                      <div class="col-6 col-md-3 border-200 border-bottom border-end py-4 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
+                        <h6 class="pb-1 text-700">Net Flow </h6>
+                        <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
+                      </div>
+                      <div class="col-6 col-md-3 border-200 border-bottom py-4 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
+                        <h6 class="pb-1 text-700">Cash Available </h6>
+                        <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
+                      </div>
+
+                      <div class="col-6 col-md-3 border-200 border-bottom border-md-bottom-0 border-end py-4 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
+                        <h6 class="pb-1 text-700">Credit Available </h6>
+                        <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
+                      </div>
+                      <div class="col-6 col-md-3 border-200 border-bottom border-md-bottom-0 border-md-end py-4 ps-3 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
+                        <h6 class="pb-1 text-700">Credit Loans </h6>
+                        <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
+                      </div>
+                      <div class="col-6 col-md-3 border-200 border-end py-4 ps-3 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
+                        <h6 class="pb-1 text-700">Credit Usage </h6>
+                        <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
+                      </div>
+                      <div class="col-6 col-md-3 py-4 ps-md-3 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
+                        <h6 class="pb-1 text-700">Investments </h6>
+                        <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Snapshot Ends -->
+
               <!-- Recent Transactions -->
               <div class="mb-4">
                 <h5 class="block-title"><i class="fas fa-dollar-sign"></i> Recent Transactions</h5>
@@ -371,145 +433,115 @@
               </div>
               <!-- Budgets Ends -->            
 
-              <!-- Credit Limit Starts -->
+              <!-- UTILITY BILL REMINDERS Starts -->
               <div class="mb-4">
-                <h5 class="block-title"><i class="fas fa-money-bill"></i> Credit Limit and Usage</h5>
+                <h5 class="block-title"><i class="fas fa-clock"></i> UTILITY BILL REMINDERS</h5>
                 <div class="card overflow-hidden">
-                  <div class="card-header bg-light">
-                    <div class="row">
-                      <div class="col-6 col-lg-3">
-                        <h5>Account</h5>
-                      </div>
-                      <div class="col-6 col-lg-4 pe-card">
-                        <select class="form-select form-select-sm">
-                          <option>All</option>
-                          <option>Estimated Time</option>
-                          <option>Billable Time</option>
-                        </select>
-                      </div>
-                      <div class="col-0 col-lg-5"></div>
-                    </div>
+                  <div class="card-body h-100 table-responsive">
+                    <table class="table table-hover table-bordered mb-0">
+                      <thead class="bg-200 text-900">
+                        <tr>
+                          <th scope="col">Merchant</th>
+                          <th scope="col">Due By</th>
+                          <th scope="col">Category</th>
+                          <th scope="col">Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Alameda County Water</td>
+                          <td>Feb-16</td>
+                          <td>Utilities</td>
+                          <td>$480.89</td>
+                        </tr>
+                        <tr>
+                          <td>Replublic Services</td>
+                          <td>Feb-18</td>
+                          <td>Utilities</td>
+                          <td>$165.89</td>
+                        </tr>
+                        <tr>
+                          <td>Alameda County Water</td>
+                          <td>Feb-16</td>
+                          <td>Utilities</td>
+                          <td>$480.89</td>
+                        </tr>
+                        <tr>
+                          <td>Replublic Services</td>
+                          <td>Feb-18</td>
+                          <td>Utilities</td>
+                          <td>$165.89</td>
+                        </tr>
+                        <tr>
+                          <td>Alameda County Water</td>
+                          <td>Feb-16</td>
+                          <td>Utilities</td>
+                          <td>$480.89</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
-                  <div class="card-body h-100">
-                    <!-- Four boxes starts -->
-                    <div class="row g-2 mt-3">
-                      <div class="col-6 mb-1 d-flex align-items-stretch">
-                        <div class="card card-hover-zoom text-white bg-primary">
-                          <div class="card-body text-center">
-                            <div class="card-title">Credit Limit</div>
-                            <p class="card-text">$4,580</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6 mb-lg-1 d-flex align-items-stretch">
-                        <div class="card card-hover-zoom text-white bg-primary">
-                          <div class="card-body text-center">
-                            <div class="card-title">Credit Loan</div>
-                            <p class="card-text">$2,458</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6 d-flex align-items-stretch">
-                        <div class="card card-hover-zoom text-white bg-primary">
-                          <div class="card-body text-center">
-                            <div class="card-title">Credit Available</div>
-                            <p class="card-text">$4,150</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6 d-flex align-items-stretch">
-                        <div class="card card-hover-zoom text-white bg-primary">
-                          <div class="card-body text-center">
-                            <div class="card-title">Credit Usage</div>
-                            <p class="card-text">6%</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Four boxes ends -->
-
-                    <!-- Gauge chart starts -->
-                    <div class="dashboard-credit-limit mt-5" style="min-height: 400px; z-index: -1;" data-echart-responsive="true"></div>
-                    <div class="row fs--1 fw-semi-bold text-500 g-0 px-3 mb-5" style="margin-top: -150px;">
-                      <div class="col-lg-3 col-6"><span class="dot" style="background-color: #8DB3F8;"></span><span>Excellent (0-10%)</span></div>
-                      <div class="col-lg-3 col-6"><span class="dot" style="background-color: #5A8FF6;"></span><span>Good (11-30%)</span></div>
-                      <div class="col-lg-3 col-6"><span class="dot" style="background-color: #2A6EF4;"></span><span>High (31-60%)</span></div>
-                      <div class="col-lg-3 col-6"><span class="dot" style="background-color: #1D4FD0;"></span><span>Very High (61-100%)</span></div>
-                    </div>
-                    <!-- Gauge chart ends -->
-                  </div>
-                  <div class="card-footer bg-light p-0 text-center" style="z-index: 1;">
-                    <a class="btn btn-link" href="debts.html">View More<i class="fas fa-chevron-right ms-1 fs--2"></i></a>
+                  <div class="card-footer bg-light p-0 text-center">
+                    <a class="btn btn-link" href="bills.html">View More<i class="fas fa-chevron-right ms-1 fs--2"></i></a>
                   </div>
                 </div>
               </div>
-              <!-- Credit Limit Ends -->            
+              <!-- UTILITY BILL REMINDERS Ends --> 
             </div>
             <!-- Left Column Ends-->
 
             <!-- Right column -->
             <div class="col-6">
-              <!-- Snapshot -->
+              <!-- Trends -->
               <div class="mb-4">
-                <h5 class="block-title"><i class="fas fa-chart-area"></i> Snapshot</h5>
+                <h5 class="block-title"><i class="fas fa-chart-line"></i> Trends</h5>
                 <div class="card overflow-hidden">
-                  <div class="card-header bg-light">
-                    <div class="row align-items-center">
-                      <div class="col-6 col-lg-3">
-                        <h5>Account</h5>
+                  <div class="card-body h-100">
+                    <!-- Daily Spend -->
+                    <div class="row align-items-center mb-1">
+                      <div class="col-12 mb-3">
+                        <h5>Daily Spend</h5>
                       </div>
-                      <div class="col-6 col-lg-4 pe-card">
+                      <div class="col-lg-4 mb-2 mb-lg-0">
                         <select class="form-select form-select-sm">
-                          <option>All</option>
-                          <option>Estimated Time</option>
-                          <option>Billable Time</option>
+                          <option>2 Weeks</option>
+                          <option>Jan</option>
+                          <option>Dec</option>
                         </select>
                       </div>
-                      <div class="col-12 col-lg-5 d-grid mt-3 mt-lg-0">
-                        <button class="btn btn-secondary btn-block">Current Month</button>
+                      <div class="col-lg-4 mb-2 mb-lg-0 d-grid">
+                        <button class="btn btn-secondary">Total: $1,234</button>
+                      </div>
+                      <div class="col-lg-4 mb-2 mb-lg-0 d-grid">
+                        <button class="btn btn-secondary">Transactions: 27</button>
                       </div>
                     </div>
+                    <div class="dashboard-trends-dailySpend" style="min-height: 300px;" data-echart-responsive="true"></div>
+                    <!-- Daily Spend Ends -->
+                    <br><br>
+                    <!-- Monthly Flow -->
+                    <div class="row align-items-center mb-1">
+                      <div class="col-lg-4 mb-3">
+                        <h5>Monthly Flow</h5>
+                      </div>
+                      <div class="col-lg-6 mb-3">
+                        <select class="form-select form-select-sm">
+                          <option>3 Months</option>
+                          <option>Jan</option>
+                          <option>Dec</option>
+                        </select>
+                      </div>
+                      <div class="col-0 co-lg-2"></div>
+                    </div>
+                    <div class="dashboard-trends-monthlyFlow" style="min-height: 300px;" data-echart-responsive="true"></div>
+                    <!-- Monthly Flow Ends -->
                   </div>
-                  <div class="card-body p-3">
-                    <div class="row g-0 text-center">
-                      <div class="col-6 col-md-3 border-200 border-bottom border-end py-4 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
-                        <h6 class="pb-1 text-700">Expenses </h6>
-                        <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
-                      </div>
-                      <div class="col-6 col-md-3 border-200 border-md-200 border-bottom border-md-end py-4 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
-                        <h6 class="pb-1 text-700">Income </h6>
-                        <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
-                      </div>
-                      <div class="col-6 col-md-3 border-200 border-bottom border-end py-4 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
-                        <h6 class="pb-1 text-700">Net Flow </h6>
-                        <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
-                      </div>
-                      <div class="col-6 col-md-3 border-200 border-bottom py-4 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
-                        <h6 class="pb-1 text-700">Cash Available </h6>
-                        <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
-                      </div>
-
-                      <div class="col-6 col-md-3 border-200 border-bottom border-md-bottom-0 border-end py-4 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
-                        <h6 class="pb-1 text-700">Credit Available </h6>
-                        <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
-                      </div>
-                      <div class="col-6 col-md-3 border-200 border-bottom border-md-bottom-0 border-md-end py-4 ps-3 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
-                        <h6 class="pb-1 text-700">Credit Loans </h6>
-                        <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
-                      </div>
-                      <div class="col-6 col-md-3 border-200 border-end py-4 ps-3 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
-                        <h6 class="pb-1 text-700">Credit Usage </h6>
-                        <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
-                      </div>
-                      <div class="col-6 col-md-3 py-4 ps-md-3 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
-                        <h6 class="pb-1 text-700">Investments </h6>
-                        <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
-                      </div>
-                    </div>
+                  <div class="card-footer bg-light p-0 text-center">
+                    <a class="btn btn-link" href="./reports/categories.html">View More <i class="fas fa-chevron-right ms-1 fs--2"></i></a>
                   </div>
                 </div>
               </div>
-              <!-- Snapshot Ends -->
+              <!-- Trends Ends -->
 
               <!-- Balance Sheet -->
               <div class="mb-4">
@@ -749,82 +781,6 @@
               </div>
               <!-- Balance Sheet Ends -->
 
-              <!-- Trends -->
-              <div class="mb-4">
-                <h5 class="block-title"><i class="fas fa-chart-line"></i> Trends</h5>
-                <div class="card overflow-hidden">
-                  <div class="card-body h-100">
-                    <!-- Daily Spend -->
-                    <div class="row align-items-center mb-1">
-                      <div class="col-12 mb-3">
-                        <h5>Daily Spend</h5>
-                      </div>
-                      <div class="col-lg-4 mb-2 mb-lg-0">
-                        <select class="form-select form-select-sm">
-                          <option>2 Weeks</option>
-                          <option>Jan</option>
-                          <option>Dec</option>
-                        </select>
-                      </div>
-                      <div class="col-lg-4 mb-2 mb-lg-0 d-grid">
-                        <button class="btn btn-secondary">Total: $1,234</button>
-                      </div>
-                      <div class="col-lg-4 mb-2 mb-lg-0 d-grid">
-                        <button class="btn btn-secondary">Transactions: 27</button>
-                      </div>
-                    </div>
-                    <div class="dashboard-trends-dailySpend" style="min-height: 300px;" data-echart-responsive="true"></div>
-                    <!-- Daily Spend Ends -->
-                    <br><br>
-                    <!-- Monthly Flow -->
-                    <div class="row align-items-center mb-1">
-                      <div class="col-lg-4 mb-3">
-                        <h5>Monthly Flow</h5>
-                      </div>
-                      <div class="col-lg-6 mb-3">
-                        <select class="form-select form-select-sm">
-                          <option>3 Months</option>
-                          <option>Jan</option>
-                          <option>Dec</option>
-                        </select>
-                      </div>
-                      <div class="col-0 co-lg-2"></div>
-                    </div>
-                    <div class="dashboard-trends-monthlyFlow" style="min-height: 300px;" data-echart-responsive="true"></div>
-                    <!-- Monthly Flow Ends -->
-                  </div>
-                  <div class="card-footer bg-light p-0 text-center">
-                    <a class="btn btn-link" href="./reports/categories.html">View More <i class="fas fa-chevron-right ms-1 fs--2"></i></a>
-                  </div>
-                </div>
-              </div>
-              <!-- Trends Ends -->
-
-              <!-- Credit Score Starts -->
-              <div class="mb-4">
-                <h5 class="block-title"><i class="fas fa-credit-card"></i> Credit Score</h5>
-                <div class="card overflow-hidden">
-                  <div class="card-body h-100 p-5">
-                    <h4 class="text-center">
-                      <a href="score.html"class="btn btn-primary rounded-pill px-3">Start Tracking your Equifax Credit Score</a>
-                    </h4><br>
-                    <p>
-                      <i class="fa fa-check"></i> &nbsp;Track and Monitor Equifax Credit Score <br><br>
-                      <i class="fa fa-check"></i> &nbsp;Track and Monitor Equifax Credit Score <br><br>
-                      <i class="fa fa-check"></i> &nbsp;Get detailed Equifax Credit Report <br><br>
-                      <i class="fa fa-check"></i> &nbsp;Get updated Credit Score every Month <br><br>
-                      <i class="fa fa-check"></i> &nbsp;Receive notification when your Credit Score is updated <br><br>
-                      <i class="fa fa-check"></i> &nbsp;See Vantage Score with top 4 factors <br><br>
-                      <i class="fa fa-check"></i> &nbsp;Understand the reported open Accounts, Debts and Loans on your file
-                    </p>
-                  </div>
-                  <div class="card-footer bg-light p-0 text-center">
-                    <a class="btn btn-link" href="score.html">View More <i class="fas fa-chevron-right ms-1 fs--2"></i></a>
-                  </div>
-                </div>
-              </div>
-              <!-- Credit Score Ends -->
-
               <!-- Recurring Merchants Starts -->
               <div class="mb-4">
                 <h5 class="block-title"><i class="fas fa-redo-alt"></i> Recurring Merchants</h5>
@@ -884,739 +840,108 @@
               </div>
               <!-- Recurring Merchants Ends -->
 
-              <!-- UTILITY BILL REMINDERS Starts -->
+              <!-- Credit Limit Starts -->
               <div class="mb-4">
-                <h5 class="block-title"><i class="fas fa-clock"></i> UTILITY BILL REMINDERS</h5>
+                <h5 class="block-title"><i class="fas fa-money-bill"></i> Credit Limit and Usage</h5>
                 <div class="card overflow-hidden">
-                  <div class="card-body h-100 table-responsive">
-                    <table class="table table-hover table-bordered mb-0">
-                      <thead class="bg-200 text-900">
-                        <tr>
-                          <th scope="col">Merchant</th>
-                          <th scope="col">Due By</th>
-                          <th scope="col">Category</th>
-                          <th scope="col">Amount</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Alameda County Water</td>
-                          <td>Feb-16</td>
-                          <td>Utilities</td>
-                          <td>$480.89</td>
-                        </tr>
-                        <tr>
-                          <td>Replublic Services</td>
-                          <td>Feb-18</td>
-                          <td>Utilities</td>
-                          <td>$165.89</td>
-                        </tr>
-                        <tr>
-                          <td>Alameda County Water</td>
-                          <td>Feb-16</td>
-                          <td>Utilities</td>
-                          <td>$480.89</td>
-                        </tr>
-                        <tr>
-                          <td>Replublic Services</td>
-                          <td>Feb-18</td>
-                          <td>Utilities</td>
-                          <td>$165.89</td>
-                        </tr>
-                        <tr>
-                          <td>Alameda County Water</td>
-                          <td>Feb-16</td>
-                          <td>Utilities</td>
-                          <td>$480.89</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <div class="card-header bg-light">
+                    <div class="row">
+                      <div class="col-6 col-lg-3">
+                        <h5>Account</h5>
+                      </div>
+                      <div class="col-6 col-lg-4 pe-card">
+                        <select class="form-select form-select-sm">
+                          <option>All</option>
+                          <option>Estimated Time</option>
+                          <option>Billable Time</option>
+                        </select>
+                      </div>
+                      <div class="col-0 col-lg-5"></div>
+                    </div>
                   </div>
-                  <div class="card-footer bg-light p-0 text-center">
-                    <a class="btn btn-link" href="bills.html">View More<i class="fas fa-chevron-right ms-1 fs--2"></i></a>
+                  <div class="card-body h-100">
+                    <!-- Four boxes starts -->
+                    <div class="row g-2 mt-3">
+                      <div class="col-6 mb-1 d-flex align-items-stretch">
+                        <div class="card card-hover-zoom text-white bg-primary">
+                          <div class="card-body text-center">
+                            <div class="card-title">Credit Limit</div>
+                            <p class="card-text">$4,580</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-lg-1 d-flex align-items-stretch">
+                        <div class="card card-hover-zoom text-white bg-primary">
+                          <div class="card-body text-center">
+                            <div class="card-title">Credit Loan</div>
+                            <p class="card-text">$2,458</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 d-flex align-items-stretch">
+                        <div class="card card-hover-zoom text-white bg-primary">
+                          <div class="card-body text-center">
+                            <div class="card-title">Credit Available</div>
+                            <p class="card-text">$4,150</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 d-flex align-items-stretch">
+                        <div class="card card-hover-zoom text-white bg-primary">
+                          <div class="card-body text-center">
+                            <div class="card-title">Credit Usage</div>
+                            <p class="card-text">6%</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Four boxes ends -->
+
+                    <!-- Gauge chart starts -->
+                    <div class="dashboard-credit-limit mt-5" style="min-height: 400px; z-index: -1;" data-echart-responsive="true"></div>
+                    <div class="row fs--1 fw-semi-bold text-500 g-0 px-3 mb-5" style="margin-top: -150px;">
+                      <div class="col-lg-3 col-6"><span class="dot" style="background-color: #8DB3F8;"></span><span>Excellent (0-10%)</span></div>
+                      <div class="col-lg-3 col-6"><span class="dot" style="background-color: #5A8FF6;"></span><span>Good (11-30%)</span></div>
+                      <div class="col-lg-3 col-6"><span class="dot" style="background-color: #2A6EF4;"></span><span>High (31-60%)</span></div>
+                      <div class="col-lg-3 col-6"><span class="dot" style="background-color: #1D4FD0;"></span><span>Very High (61-100%)</span></div>
+                    </div>
+                    <!-- Gauge chart ends -->
+                  </div>
+                  <div class="card-footer bg-light p-0 text-center" style="z-index: 1;">
+                    <a class="btn btn-link" href="debts.html">View More<i class="fas fa-chevron-right ms-1 fs--2"></i></a>
                   </div>
                 </div>
               </div>
-              <!-- UTILITY BILL REMINDERS Ends -->
+              <!-- Credit Limit Ends --> 
+              
+              <!-- Credit Score Starts -->
+              <div class="mb-4">
+                <h5 class="block-title"><i class="fas fa-credit-card"></i> Credit Score</h5>
+                <div class="card overflow-hidden">
+                  <div class="card-body h-100 p-5">
+                    <h4 class="text-center">
+                      <a href="score.html"class="btn btn-primary rounded-pill px-3">Start Tracking your Equifax Credit Score</a>
+                    </h4><br>
+                    <p>
+                      <i class="fa fa-check"></i> &nbsp;Track and Monitor Equifax Credit Score <br><br>
+                      <i class="fa fa-check"></i> &nbsp;Track and Monitor Equifax Credit Score <br><br>
+                      <i class="fa fa-check"></i> &nbsp;Get detailed Equifax Credit Report <br><br>
+                      <i class="fa fa-check"></i> &nbsp;Get updated Credit Score every Month <br><br>
+                      <i class="fa fa-check"></i> &nbsp;Receive notification when your Credit Score is updated <br><br>
+                      <i class="fa fa-check"></i> &nbsp;See Vantage Score with top 4 factors <br><br>
+                      <i class="fa fa-check"></i> &nbsp;Understand the reported open Accounts, Debts and Loans on your file
+                    </p>
+                  </div>
+                  <div class="card-footer bg-light p-0 text-center">
+                    <a class="btn btn-link" href="score.html">View More <i class="fas fa-chevron-right ms-1 fs--2"></i></a>
+                  </div>
+                </div>
+              </div>
+              <!-- Credit Score Ends -->
             </div>
             <!-- Right column Ends -->
           </div>
-          <!-- Desktop View -->
-
-          <!-- Mobile View -->
-          <div class="row mb-3 d-lg-none mobile-view">
-            <!-- Snapshot -->
-            <div class="col-lg-6 mb-4">
-              <h5 class="block-title"><i class="fas fa-chart-area"></i> Snapshot</h5>
-              <div class="card overflow-hidden">
-                <div class="card-header bg-light">
-                  <div class="row align-items-center">
-                    <div class="col-6 col-lg-3">
-                      <h5>Account</h5>
-                    </div>
-                    <div class="col-6 col-lg-4 pe-card">
-                      <select class="form-select form-select-sm">
-                        <option>All</option>
-                        <option>Estimated Time</option>
-                        <option>Billable Time</option>
-                      </select>
-                    </div>
-                    <div class="col-12 col-lg-5 d-grid mt-3 mt-lg-0">
-                      <button class="btn btn-secondary btn-block">Current Month</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body p-3">
-                  <div class="row g-0 text-center">
-                    <div class="col-6 col-md-3 border-200 border-bottom border-end p-4 db-snap-box">
-                      <h6 class="pb-1 text-700">Expenses </h6>
-                      <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
-                    </div>
-                    <div class="col-6 col-md-3 border-200 border-md-200 border-bottom border-md-end p-4 db-snap-box">
-                      <h6 class="pb-1 text-700">Income </h6>
-                      <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
-                    </div>
-                    <div class="col-6 col-md-3 border-200 border-bottom border-end p-4 db-snap-box">
-                      <h6 class="pb-1 text-700">Net Flow </h6>
-                      <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
-                    </div>
-                    <div class="col-6 col-md-3 border-200 border-bottom p-4 db-snap-box">
-                      <h6 class="pb-1 text-700">Cash Available </h6>
-                      <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
-                    </div>
-
-                    <div class="col-6 col-md-3 border-200 border-bottom border-md-bottom-0 border-end py-4 db-snap-box">
-                      <h6 class="pb-1 text-700">Credit Available </h6>
-                      <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
-                    </div>
-                    <div class="col-6 col-md-3 border-200 border-bottom border-md-bottom-0 border-md-end py-4 ps-3 db-snap-box">
-                      <h6 class="pb-1 text-700">Credit Loans </h6>
-                      <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
-                    </div>
-                    <div class="col-6 col-md-3 border-200 border-end py-4 ps-3 db-snap-box">
-                      <h6 class="pb-1 text-700">Credit Usage </h6>
-                      <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
-                    </div>
-                    <div class="col-6 col-md-3 py-4 ps-md-3 db-snap-box">
-                      <h6 class="pb-1 text-700">Investments </h6>
-                      <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Snapshot Ends -->
-
-            <!-- Recent Transactions -->
-            <div class="col-lg-6 mb-4">
-              <h5 class="block-title"><i class="fas fa-dollar-sign"></i> Recent Transactions</h5>
-              <div class="card overflow-hidden">
-                <div class="card-header bg-light">
-                  <div class="row">
-                    <div class="col-6 col-lg-3">
-                      <h5>Account</h5>
-                    </div>
-                    <div class="col-6 col-lg-4 pe-card">
-                      <select class="form-select form-select-sm">
-                        <option>All</option>
-                        <option>Estimated Time</option>
-                        <option>Billable Time</option>
-                      </select>
-                    </div>
-                    <div class="col-0 col-lg-5"></div>
-                  </div>
-                </div>
-                <div class="card-body p-0 table-responsive">
-                  <table class="table table-bordered table-hover text-center mb-0">
-                    <thead class="bg-200 text-900">
-                      <tr>
-                        <th scope="col">Date</th>
-                        <th scope="col">Merchant</th>
-                        <th scope="col">Category</th>
-                        <th scope="col">Amount</th>
-                        <th scope="col">Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                      <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                      <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                      <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                      <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                      <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                      <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                      <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                      <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="card-footer bg-light p-0 text-center">
-                  <a class="btn btn-link" href="transactions.html">View More <i class="fas fa-chevron-right ms-1 fs--2"></i></a>
-                </div>
-              </div>
-            </div>
-            <!-- Recent Transactions Ends -->
-
-            <!-- Balance Sheet -->
-            <div class="mb-4">
-              <div class="row">
-                <div class="col-8">
-                  <h5 class="block-title"><i class="fas fa-th-list"></i> Balance Sheet</h5>
-                </div>
-                <div class="col-4 text-end">
-                  <h5 style="color: #d8e2ef;">
-                    <i class="fas fa-plus-circle" type="button" data-bs-toggle="modal" data-bs-target="#add-new-assets-modal"></i>
-                    <i class="fas fa-info-circle" type="button" data-bs-toggle="modal" data-bs-target="#balance-sheet-info-modal"></i>
-                  </h5>
-                </div>
-              </div>
-              <div class="card overflow-hidden">
-                <div class="card-body text-1000 ">
-                  <div class="alert bg-100 mb-0" role="alert" data-bs-toggle="collapse" data-bs-target="#netWorthCollapse" aria-expanded="false">
-                    <div class="row">
-                      <div class="col">Net Worth</div>
-                      <div class="col text-end"><span class="text-success">$172,297</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
-                    </div>
-                  </div>
-                  <div class="collapse" id="netWorthCollapse">
-                    <div class="border border-top-0 p-card">
-                      <table class="table table-bordered table-hover text-center mb-0">
-                        <thead class="bg-200 text-900">
-                          <tr>
-                            <th>Date</th><th>Merchant</th><th>Category</th><th>Amount</th><th>Status</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#checkingAccountCollapse" aria-expanded="false">
-                    <div class="row">
-                      <div class="col">Checking Accounts</div>
-                      <div class="col text-end"><span class="text-success">$4039</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
-                    </div>
-                  </div>
-                  <div class="collapse" id="checkingAccountCollapse">
-                    <div class="border border-top-0 p-card">
-                      <table class="table table-bordered table-hover text-center mb-0">
-                        <thead class="bg-200 text-900">
-                          <tr>
-                            <th>Date</th><th>Merchant</th><th>Category</th><th>Amount</th><th>Status</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#investmentAccountCollapse" aria-expanded="false">
-                    <div class="row">
-                      <div class="col">Investment Accounts</div>
-                      <div class="col text-end"><span class="text-success">$108</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
-                    </div>
-                  </div>
-                  <div class="collapse" id="investmentAccountCollapse">
-                    <div class="border border-top-0 p-card">
-                      <table class="table table-bordered table-hover text-center mb-0">
-                        <thead class="bg-200 text-900">
-                          <tr>
-                            <th>Date</th><th>Merchant</th><th>Category</th><th>Amount</th><th>Status</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#otherAssetsCollapse" aria-expanded="false">
-                    <div class="row">
-                      <div class="col">Home, Vehicle & Other Assets</div>
-                      <div class="col text-end"><span class="text-success">$744,018</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
-                    </div>
-                  </div>
-                  <div class="collapse" id="otherAssetsCollapse">
-                    <div class="border border-top-0 p-card">
-                      <table class="table table-bordered table-hover text-center mb-0">
-                        <thead class="bg-200 text-900">
-                          <tr>
-                            <th>Date</th><th>Merchant</th><th>Category</th><th>Amount</th><th>Status</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#creditLoansCollapse" aria-expanded="false">
-                    <div class="row">
-                      <div class="col">Credit Loans</div>
-                      <div class="col text-end"><span class="text-danger">-$1536</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
-                    </div>
-                  </div>
-                  <div class="collapse" id="creditLoansCollapse">
-                    <div class="border border-top-0 p-card">
-                      <table class="table table-bordered table-hover text-center mb-0">
-                        <thead class="bg-200 text-900">
-                          <tr>
-                            <th>Date</th><th>Merchant</th><th>Category</th><th>Amount</th><th>Status</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#otherLoansCollapse" aria-expanded="false">
-                    <div class="row">
-                      <div class="col">Mortgage, Other debts & Loans</div>
-                      <div class="col text-end"><span class="text-danger">-$562,487</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
-                    </div>
-                  </div>
-                  <div class="collapse" id="otherLoansCollapse">
-                    <div class="border border-top-0 p-card">
-                      <table class="table table-bordered table-hover text-center mb-0">
-                        <thead class="bg-200 text-900">
-                          <tr>
-                            <th>Date</th><th>Merchant</th><th>Category</th><th>Amount</th><th>Status</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                          <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Balance Sheet Ends -->
-
-            <!-- Trends -->
-            <div class="col-lg-6 mb-4">
-              <h5 class="block-title"><i class="fas fa-chart-line"></i> Trends</h5>
-              <div class="card overflow-hidden">
-                <div class="card-body h-100">
-                  <!-- Daily Spend -->
-                  <div class="row align-items-center mb-1">
-                    <div class="col-12 mb-3">
-                      <h5>Daily Spend</h5>
-                    </div>
-                    <div class="col-lg-4 mb-2 mb-lg-0">
-                      <select class="form-select form-select-sm">
-                        <option>2 Weeks</option>
-                        <option>Jan</option>
-                        <option>Dec</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-4 mb-2 mb-lg-0 d-grid">
-                      <button class="btn btn-dark">Total: $1,234</button>
-                    </div>
-                    <div class="col-lg-4 mb-2 mb-lg-0 d-grid">
-                      <button class="btn btn-dark">Transactions: 27</button>
-                    </div>
-                  </div>
-                  <div class="dashboard-trends-dailySpend" style="min-height: 300px;" data-echart-responsive="true"></div>
-                  <!-- Daily Spend Ends -->
-                  <br><br>
-                  <!-- Monthly Flow -->
-                  <div class="row align-items-center mb-1">
-                    <div class="col-lg-4 mb-3">
-                      <h5>Monthly Flow</h5>
-                    </div>
-                    <div class="col-lg-6 mb-3">
-                      <select class="form-select form-select-sm">
-                        <option>3 Months</option>
-                        <option>Jan</option>
-                        <option>Dec</option>
-                      </select>
-                    </div>
-                    <div class="col-0 co-lg-2"></div>
-                  </div>
-                  <div class="dashboard-trends-monthlyFlow" style="min-height: 300px;" data-echart-responsive="true"></div>
-                  <!-- Monthly Flow Ends -->
-                </div>
-                <div class="card-footer bg-light p-0 text-center">
-                  <a class="btn btn-link" href="reports/categories.html">View More <i class="fas fa-chevron-right ms-1 fs--2"></i></a>
-                </div>
-              </div>
-            </div>
-            <!-- Trends Ends -->
-
-            <!-- Insights -->
-            <div class="col-lg-6 mb-4">
-              <h5 class="block-title"><i class="fas fa-chart-bar"></i> Insights</h5>
-              <div class="card overflow-hidden">
-                <div class="card-body h-100">
-                  <!-- Spend Trend by Merchants -->
-                  <div class="row align-items-center mb-1">
-                    <div class="col-12 mb-3">
-                      <h5>Spend Trend by Merchants</h5>
-                    </div>
-                    <div class="col-6">
-                      <select class="form-select form-select-sm">
-                        <option>2 Weeks</option>
-                        <option>Jan</option>
-                        <option>Dec</option>
-                      </select>
-                    </div>
-                    <div class="col-6">
-                      <select class="form-select form-select-sm">
-                        <option>Top 15</option>
-                        <option>Show All</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="dashboard-insights-merchants" style="min-height: 500px;" data-echart-responsive="true"></div>
-                  <!-- Spend Trend by Merchants -->
-                  <br>
-                  <!-- Spend Trend by Category -->
-                  <div class="row align-items-center">
-                    <div class="col-12 mb-3">
-                      <h5>Spend Trend by Category</h5>
-                    </div>
-                    <div class="col-6">
-                      <select class="form-select form-select-sm">
-                        <option>2 Weeks</option>
-                        <option>Jan</option>
-                        <option>Dec</option>
-                      </select>
-                    </div>
-                    <div class="col-6">
-                      <select class="form-select form-select-sm">
-                        <option>Top 15</option>
-                        <option>Show All</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="dashboard-insights-category" style="min-height: 320px;" data-echart-responsive="true"></div>
-                  <!-- Spend Trend by Category -->
-                  <br><br>
-                  <!-- Spend Trend by Category Table -->
-                  <table class="table table-responsive table-hover table-bordered">
-                    <thead class="table-dark">
-                      <tr>
-                        <th scope="col">Category</th>
-                        <th scope="col">Spend</th>
-                        <th scope="col">Share</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Shopping</td>
-                        <td>$50.00</td>
-                        <td>38%</td>
-                      </tr>
-                      <tr>
-                        <td>Pharmacy</td>
-                        <td>$50.00</td>
-                        <td>25%</td>
-                      </tr>
-                      <tr>
-                        <td>Restaurants</td>
-                        <td>$35.00</td>
-                        <td>11%</td>
-                      </tr>
-                      <tr>
-                        <td>Income</td>
-                        <td>$39.00</td>
-                        <td>9%</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <!-- Spend Trend by Category Table -->
-                </div>
-                <div class="card-footer bg-light p-0 text-center">
-                  <a class="btn btn-link" href="reports/merchants.html">View More <i class="fas fa-chevron-right ms-1 fs--2"></i></a>
-                </div>
-              </div>
-            </div>
-            <!-- Insights Ends -->
-
-            <!-- Budgets Starts -->
-            <div class="col-lg-6 mb-4">
-              <h5 class="block-title"><i class="fas fa-balance-scale"></i> Budgets</h5>
-              <div class="card overflow-hidden">
-                <div class="card-header bg-light">
-                  <div class="row g-3 align-items-center">
-                    <div class="col-auto mb-1 mb-lg-0">
-                      <h5>Budget for</h5>
-                    </div>
-                    <div class="col-auto mb-1 mb-lg-0">
-                      <select class="form-select form-select-sm">
-                        <option>Jan 2022</option>
-                        <option>Dec 2021</option>
-                        <option>Nov 2021</option>
-                      </select>
-                    </div>
-                    <div class="col-auto"></div>
-                    <div class="col-auto">
-                      <h5>Show</h5>
-                    </div>
-                    <div class="col-auto">
-                      <select class="form-select form-select-sm">
-                        <option>All</option>
-                        <option>Estimated Time</option>
-                        <option>Billable Time</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body h-100">
-                  <div class="dashboard-budget" style="min-height: 300px;" data-echart-responsive="true"></div>
-                </div>
-                <div class="card-footer bg-light p-0 text-center">
-                  <a class="btn btn-link" href="budgets.html">View More<i class="fas fa-chevron-right ms-1 fs--2"></i></a>
-                </div>
-              </div>
-            </div>
-            <!-- Budgets Ends -->
-
-            <!-- Credit Limit Starts -->
-            <div class="mb-4">
-              <h5 class="block-title"><i class="fas fa-money-bill"></i> Credit Limit and Usage</h5>
-              <div class="card overflow-hidden">
-                <div class="card-header bg-light">
-                  <div class="row">
-                    <div class="col-6 col-lg-3">
-                      <h5>Account</h5>
-                    </div>
-                    <div class="col-6 col-lg-4 pe-card">
-                      <select class="form-select form-select-sm">
-                        <option>All</option>
-                        <option>Estimated Time</option>
-                        <option>Billable Time</option>
-                      </select>
-                    </div>
-                    <div class="col-0 col-lg-5"></div>
-                  </div>
-                </div>
-                <div class="card-body h-100">
-                  <!-- Four boxes starts -->
-                  <div class="row g-2 mt-3">
-                    <div class="col-6 mb-1 d-flex align-items-stretch">
-                      <div class="card card-hover-zoom text-white bg-primary">
-                        <div class="card-body text-center">
-                          <div class="card-title">Credit Limit</div>
-                          <p class="card-text">$4,580</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6 mb-lg-1 d-flex align-items-stretch">
-                      <div class="card card-hover-zoom text-white bg-primary">
-                        <div class="card-body text-center">
-                          <div class="card-title">Credit Loan</div>
-                          <p class="card-text">$2,458</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6 d-flex align-items-stretch">
-                      <div class="card card-hover-zoom text-white bg-primary">
-                        <div class="card-body text-center">
-                          <div class="card-title">Credit Available</div>
-                          <p class="card-text">$4,150</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6 d-flex align-items-stretch">
-                      <div class="card card-hover-zoom text-white bg-primary">
-                        <div class="card-body text-center">
-                          <div class="card-title">Credit Usage</div>
-                          <p class="card-text">6%</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Four boxes ends -->
-
-                  <!-- Gauge chart starts -->
-                  <div class="dashboard-credit-limit mt-5" style="min-height: 400px; z-index: -1;" data-echart-responsive="true"></div>
-                  <div class="row fs--1 fw-semi-bold text-500 g-0 px-3 mb-5" style="margin-top: -150px;">
-                    <div class="col-lg-3 col-6"><span class="dot" style="background-color: #8DB3F8;"></span><span>Excellent (0-10%)</span></div>
-                    <div class="col-lg-3 col-6"><span class="dot" style="background-color: #5A8FF6;"></span><span>Good (11-30%)</span></div>
-                    <div class="col-lg-3 col-6"><span class="dot" style="background-color: #2A6EF4;"></span><span>High (31-60%)</span></div>
-                    <div class="col-lg-3 col-6"><span class="dot" style="background-color: #1D4FD0;"></span><span>Very High (61-100%)</span></div>
-                  </div>
-                  <!-- Gauge chart ends -->
-                </div>
-                <div class="card-footer bg-light p-0 text-center" style="z-index: 1;">
-                  <a class="btn btn-link" href="debts.html">View More<i class="fas fa-chevron-right ms-1 fs--2"></i></a>
-                </div>
-              </div>
-            </div>
-            <!-- Credit Limit Ends -->  
-
-            <!-- Credit Score Starts -->
-            <div class="col-lg-6 mb-4">
-              <h5 class="block-title"><i class="fas fa-credit-card"></i> Credit Score</h5>
-              <div class="card overflow-hidden">
-                <div class="card-body h-100 p-5">
-                  <h4 class="text-center">
-                    <a href="score.html"class="btn btn-primary rounded-pill px-3">Start Tracking your Equifax Credit Score</a>
-                  </h4><br>
-                  <p>
-                    <i class="fa fa-check"></i> &nbsp;Track and Monitor Equifax Credit Score <br><br>
-                    <i class="fa fa-check"></i> &nbsp;Track and Monitor Equifax Credit Score <br><br>
-                    <i class="fa fa-check"></i> &nbsp;Get detailed Equifax Credit Report <br><br>
-                    <i class="fa fa-check"></i> &nbsp;Get updated Credit Score every Month <br><br>
-                    <i class="fa fa-check"></i> &nbsp;Receive notification when your Credit Score is updated <br><br>
-                    <i class="fa fa-check"></i> &nbsp;See Vantage Score with top 4 factors <br><br>
-                    <i class="fa fa-check"></i> &nbsp;Understand the reported open Accounts, Debts and Loans on your file
-                  </p>
-                </div>
-                <div class="card-footer bg-light p-0 text-center">
-                  <a class="btn btn-link" href="score.html">View More <i class="fas fa-chevron-right ms-1 fs--2"></i></a>
-                </div>
-              </div>
-            </div>
-            <!-- Credit Score Ends -->
-
-            <!-- Recurring Merchants Starts -->
-            <div class="col-lg-6 mb-4">
-              <h5 class="block-title"><i class="fas fa-redo-alt"></i> Recurring Merchants</h5>
-              <div class="card overflow-hidden">
-                <div class="card-body h-100 table-responsive">
-                  <table class="table table-hover table-bordered mb-0">
-                    <thead class="bg-200 text-900">
-                      <tr>
-                        <th scope="col">Occurence Date</th>
-                        <th scope="col">Merchant</th>
-                        <th scope="col">Amount</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Shopping</td>
-                        <td>$50.00</td>
-                        <td>38%</td>
-                      </tr>
-                      <tr>
-                        <td>Pharmacy</td>
-                        <td>$50.00</td>
-                        <td>25%</td>
-                      </tr>
-                      <tr>
-                        <td>Restaurants</td>
-                        <td>$35.00</td>
-                        <td>11%</td>
-                      </tr>
-                      <tr>
-                        <td>Income</td>
-                        <td>$39.00</td>
-                        <td>9%</td>
-                      </tr>
-                    </tbody>
-                    <tfoot class="bg-200 text-900">
-                      <tr>
-                        <td colspan="2">No. of Merchants: 12</td>
-                        <td>Total: $1,234</td>
-                      </tr>
-                    </tfoot>
-                  </table>
-                </div>
-                <div class="card-footer bg-light p-0 text-center">
-                  <a class="btn btn-link" href="bills.html">View More<i class="fas fa-chevron-right ms-1 fs--2"></i></a>
-                </div>
-              </div>
-            </div>
-            <!-- Recurring Merchants Ends -->
-
-            <!-- UTILITY BILL REMINDERS Starts -->
-            <div class="col-lg-6 mb-4">
-              <h5 class="block-title"><i class="fas fa-clock"></i> UTILITY BILL REMINDERS</h5>
-              <div class="card overflow-hidden">
-                <div class="card-body h-100 table-responsive">
-                  <table class="table table-hover table-bordered mb-0">
-                    <thead class="bg-200 text-900">
-                      <tr>
-                        <th scope="col">Merchant</th>
-                        <th scope="col">Due By</th>
-                        <th scope="col">Category</th>
-                        <th scope="col">Amount</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Alameda County Water</td>
-                        <td>Feb-16</td>
-                        <td>Utilities</td>
-                        <td>$480.89</td>
-                      </tr>
-                      <tr>
-                        <td>Replublic Services</td>
-                        <td>Feb-18</td>
-                        <td>Utilities</td>
-                        <td>$165.89</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="card-footer bg-light p-0 text-center">
-                  <a class="btn btn-link" href="bills.html">View More<i class="fas fa-chevron-right ms-1 fs--2"></i></a>
-                </div>
-              </div>
-            </div>
-            <!-- UTILITY BILL REMINDERS Ends -->
-          </div>
-          <!-- Mobile View -->
+          <!-- Main Content -->
 
           <!-- Temp Cred Score -->
           <div class="row g-0 mb-3">

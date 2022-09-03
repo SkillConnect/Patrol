@@ -1,5 +1,3 @@
-const view = (window.innerWidth && window.innerWidth > 992) ? '.desktop-view' : '.mobile-view'
-
 /* -------------------------------------------------------------------------- */
 // Notifications Alert
 // Append notifications to this list
@@ -32,7 +30,7 @@ var startNotificationAlert = setInterval(
 /* -------------------------------------------------------------------------- */
 /* Echarts Horizontal Bar Chart - Dashboard/Insights/Merchants                */
 var dashboardInsightsSpendByMerchantsChartInit = function dashboardInsightsSpendByMerchantsChartInit() {
-    var $horizontalBarChartEl = document.querySelector(`${view} .dashboard-insights-merchants`);
+    var $horizontalBarChartEl = document.querySelector(`.dashboard-insights-merchants`);
   
     if ($horizontalBarChartEl) {
       // Get options from data attribute
@@ -141,7 +139,7 @@ var dashboardInsightsSpendByMerchantsChartInit = function dashboardInsightsSpend
 /* -------------------------------------------------------------------------- */
 /* Echarts Pie Chart - Dashboard/Insights/Category                            */
 var dashboardInsightsSpendByCategoryInit = function dashboardInsightsSpendByCategoryInit() {
-    var $pieChartEl = document.querySelector(`${view} .dashboard-insights-category`);
+    var $pieChartEl = document.querySelector(`.dashboard-insights-category`);
   
     if ($pieChartEl) {
       // Get options from data attribute
@@ -243,7 +241,7 @@ var dashboardInsightsSpendByCategoryInit = function dashboardInsightsSpendByCate
 /* -------------------------------------------------------------------------- */
 /* Echarts Line Chart - Dashboard/Trends/DailySpend                           */
 var dashboardTrendsDailySpendInit = function dashboardTrendsDailySpendInit() {
-    var $lineChartEl = document.querySelector(`${view} .dashboard-trends-dailySpend`);
+    var $lineChartEl = document.querySelector(`.dashboard-trends-dailySpend`);
   
     if ($lineChartEl) {
       // Get options from data attribute
@@ -374,7 +372,7 @@ var dashboardTrendsDailySpendInit = function dashboardTrendsDailySpendInit() {
 /* -------------------------------------------------------------------------- */
 /* Echarts Line Chart - Dashboard/Trends/MonthlyFlow                          */
 var dashboardTrendsMonthlyFlowInit = function dashboardTrendsMonthlyFlowInit() {
-    const $monthlyFlowChart = document.querySelector(`${view} .dashboard-trends-monthlyFlow`);
+    const $monthlyFlowChart = document.querySelector(`.dashboard-trends-monthlyFlow`);
   
     if ($monthlyFlowChart) {
       const data = [
@@ -485,7 +483,7 @@ var dashboardTrendsMonthlyFlowInit = function dashboardTrendsMonthlyFlowInit() {
 /* -------------------------------------------------------------------------- */
 /* Echarts Horizontal Bar Chart - Dashboard/Budget                            */
 var dashboardBudgetChartInit = function dashboardBudgetChartInit() {
-  var $barSeriesChartEl = document.querySelector(`${view} .dashboard-budget`);
+  var $barSeriesChartEl = document.querySelector(`.dashboard-budget`);
 
   if ($barSeriesChartEl) {
     // Get options from data attribute
@@ -590,7 +588,7 @@ var dashboardBudgetChartInit = function dashboardBudgetChartInit() {
 /* -------------------------------------------------------------------------- */
 /* Echarts Gauge Chart - Dashboard/CreditLimit               */
 var dashboardCreditLimitChartInit = function dashboardCreditLimitChartInit() {
-  var $chartEl = document.querySelector(`${view} .dashboard-credit-limit`);
+  var $chartEl = document.querySelector(`.dashboard-credit-limit`);
 
   if ($chartEl) {
     // Get options from data attribute
