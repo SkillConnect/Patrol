@@ -66,11 +66,11 @@
         <div class="content mt-4">
           <h5 class="block-title page-title text-center">Settings</h5>
           <div class="card overflow-hidden">
-            <div class="card-body">
+            <div class="card-body px-lg-5">
               <div class="row">
                 <!-- Account details -->
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                  <div class="card">
+                <div class="col-lg-4 mb-5">
+                  <div class="card border shadow-sm">
                     <div class="card-body text-center">
                       <br>
                       <img src="./assets/img/round_logo.png" style="max-width: 200px" class="mb-4">
@@ -78,7 +78,7 @@
                       <p> <i class="fas fa-mobile-alt"></i> 1234566778 <a href="#"><i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-contact-modal"></i></a></p>
                       <button class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#feedback-modal">Send Feedback</button>
 
-                      <div class="card text-start">
+                      <div class="card text-start mb-3">
                         <div class="card-header bg-500 text-white">Last Login</div>
                         <div class="card-body">
                           <p><i class="fas fa-clock"></i> Wed Jan 26 03:04:49 UTC 2022 </p>
@@ -91,8 +91,8 @@
                 <!-- Account details ends -->
 
                 <!-- Setting Tabs -->
-                <div class="col-lg-8">
-                  <div class="card">
+                <div class="col-lg-8 mb-5">
+                  <div class="card shadow-sm border">
                     <div class="card-body">
                       <ul class="nav nav-pills px-lg-3" id="pill-myTab" role="tablist">
                         <li class="nav-item"><a class="nav-link active" id="pill-billing-tab" data-bs-toggle="tab" href="#pill-tab-billing" role="tab" aria-controls="pill-tab-billing" aria-selected="true">Billing</a></li>
@@ -106,14 +106,60 @@
                         <div class="tab-pane fade show active" id="pill-tab-billing" role="tabpanel" aria-labelledby="billing-tab">
                           <div class="card mb-4">
                             <div class="card-header bg-300">Subscription</div>
-                            <div class="card-body">
-                              <i class="fa fa-info-circle"></i> Congratulations! You are now part of MoneyPatrol beta user Free Membership Plan.
+                            <div class="card-body table-responsive">
+                              <table class="table table-hover table-bordered text-center align-middle">
+                                <thead class="bg-200 text-900">
+                                  <tr> 
+                                    <th>LAST CHARGED</th>
+                                    <th>BILLING CYCLE STARTS</th>
+                                    <th>BILLING CYCLE ENDS</th>
+                                    <th>STATUS</th>
+                                    <th>TYPE</th>
+                                    <th>ACTION</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Nov 27, 2019</td>
+                                    <td>Nov 27, 2019</td>
+                                    <td>Nov 27, 2019</td>
+                                    <td>Yearly</td>
+                                    <td>Active</td>
+                                    <td>
+                                      <a class="btn btn-sm btn-primary" href="membership.html">Manage Membership</a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
                             </div>
                           </div>
                           <div class="card">
                             <div class="card-header bg-300">Card Payment Details</div>
-                            <div class="card-body">
-                              <i class="fa fa-info-circle"></i> No Card Payment Added!
+                            <div class="card-body table-responsive">
+                              <table class="table table-hover table-bordered text-center align-middle">
+                                <thead class="bg-200 text-900">
+                                  <tr> 
+                                    <th>TYPE</th>
+                                    <th>HOLDER NAME</th>
+                                    <th>CARD NUMBER</th>
+                                    <th>EXP MONTH</th>
+                                    <th>EXP YEAR</th>
+                                    <th>ACTION</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>CREDIT</td>
+                                    <td>STGAKKI</td>
+                                    <td>2022-XXXX</td>
+                                    <td>12</td>
+                                    <td>2022</td>
+                                    <td>
+                                      <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#update-card-modal">Update Card</button>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
                             </div>
                           </div>
                         </div>
@@ -174,7 +220,7 @@
                             </div>
                           </div>
     
-                          <div class="card mb-4">
+                          <div class="card">
                             <div class="card-header bg-300">Delete Account</div>
                             <div class="card-body">
                               <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-account-modal">Delete Account</button> <br><br>
@@ -215,7 +261,7 @@
                             </div>
                           </div>
     
-                          <div class="card mb-4">
+                          <div class="card">
                             <div class="card-header bg-300">Configure Text & Email Alerts</div>
                             <div class="card-body table-responsive" id="configure-alerts">
 
@@ -224,6 +270,7 @@
                         </div>
                         <div class="tab-pane fade" id="pill-tab-security" role="tabpanel" aria-labelledby="security-tab">
                           <div class="card mb-4">
+                            <div class="card-header bg-300">Authentication</div>
                             <div class="card-body">
                               <div class="row">
                                 <div class="col-8"><h5 style="font-size: 1rem;"> Enable Dual Factor Authentication </h5></div>
@@ -259,7 +306,7 @@
                           </div>
                         </div>
                         <div class="tab-pane fade" id="pill-tab-invites" role="tabpanel" aria-labelledby="invites-tab">
-                          <div class="card mb-4">
+                          <div class="card">
                             <div class="card-header bg-300">Invite Friends</div>
                             <div class="card-body">
                               <div class="row mb-4">
@@ -274,7 +321,7 @@
                               Also you'll be able to see your progress of your invitation and total successful invitation.
     
                               <div class="table-responsive mt-3">
-                                <table class="table table-hover table-bordered mt-4">
+                                <table class="table table-hover table-bordered mt-4 align-middle">
                                   <thead class="bg-200 text-900">
                                     <tr> 
                                       <th>EMAIL</th>
@@ -303,7 +350,7 @@
                           </div>
                         </div>
                         <div class="tab-pane fade" id="pill-tab-support" role="tabpanel" aria-labelledby="support-tab">
-                          <div class="card mb-4">
+                          <div class="card">
                             <form class="p-3">
                               <div class="mb-3">
                                 <textarea class="form-control" rows="10" placeholder="Please write your query here and then submit this form."></textarea>
@@ -551,7 +598,53 @@
             </div>
           </div>
         </div>
-        <!-- Info Modal ends -->             
+        <!-- Info Modal ends -->    
+        <!-- Update Card Modal -->
+        <div class="modal fade" id="update-card-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Update Card</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Card Holder Name</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Card Number</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label class="form-label">Expiry Date</label>
+                          <input type="text" placeholder="MM / YYYY" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label class="form-label">CVC</label>
+                          <input type="password" placeholder="XXX" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <br>
+                  <img src="./assets/img/icons/icon-payment-methods.png" style="width: 50%;">
+                  <p class="mt-2">If you would like to modify anything, please visit the <b>Account</b> section</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#verify-mobile-modal">Update </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Update Card Modal ends -->         
       </div>
     </main>
 

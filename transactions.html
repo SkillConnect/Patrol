@@ -173,7 +173,9 @@
                   </div>
                 </div>
                 <!-- Search Ends -->
-                <div class="table-responsive scrollbar">
+
+                <!-- Table Desktop View Starts -->
+                <div class="table-responsive scrollbar d-none d-md-block">
                   <table class="table table-bordered table-hover overflow-hidden text-center align-middle">
                     <thead class="bg-200 text-900 text-center ">
                       <tr>
@@ -238,6 +240,69 @@
                     </tbody>
                   </table>
                 </div>
+                <!-- Table Desktop View Ends -->
+
+                <!-- Table Mobile View -->
+                <div class="card shopping-cart-bar-min-height h-100 d-md-none">
+                  <div class="card-body py-0 h-100">
+                    <div>
+                      <div class="bg-secondary w-100 py-2 px-2 text-white text-center rounded-pill">
+                        20th OCT
+                      </div>
+                      <div class="row g-0 align-items-center py-3" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal">
+                        <div class="col pe-4">
+                          <h5>Remington Park</h5>
+                          <h6 class="text-900">Category</h6>
+                        </div>
+                        <div class="col-auto text-end">
+                          <p class="mb-0 font-sans-serif text-success"> $43.6</p>
+                        </div>
+                      </div>
+                      <div class="row g-0 align-items-center py-3 border-top" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal">
+                        <div class="col pe-4">
+                          <h5>Netflix</h5>
+                          <h6 class="text-900">Category</h6>
+                        </div>
+                        <div class="col-auto text-end">
+                          <p class="mb-0 font-sans-serif text-danger"> $13.6</p>
+                        </div>
+                      </div>
+                      <div class="row g-0 align-items-center py-3 border-top" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal">
+                        <div class="col pe-4">
+                          <h5>Airtel Mobile</h5>
+                          <h6 class="text-900">Category</h6>
+                        </div>
+                        <div class="col-auto text-end">
+                          <p class="mb-0 font-sans-serif text-success"> $26.6</p>
+                        </div>
+                      </div>
+                      <div class="bg-secondary w-100 py-2 px-2 text-white text-center rounded-pill">
+                        15th OCT
+                      </div>                      
+                      <div class="row g-0 align-items-center py-3" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal">
+                        <div class="col pe-4">
+                          <h5>Disney Shopping</h5>
+                          <h6 class="text-900">Category</h6>
+                        </div>
+                        <div class="col-auto text-end">
+                          <p class="mb-0 font-sans-serif text-success"> $16</p>
+                        </div>
+                      </div>
+                      <div class="row g-0 align-items-center py-3 border-top" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal">
+                        <div class="col pe-4">
+                          <h5>New Bazaar</h5>
+                          <h6 class="text-900">Category</h6>
+                        </div>
+                        <div class="col-auto text-end">
+                          <p class="mb-0 font-sans-serif text-danger"> $43.6</p>
+                        </div>
+                      </div>                                            
+                    </div>
+                  </div>
+                </div>
+                <!-- Table Mobile View Ends -->
+
+
                 <div class="d-flex justify-content-center mt-3">
                   <button class="btn btn-sm btn-falcon-default me-1" type="button" title="Previous" data-list-pagination="prev"><span class="fas fa-chevron-left"></span></button>
                   <ul class="pagination mb-0"></ul>
@@ -468,10 +533,10 @@
         <div class="modal fade" id="edit-transaction-modal" tabindex="-1" role="dialog" aria-hidden="true">
           <div class="modal-dialog modal-dialog-scrollable" role="document" style="max-width: 500px">
             <div class="modal-content position-relative">
-              <div class="modal-header">
-                <h5 class="mx-auto">Edit Transaction</h5>
-              </div>
               <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Edit Transaction</h5>
+                </div>                
                 <div class="p-4 pb-0">
                   <form>
                     <div class="mb-3">

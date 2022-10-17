@@ -19,7 +19,7 @@ Object.keys(CONFIG).forEach(function (key) {
   }
 });
 
-if (window.innerWidth < 1200) {
+if (window.innerWidth < 1400) {
   localStorage.setItem('isFluid', true)
 } else {
   localStorage.setItem('isFluid', false)
