@@ -204,7 +204,7 @@
                         <th class="text-nowrap" scope="col">Category <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#category-modal"></i></th>
                         <th class="text-nowrap" scope="col">Institution <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#institution-modal"></i></th>
                         <th class="text-nowrap" scope="col">Tags <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#tags-modal"></i></th>
-                        <th class="text-nowrap" scope="col">Type <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#type-modal"></i></th>
+                        <th scope="col">Type <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#type-modal"></i></th>
                         <th class="text-nowrap" scope="col">Reviewed? <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#reviewed-modal"></i></th>
                         <th class="text-nowrap" scope="col">Action <i class="fa fa-info-circle" data-bs-toggle="modal" data-bs-target="#action-modal"></i></th>
                       </tr>
@@ -216,7 +216,7 @@
                         <td class="text-nowrap merchant"><a href="./dataInsights/merchants.html">Mowry Plaza Pharmacy</a></td>
                         <td class="text-nowrap category"><a href="./dataInsights/categories.html">Pharmacy</a></td>
                         <td class="text-nowrap institution">Discover Card</td>
-                        <td class="tags"><input class="form-control form-control-sm" type="text"></td>
+                        <td class="tags">Some Tag</td>
                         <td class="type">
                           <select class="form-select form-select-sm">
                             <option value="5">5</option>
@@ -230,7 +230,9 @@
                             <i class="fa fa-check"></i> &nbsp;
                             <i class="fa fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal"></i> &nbsp;
                             <i class="fa fa-edit" data-bs-toggle="modal" data-bs-target="#add-memo-modal"></i> &nbsp;
+                            <i class="fa fa-tag" data-bs-toggle="modal" data-bs-target="#manage-tags-modal"></i> &nbsp;
                             <i class="fa fa-code-branch" data-bs-toggle="modal" data-bs-target="#split-transaction-modal"></i> &nbsp;
+                            <i class="fa fa-paperclip" data-bs-toggle="modal" data-bs-target="#split-transaction-modal"></i> &nbsp;
                             <i class="fa fa-trash" data-bs-toggle="modal" data-bs-target="#delete-modal"></i>
                         </td>
                       </tr>
@@ -240,7 +242,7 @@
                         <td class="text-nowrap merchant"><a href="./dataInsights/merchants.html">Health Insurance</a></td>
                         <td class="text-nowrap category"><a href="./dataInsights/categories.html">LIC</a></td>
                         <td class="text-nowrap institution">Mastercard Card</td>
-                        <td class="tags"><input class="form-control form-control-sm" type="text"></td>
+                        <td class="tags">Some Tag</td>
                         <td class="type">
                           <select class="form-select form-select-sm">
                             <option value="5">5</option>
@@ -254,7 +256,9 @@
                           <i class="fa fa-check"></i> &nbsp;
                           <i class="fa fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal"></i> &nbsp;
                           <i class="fa fa-edit" data-bs-toggle="modal" data-bs-target="#add-memo-modal"></i> &nbsp;
+                          <i class="fa fa-tag" data-bs-toggle="modal" data-bs-target="#manage-tags-modal"></i> &nbsp;
                           <i class="fa fa-code-branch" data-bs-toggle="modal" data-bs-target="#split-transaction-modal"></i> &nbsp;
+                          <i class="fa fa-paperclip" data-bs-toggle="modal" data-bs-target="#split-transaction-modal"></i> &nbsp;
                           <i class="fa fa-trash" data-bs-toggle="modal" data-bs-target="#delete-modal"></i>
                         </td>
                       </tr>
@@ -412,29 +416,95 @@
         </div>
         <!-- Info Modals ends -->
 
-        <!-- Edit Transaction -->
-        <div class="modal fade" id="edit-transaction-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Manage Tags -->
+        <div class="modal fade" id="manage-tags-modal" tabindex="-1" role="dialog" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
             <div class="modal-content position-relative">
               <div class="modal-body p-0">
                 <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
-                  <h5 class="mb-1 text-white">Edit Transaction</h5>
+                  <h5 class="mb-1 text-white">Add Custom Tags</h5>
                 </div>
+                <div class="p-4 pb-2">
+                  <p class="text-danger">
+                    When you delete a category, all transactions assUncategorized
+                  </p>
+
+                  <form class="row g-3">
+                    <div class="col-lg-8">
+                      <input type="password" class="form-control" placeholder="Add Tag">
+                    </div>
+                    <div class="col-lg-4">
+                      <button type="submit" class="btn btn-primary mb-3">Save</button>
+                    </div>
+                  </form>
+
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-hover text-center">
+                      <thead class="bg-200 text-900">
+                        <tr>
+                          <th scope="col">List of Existing Tags</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>My Tag 1</td>
+                          <td>
+                            <i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-tags-modal"></i> &nbsp;
+                            <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-tags-modal"></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td>
+                            <i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-tags-modal"></i> &nbsp;
+                            <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-tags-modal"></i>
+                          </td>
+                        </tr>                                                                      
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="row my-4">
+                    <div class="col-lg-6 d-grid mb-2 px-2">
+                      <a class="btn btn-primary" href="/tag-rules.html">View Tag Rules</a>
+                    </div>
+                    <div class="col-lg-6 d-grid mb-2 px-2">
+                      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#manage-tagrules-modal">
+                        <i class="fas fa-plus-circle"></i> Manage Tags
+                      </button>
+                    </div>                    
+                  </div>                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Manage Tags Ends -->  
+
+        <!-- Edit Transaction -->
+        <div class="modal fade" id="edit-transaction-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Edit Transaction</h5>
+                </div>                
                 <div class="p-4 pb-0">
                   <form>
-                    <div class="mb-1">
+                    <div class="mb-3">
                       <label class="form-label">Date:</label>
                       <input type="text" class="form-control">
                     </div>
-                    <div class="mb-1">
+                    <div class="mb-3">
                       <label class="form-label">Institution:</label>
                       <input type="text" class="form-control">
                     </div>
-                    <div class="mb-1">
+                    <div class="mb-3">
                       <label class="form-label">Amount:</label>
                       <input type="text" class="form-control">
                     </div>
-                    <div class="mb-1">
+                    <div class="mb-3">
                       <label class="col-form-label" for="type">Merchant:</label>
                       <select class="form-select" aria-label="Default select example">
                         <option selected>Select Merchant</option>
@@ -442,7 +512,7 @@
                         <option value="2">Microsoft Azure</option>
                       </select>
                     </div>
-                    <div class="mb-1">
+                    <div class="mb-3">
                       <label class="col-form-label" for="type">Category:</label>
                       <select class="form-select" aria-label="Default select example">
                         <option selected>Select Category</option>
@@ -450,7 +520,34 @@
                         <option value="2">Deposit</option>
                       </select>
                     </div>
-                    <div class="mb-1">
+
+                    <div class="mb-3">
+                      <label class="col-form-label text-800" for="type">Apply Merchant and Category Name change to:</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio-1" checked>
+                        <label class="form-check-label mb-0" for="radio-1"> only this transaction </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio-2">
+                        <label class="form-check-label mb-0" for="radio-2">
+                          this transaction + all past and future transactions which would have the current Category "Travel & Transportation" 
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio-3">
+                        <label class="form-check-label mb-0" for="radio-3">
+                          this transaction + all past and future transactions which would have the current Merchant "Uberbv Uber Pending" 
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio-4">
+                        <label class="form-check-label mb-0" for="radio-4">
+                          this transaction + all past and future transactions which would have the current Merchant and Category combination pair: Merchant as "Uberbv Uber Pending" and Category as "Travel & Transportation" 
+                        </label>
+                      </div>                                            
+                    </div>
+
+                    <div class="mb-3">
                       <label class="col-form-label" for="type">Reviewed:</label>
                       <select class="form-select" aria-label="Default select example">
                         <option value="0" selected>Reviewed Later</option>
@@ -458,7 +555,7 @@
                         <option value="2">Not Reviewed</option>
                       </select>
                     </div>
-                    <div class="mb-1">
+                    <div class="mb-3">
                       <label class="col-form-label" for="type">Type:</label>
                       <select class="form-select" aria-label="Default select example">
                         <option selected>Select Type</option>
@@ -466,11 +563,11 @@
                         <option value="2">Expense</option>
                       </select>
                     </div>
-                    <div class="mb-1">
+                    <div class="mb-3">
                       <label class="form-label">Tags:</label>
-                      <input type="text" class="form-control">
+                      <a href="" data-bs-toggle="modal" data-bs-target="#manage-tags-modal">Add/Edit</a>
                     </div>
-                    <div class="mb-2">
+                    <div class="mb-3">
                       <label class="form-label">Memo</label>
                       <textarea class="form-control" rows="3"></textarea>
                     </div>
@@ -598,6 +695,7 @@
     <script src="./vendors/is/is.min.js"></script>
     <script src="./vendors/echarts/echarts.min.js"></script>
     <script src="./vendors/fontawesome/all.min.js"></script>
+    <script src="./vendors/dayjs/dayjs.min.js"></script>
     <script src="./vendors/lodash/lodash.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="./vendors/list.js/list.min.js"></script>

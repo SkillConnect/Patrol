@@ -10,10 +10,10 @@
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/logo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/logo.png">
-    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png">
     <link rel="manifest" href="./assets/img/favicons/manifest.json">
     <meta name="msapplication-TileImage" content="./assets/img/favicons/mstile-150x150.png">
     <meta name="theme-color" content="#ffffff">
@@ -50,11 +50,11 @@
   </head>
 
   <body>
-    <main class="main" id="top">
+    <main class="main" id="top">     
       <!-- Navbar -->
-      <div id="navbarPlaceholder"></div>
+      <div id="mobileNavbarPlaceholder"></div>
       <!-- Navbar -->
-      
+
       <div class="container mb-2 mb-lg-5" data-layout="container">
         <script>
           var isFluid = JSON.parse(localStorage.getItem('isFluid'));
@@ -65,7 +65,143 @@
           }
         </script>
 
+        <nav class="navbar navbar-light navbar-vertical navbar-expand-xl">
+          <div class="d-flex align-items-center">
+            <div class="toggle-icon-wrapper">
+
+              <button class="btn navbar-toggler-humburger-icon navbar-vertical-toggle"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
+
+            </div><a class="navbar-brand" href="index.html">
+              <div class="d-flex align-items-center py-3">
+                <img class="me-2" src="assets/img/logo.png" style="height: 40px;"/>
+                <!-- <span class="font-sans-serif fs-1">MoneyPatrol</span> -->
+              </div>
+            </a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarVerticalCollapse" style="background-color: #031c4a; color: white;">
+            <div class="navbar-vertical-content scrollbar">
+              <ul class="navbar-nav flex-column mb-3" id="navbarVerticalNav">
+                <a class="nav-link" href="index.html">
+                  <div class="d-flex align-items-center">
+                    <span class="nav-link-icon"><span class="fas fa-chart-area"></span></span>
+                    <span class="nav-link-text ps-1">DASHBOARD</span>
+                  </div>
+                </a>
+                <a class="nav-link" href="transactions.html">
+                  <div class="d-flex align-items-center">
+                    <span class="nav-link-icon"><span class="fas fa-money-check"></span></span>
+                    <span class="nav-link-text ps-1">TRANSACTIONS</span>
+                  </div>
+                </a>
+                <a class="nav-link" href="balances.html">
+                  <div class="d-flex align-items-center">
+                    <span class="nav-link-icon"><span class="fas fa-dollar-sign"></span></span>
+                    <span class="nav-link-text ps-1">BALANCES</span>
+                  </div>
+                </a>                
+                <a class="nav-link" href="flow.html">
+                  <div class="d-flex align-items-center">
+                    <span class="nav-link-icon"><span class="fas fa-flag"></span></span>
+                    <span class="nav-link-text ps-1">FLOW</span>
+                  </div>
+                </a>
+                <a class="nav-link" href="budgets.html">
+                  <div class="d-flex align-items-center">
+                    <span class="nav-link-icon"><span class="fas fa-exchange-alt"></span></span>
+                    <span class="nav-link-text ps-1">BUDGETS</span>
+                  </div>
+                </a>
+                <a class="nav-link" href="debts.html">
+                  <div class="d-flex align-items-center">
+                    <span class="nav-link-icon"><span class="fas fa-credit-card"></span></span>
+                    <span class="nav-link-text ps-1">DEBTS</span>
+                  </div>
+                </a>   
+                <a class="nav-link" href="bills.html">
+                  <div class="d-flex align-items-center">
+                    <span class="nav-link-icon"><span class="fas fa-clock"></span></span>
+                    <span class="nav-link-text ps-1">BILLS</span>
+                  </div>
+                </a>
+                <a class="nav-link" href="investments.html">
+                  <div class="d-flex align-items-center">
+                    <span class="nav-link-icon"><span class="fas fa-chart-line"></span></span>
+                    <span class="nav-link-text ps-1">INVESTMENTS</span>
+                  </div>
+                </a>
+                <li class="nav-item">
+                  <a class="nav-link collapsed" href="#reports-expand" data-bs-toggle="collapse" aria-expanded="false" aria-controls="reports-expand">
+                    <div class="d-flex align-items-center">
+                      <span class="nav-link-icon"><span class="fas fa-chart-pie"></span></span>
+                      <span class="nav-link-text ps-1">REPORTS</span> &ensp;
+                      <span class="nav-link-icon"><span class="fas fa-sm fa-caret-down"></span></span>
+                    </div>
+                  </a>                  
+                  <ul class="nav collapse" id="reports-expand"> 
+                    <li class="nav-item"><a class="nav-link" href="reports/tags.html" data-bs-toggle="" aria-expanded="false">
+                        <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Tags</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="reports/categories.html" data-bs-toggle="" aria-expanded="false">
+                        <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Catagories</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="reports/merchants.html" data-bs-toggle="" aria-expanded="false">
+                        <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Merchants</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="reports/recurring-transactions.html" data-bs-toggle="" aria-expanded="false">
+                        <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Recurring Transactions</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="reports/large-transactions.html" data-bs-toggle="" aria-expanded="false">
+                        <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Large Transactions</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="reports/weekly-monthly.html" data-bs-toggle="" aria-expanded="false">
+                      <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Weekly/Monthly Report</span>
+                      </div>
+                    </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="reports/cash-available.html" data-bs-toggle="" aria-expanded="false">
+                        <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Cash Available</span>
+                        </div>
+                      </a>
+                    </li>    
+                    <li class="nav-item"><a class="nav-link" href="reports/credit-usage.html" data-bs-toggle="" aria-expanded="false">
+                      <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Credit Usage</span>
+                      </div>
+                    </a>
+                    </li>                 
+                  </ul>
+                </li>                
+                <a class="nav-link" href="score.html">
+                  <div class="d-flex align-items-center">
+                    <span class="nav-link-icon"><span class="fas fa-chart-bar"></span></span>
+                    <span class="nav-link-text ps-1">SCORE</span>
+                  </div>
+                </a>   
+                <a class="nav-link" href="accounts.html">
+                  <div class="d-flex align-items-center">
+                    <span class="nav-link-icon"><span class="fas fa-university"></span></span>
+                    <span class="nav-link-text ps-1">ACCOUNTS</span>
+                  </div>
+                </a>
+              </ul>
+            </div>
+          </div>
+        </nav>        
+
         <div class="content">
+          <!-- Navbar -->
+          <div id="navbarPlaceholder"></div>
+          <!-- Navbar -->
+
           <!-- Alert Section -->
           <div class="row mt-3 mb-4">
             <!-- Alert -->
@@ -213,11 +349,7 @@
                     <div class="row g-0 text-center">
                       <div class="col-6 col-md-3 border-200 border-bottom border-end py-4 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
                         <h6 class="pb-1 text-700">Expenses </h6>
-                        <p class="font-sans-serif lh-1 mb-1 fs-2">
-                          <div class="spinner-border text-400" role="status">
-                            <span class="visually-hidden">Loading...</span>
-                          </div>
-                        </p>
+                        <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
                       </div>
                       <div class="col-6 col-md-3 border-200 border-md-200 border-bottom border-md-end py-4 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
                         <h6 class="pb-1 text-700">Income </h6>
@@ -236,15 +368,15 @@
                         <h6 class="pb-1 text-700">Credit Available </h6>
                         <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
                       </div>
-                      <div class="col-6 col-md-3 border-200 border-bottom border-md-bottom-0 border-md-end py-4 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
+                      <div class="col-6 col-md-3 border-200 border-bottom border-md-bottom-0 border-md-end py-4 ps-3 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
                         <h6 class="pb-1 text-700">Credit Loans </h6>
                         <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
                       </div>
-                      <div class="col-6 col-md-3 border-200 border-end py-4 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
+                      <div class="col-6 col-md-3 border-200 border-end py-4 ps-3 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
                         <h6 class="pb-1 text-700">Credit Usage </h6>
                         <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
                       </div>
-                      <div class="col-6 col-md-3 py-4 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
+                      <div class="col-6 col-md-3 py-4 ps-md-3 db-snap-box" data-bs-toggle="modal" data-bs-target="#snapshotDetailsModal">
                         <h6 class="pb-1 text-700">Investments </h6>
                         <p class="font-sans-serif lh-1 mb-1 fs-2">$ 0 </p>
                       </div>
@@ -291,7 +423,7 @@
                           <td>POSTED</td>
                         </tr>
                         <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
-                        <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy Mowry Plaza Pharmacy Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
+                        <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
                         <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
                         <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
                         <tr><td>Dec 29</td><td>Mowry Plaza Pharmacy</td><td>Pharmacy</td><td>-$50.00</td><td>POSTED</td></tr>
@@ -562,7 +694,7 @@
                 </div>
                 <div class="card overflow-hidden">
                   <div class="card-body text-1000 ">
-                    <div class="alert bg-100 mb-0" role="alert" data-bs-toggle="collapse" data-bs-target="#netWorthCollapse" aria-expanded="false" style="cursor: pointer;">
+                    <div class="alert bg-100 mb-0" role="alert" data-bs-toggle="collapse" data-bs-target="#netWorthCollapse" aria-expanded="false">
                       <div class="row">
                         <div class="col">Net Worth</div>
                         <div class="col text-end"><span class="text-success">$172,297</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
@@ -617,8 +749,8 @@
                       </div>
                     </div>
 
-                    <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#checkingAccountCollapse" aria-expanded="false" style="cursor: pointer;">
-                      <div class="row" >
+                    <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#checkingAccountCollapse" aria-expanded="false">
+                      <div class="row">
                         <div class="col">Checking Accounts</div>
                         <div class="col text-end"><span class="text-success">$4039</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
                       </div>
@@ -643,7 +775,7 @@
                       </div>
                     </div>
 
-                    <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#savingsAccountCollapse" aria-expanded="false" style="cursor: pointer;">
+                    <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#savingsAccountCollapse" aria-expanded="false">
                       <div class="row">
                         <div class="col">Savings Accounts</div>
                         <div class="col text-end"><span class="text-success">$4039</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
@@ -669,7 +801,7 @@
                       </div>
                     </div>
 
-                    <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#investmentAccountCollapse" aria-expanded="false" style="cursor: pointer;">
+                    <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#investmentAccountCollapse" aria-expanded="false">
                       <div class="row">
                         <div class="col">Investment Accounts</div>
                         <div class="col text-end"><span class="text-success">$108</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
@@ -695,7 +827,7 @@
                       </div>
                     </div>
 
-                    <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#otherAssetsCollapse" aria-expanded="false" style="cursor: pointer;">
+                    <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#otherAssetsCollapse" aria-expanded="false">
                       <div class="row">
                         <div class="col">Home, Vehicle & Other Assets</div>
                         <div class="col text-end"><span class="text-success">$744,018</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
@@ -725,7 +857,7 @@
                       </div>
                     </div>
 
-                    <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#creditLoansCollapse" aria-expanded="false" style="cursor: pointer;">
+                    <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#creditLoansCollapse" aria-expanded="false">
                       <div class="row">
                         <div class="col">Credit Loans</div>
                         <div class="col text-end"><span class="text-danger">-$1536</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
@@ -751,7 +883,7 @@
                       </div>
                     </div>
 
-                    <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#otherLoansCollapse" aria-expanded="false" style="cursor: pointer;">
+                    <div class="alert bg-100 mb-0 mt-3" role="alert" data-bs-toggle="collapse" data-bs-target="#otherLoansCollapse" aria-expanded="false">
                       <div class="row">
                         <div class="col">Mortgage, Other debts & Loans</div>
                         <div class="col text-end"><span class="text-danger">-$562,487</span> &nbsp;<i class="fas fa-chevron-right"></i> </div>
@@ -1102,14 +1234,7 @@
         <!-- Calendar Modal Starts -->
         <div class="modal fade" id="eventDetailsModal" tabindex="-1">
           <div class="modal-dialog modal-dialog-centered" style="max-width: 700px">
-            <div class="modal-content position-relative">
-              <div class="position-absolute top-0 end-0 mt-2 me-2 z-index-1">
-                <a class="btn btn-circle" data-bs-dismiss="modal">
-                  <i class="fa fa-lg fa-times" style="color: white"></i>
-                </a>
-              </div>
-              <div class="modal-body p-0"> </div>            
-            </div>
+            <div class="modal-content border"></div>
           </div>
         </div>
         <!-- Calendar Modal Ends -->

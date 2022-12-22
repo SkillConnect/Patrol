@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <title>Category/Merchant Rule | MoneyPatrol</title>
+    <title>Tag Rule | MoneyPatrol</title>
 
     <!-- ===============================================-->
     <!--    Favicons-->
@@ -64,58 +64,52 @@
         </script>
 
         <div class="content mt-4">
-          <h5 class="block-title page-title text-center">Category/Merchant Rules</h5>
+          <h5 class="block-title page-title text-center">Tag Rules</h5>
           <div class="card overflow-hidden">
             <div class="card-body px-lg-5">
               <!-- Buttons -->
               <div class="row mb-3 text-center">
                 <div class="col"></div>
                 <div class="col-lg-3 d-flex mb-3">
-                  <button class="btn btn-primary flex-1" data-bs-toggle="modal" data-bs-target="#add-category-modal"><i class="fas fa-plus-circle"></i> Add Category Rule</button>
-                </div>
-                <div class="col-lg-3 d-flex mb-3">
-                  <button class="btn btn-primary flex-1" data-bs-toggle="modal" data-bs-target="#add-merchant-modal"><i class="fas fa-plus-circle"></i> Add Merchant Rule</button>
+                  <button class="btn btn-primary flex-1" data-bs-toggle="modal" data-bs-target="#add-tag-modal"><i class="fas fa-plus-circle"></i> Add Tag Rule</button>
                 </div>
                 <div class="col"></div>
               </div>
               <!-- Buttons End -->
 
-              <h5 class="text-center mb-3">Category/Merchant Rule </h5>
-              <p><i class="fas fa-info-circle"></i> Category/Merchant Rule helps to rename merchant and category names. You can add new rule to rename a category/merchant. </p>
-              
-              <!-- Table 1 -->
+              <h5 class="text-center mb-3">Tag Rule </h5>
+              <p><i class="fas fa-info-circle"></i> Tag Rule helps to add tags automatically for merchant and category names. You can add new tag rule to add tags for a category/merchant.</p>
+
+               <!-- Table 1 -->
               <div class="table-responsive mb-4">
                 <table class="table table-bordered table-hover text-center mb-0">
                   <thead class="bg-200 text-900">
                     <tr>
                       <th scope="col">Rule Type</th>
                       <th scope="col">Applied To</th>
-                      <th scope="col">Changed To</th>
-                      <th scope="col">Paired With</th>
+                      <th scope="col">Tags Assigned</th>
                       <th scope="col">Created Date</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Category Name</td>
-                      <td>Card/Loan Payment Received</td>
-                      <td>Financial Services</td>
-                      <td>FCCX (Merchant)</td>
-                      <td>Dec 29</td>
+                      <td>Merchant Name</td>
+                      <td>Paypal</td>
+                      <td>Online Payments</td>
+                      <td>Dec 29, 2021</td>
                       <td>
-                        <i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-category-modal"></i> &nbsp;
+                        <i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-tag-modal"></i> &nbsp;
                         <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-rule-modal"></i>
                       </td>
                     </tr>
                     <tr>
                       <td>Merchant Name</td>
-                      <td>Card/Loan Payment Received</td>
-                      <td>Financial Services</td>
-                      <td>FCCX (Merchant)</td>
-                      <td>Dec 29</td>
+                      <td>Weverse</td>
+                      <td>Kpop</td>
+                      <td>Jan 29, 2022</td>
                       <td>
-                        <i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-category-modal"></i> &nbsp;
+                        <i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-tag-modal"></i> &nbsp;
                         <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-rule-modal"></i>
                       </td>
                     </tr>
@@ -123,6 +117,41 @@
                 </table>
               </div>
               <!-- Table 1 Ends -->
+
+              <h5 class="text-center my-3"> Manage Custom Tags </h5>
+              <p><i class="fas fa-info-circle"></i> Category/Merchant Rule helps to rename merchant and category names. You can add new rule to rename a category/merchant. </p>
+              
+              <!-- Table 1 -->
+              <div class="table-responsive mb-4">
+                <table class="table table-bordered table-hover text-center mb-0">
+                  <thead class="bg-200 text-900">
+                    <tr>
+                      <th scope="col">Tags Assigned</th>
+                      <th scope="col">Created Date</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Online Payments</td>
+                      <td>Dec 29, 2021</td>
+                      <td>
+                        <i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-tag-modal"></i> &nbsp;
+                        <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-rule-modal"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Kpop</td>
+                      <td>Jan 29, 2022</td>
+                      <td>
+                        <i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-tag-modal"></i> &nbsp;
+                        <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-rule-modal"></i>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Table 1 Ends -->              
             </div>
           </div>
         </div>

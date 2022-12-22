@@ -53,6 +53,10 @@
       <div id="navbarPlaceholder"></div>
       <!-- Navbar -->
       
+      <!-- 
+        uncomment for small view
+        <div class="container-fluid mb-2 mb-lg-5" data-layout="container">
+       -->
       <div class="container mb-2 mb-lg-5" data-layout="container">
         <script>
           var isFluid = JSON.parse(localStorage.getItem('isFluid'));
@@ -68,8 +72,8 @@
           <div class="card overflow-hidden">
             <!-- Header starts -->
             <div class="card-header bg-light">
-              <div class="row align-items-center">
-                <div class="col col-lg-2 mb-2">
+              <div class="row align-items-center g-3">
+                <div class="col-4 col-lg-2 mb-2">
                   <h6>Account:</h6>
                   <select class="form-select form-select-sm">
                     <option>All</option>
@@ -77,7 +81,7 @@
                     <option>Billable Time</option>
                   </select>
                 </div>
-                <div class="col col-lg-2 mb-2">
+                <div class="col-4 col-lg-2 mb-2">
                   <h6>Merchant:</h6>
                   <select class="form-select form-select-sm">
                     <option>All</option>
@@ -85,7 +89,7 @@
                     <option>Billable Time</option>
                   </select>
                 </div>
-                <div class="col col-lg-2 mb-2">
+                <div class="col-4 col-lg-2 mb-2">
                   <h6>Category:</h6>
                   <select class="form-select form-select-sm">
                     <option>All</option>
@@ -93,7 +97,7 @@
                     <option>Billable Time</option>
                   </select>
                 </div>
-                <div class="col col-lg-2 mb-2">
+                <div class="col-4 col-lg-2 mb-2">
                   <h6>Time Period:</h6>
                   <select class="form-select form-select-sm">
                     <option>All</option>
@@ -101,7 +105,7 @@
                     <option>Billable Time</option>
                   </select>
                 </div>
-                <div class="col col-lg-2 mb-2">
+                <div class="col-4 col-lg-2 mb-2">
                   <h6>Type: </h6>
                   <select class="form-select form-select-sm">
                     <option>All</option>
@@ -109,7 +113,7 @@
                     <option>Billable Time</option>
                   </select>
                 </div>
-                <div class="col col-lg-2 mb-2">
+                <div class="col-4 col-lg-2 mb-2">
                   <h6>Status: </h6>
                   <select class="form-select form-select-sm">
                     <option>All</option>
@@ -121,7 +125,7 @@
 
               <div class="row mt-lg-2 mt-3" style="font-size: 0.75rem;">
                 <div class="col-lg-2 col-6 mb-2">
-                  <a href="transaction-rules.html"><i class="fas fa-tag"></i> Manage Tags</a>
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#manage-tagrules-modal"><i class="fas fa-tag"></i> Manage Tags</a>
                 </div>
                 <div class="col-lg-2 col-6 mb-2">
                   <a href="#" data-bs-toggle="modal" data-bs-target="#manage-merchants-modal"><i class="fas fa-shopping-bag"></i> Manage Merchants</a>
@@ -149,21 +153,16 @@
             <!-- Table starts -->
             <div class="card-body p-2">
               <div id="transactions-summary-table" data-list='{"valueNames":["date","amount","merchant", "category", "institution", "tags", "type", "reviewed", "action"],"page":10,"pagination":true}'>
-                <!-- Search -->
+                <!-- Quick Insights -->
                 <div class="row pl-2 my-3">
-                  <div class="col-lg-3 text-start mb-2">
-                    <div class="input-group input-group-sm">
-                      <label class="input-group-text mb-0">Show</label>
-                      <select class="itemCount form-select">
-                        <option value="1">1</option>
-                        <option selected value="2">2</option>
-                        <option value="5">5</option>
-                        <option value="10">10</option>
-                      </select>
-                    </div>
+                  <div class="col-lg-5">
+                    <p><i>Quick Insights</i></p>
                   </div>
-                  <div class="col-0 col-lg-5"></div>
-                  <div class="col-lg-4 float-end">
+                  <div class="col-3 col-lg-4 text-lg-end ps-4">
+                    <i class="far fa-file-excel fa-lg text-success" title="Download Excel"></i> &nbsp;
+                    <i class="fas fa-print fa-lg text-danger" title="Print PDF"></i>
+                  </div>
+                  <div class="col-9 col-lg-3 float-end">
                     <form>
                       <div class="input-group">
                         <input class="form-control form-control-sm shadow-none fuzzy-search" type="search" placeholder="Search" aria-label="search">
@@ -171,6 +170,33 @@
                       </div>
                     </form>
                   </div>
+                </div>
+                <!-- Quick Insights Ends -->
+
+                <!-- Search -->
+                <div class="row pl-2 my-3">
+                  <div class="col-lg-6"></div>
+                  <div class="col-lg-3 text-start mb-2">
+                    <div class="input-group input-group-sm">
+                      <label class="input-group-text mb-0">Show</label>
+                      <select class="itemCount form-select">
+                        <option value="1">1 Days</option>
+                        <option selected value="2">2 Days</option>
+                        <option value="5">5 Days</option>
+                        <option value="10">10 Days</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 text-start mb-2">
+                    <div class="input-group input-group-sm">
+                      <label class="input-group-text mb-0">Show</label>
+                      <select class="itemCount form-select">
+                        <option selected value="1">All</option>
+                        <option value="2">Deposits</option>
+                        <option value="3">Expenses</option>
+                      </select>
+                    </div>
+                  </div>                   
                 </div>
                 <!-- Search Ends -->
 
@@ -197,7 +223,7 @@
                         <td class="merchant">Mowry Plaza Pharmacy</td>
                         <td class="category">Pharmacy</td>
                         <td class="institution">Discover Card</td>
-                        <td class="tags"><input class="form-control form-control-sm" type="text"></td>
+                        <td class="tags">My Tag 1</td>
                         <td class="type">
                           <select class="form-select form-select-sm">
                             <option value="1">Expense</option>
@@ -209,6 +235,7 @@
                         <td class="text-nowrap action">
                           <i class="fa fa-check"></i> &nbsp;
                           <i class="fa fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal"></i> &nbsp;
+                          <i class="fa fa-tag" data-bs-toggle="modal" data-bs-target="#manage-tags-modal"></i> &nbsp;
                           <i class="fa fa-edit" data-bs-toggle="modal" data-bs-target="#add-memo-modal"></i> &nbsp;
                           <i class="fa fa-code-branch" data-bs-toggle="modal" data-bs-target="#split-transaction-modal"></i> &nbsp;
                           <i class="fa fa-trash" data-bs-toggle="modal" data-bs-target="#delete-modal"></i>
@@ -220,7 +247,7 @@
                         <td class="merchant">Health Insurance</td>
                         <td class="category">LIC</td>
                         <td class="institution">Mastercard Card</td>
-                        <td class="tags"><input class="form-control form-control-sm" type="text"></td>
+                        <td class="tags">Some tag</td>
                         <td class="type">
                           <select class="form-select form-select-sm">
                             <option value="1">Expense</option>
@@ -232,6 +259,7 @@
                         <td class="text-nowrap action">
                           <i class="fa fa-check"></i> &nbsp;
                           <i class="fa fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal"></i> &nbsp;
+                          <i class="fa fa-tag" data-bs-toggle="modal" data-bs-target="#manage-tags-modal"></i> &nbsp;
                           <i class="fa fa-edit" data-bs-toggle="modal" data-bs-target="#add-memo-modal"></i> &nbsp;
                           <i class="fa fa-code-branch" data-bs-toggle="modal" data-bs-target="#split-transaction-modal"></i> &nbsp;
                           <i class="fa fa-trash" data-bs-toggle="modal" data-bs-target="#delete-modal"></i>
@@ -243,58 +271,54 @@
                 <!-- Table Desktop View Ends -->
 
                 <!-- Table Mobile View -->
-                <div class="card shopping-cart-bar-min-height h-100 d-md-none">
-                  <div class="card-body py-0 h-100">
+                <div class="card h-100 d-md-none">
+                  <div class="card-body h-100 transactions-mobile">
                     <div>
-                      <div class="bg-secondary w-100 py-2 px-2 text-white text-center rounded-pill">
-                        20th OCT
-                      </div>
+                      <div class="py-1 px-2 date"> 20th OCT </div>
                       <div class="row g-0 align-items-center py-3" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal">
                         <div class="col pe-4">
                           <h5>Remington Park</h5>
-                          <h6 class="text-900">Category</h6>
+                          <h6>Category</h6>
                         </div>
                         <div class="col-auto text-end">
-                          <p class="mb-0 font-sans-serif text-success"> $43.6</p>
+                          <p class="text-success">$43.6</p>
                         </div>
                       </div>
                       <div class="row g-0 align-items-center py-3 border-top" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal">
                         <div class="col pe-4">
                           <h5>Netflix</h5>
-                          <h6 class="text-900">Category</h6>
+                          <h6>Category</h6>
                         </div>
                         <div class="col-auto text-end">
-                          <p class="mb-0 font-sans-serif text-danger"> $13.6</p>
+                          <p class="text-danger"> $13.6</p>
                         </div>
                       </div>
                       <div class="row g-0 align-items-center py-3 border-top" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal">
                         <div class="col pe-4">
                           <h5>Airtel Mobile</h5>
-                          <h6 class="text-900">Category</h6>
+                          <h6>Category</h6>
                         </div>
                         <div class="col-auto text-end">
-                          <p class="mb-0 font-sans-serif text-success"> $26.6</p>
+                          <p class="text-success"> $26.6</p>
                         </div>
                       </div>
-                      <div class="bg-secondary w-100 py-2 px-2 text-white text-center rounded-pill">
-                        15th OCT
-                      </div>                      
+                      <div class="py-1 px-2 date"> 15th OCT </div>                      
                       <div class="row g-0 align-items-center py-3" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal">
                         <div class="col pe-4">
                           <h5>Disney Shopping</h5>
-                          <h6 class="text-900">Category</h6>
+                          <h6>Category</h6>
                         </div>
                         <div class="col-auto text-end">
-                          <p class="mb-0 font-sans-serif text-success"> $16</p>
+                          <p class="text-success"> $16</p>
                         </div>
                       </div>
                       <div class="row g-0 align-items-center py-3 border-top" data-bs-toggle="modal" data-bs-target="#edit-transaction-modal">
                         <div class="col pe-4">
                           <h5>New Bazaar</h5>
-                          <h6 class="text-900">Category</h6>
+                          <h6>Category</h6>
                         </div>
                         <div class="col-auto text-end">
-                          <p class="mb-0 font-sans-serif text-danger"> $43.6</p>
+                          <p class="text-danger"> $43.6</p>
                         </div>
                       </div>                                            
                     </div>
@@ -461,64 +485,61 @@
           <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
             <div class="modal-content position-relative">
               <div class="modal-body p-0">
-                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                <div class="rounded-top-lg py-3 bg-dark text-center">
                   <h5 class="mb-1 text-white">Add Transaction</h5>
                 </div>
-                <div class="p-4 pb-0">
-                  <form>
-                    <div class="mb-1">
+                <div class="p-4 pb-3">
+                  <form class="mb-3">
+                    <div class="mb-2">
                       <label class="form-label">Date:</label>
                       <input type="text" class="form-control">
                     </div>
-                    <div class="mb-1">
-                      <label class="form-label">Institution:</label>
-                      <input type="text" class="form-control">
-                    </div>
-                    <div class="mb-1">
-                      <label class="form-label">Amount:</label>
-                      <input type="text" class="form-control">
-                    </div>
-                    <div class="mb-1">
-                      <label class="col-form-label" for="type">Merchant:</label>
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected>Select Merchant</option>
-                        <option value="1">Google LLC GSuite</option>
-                        <option value="2">Microsoft Azure</option>
-                      </select>
-                    </div>
-                    <div class="mb-1">
-                      <label class="col-form-label" for="type">Category:</label>
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected>Select Category</option>
-                        <option value="1">Credit</option>
-                        <option value="2">Deposit</option>
-                      </select>
-                    </div>
-                    <div class="mb-1">
-                      <label class="col-form-label" for="type">Reviewed:</label>
-                      <select class="form-select" aria-label="Default select example">
-                        <option value="0" selected>Reviewed Later</option>
-                        <option value="1">Reviewed</option>
-                        <option value="2">Not Reviewed</option>
-                      </select>
-                    </div>
-                    <div class="mb-1">
+                    <div class="mb-2">
                       <label class="col-form-label" for="type">Type:</label>
                       <select class="form-select" aria-label="Default select example">
                         <option selected>Select Type</option>
                         <option value="1">Investments</option>
                         <option value="2">Expense</option>
                       </select>
-                    </div>
-                    <div class="mb-1">
-                      <label class="form-label">Tags:</label>
+                    </div>                    
+                    <div class="mb-2">
+                      <label class="form-label">Institution:</label>
                       <input type="text" class="form-control">
                     </div>
                     <div class="mb-2">
-                      <label class="form-label">Memo</label>
-                      <textarea class="form-control" rows="3"></textarea>
+                      <label class="form-label">Amount:</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-2">
+                      <label class="col-form-label" for="type">Merchant:</label>
+                      <select class="form-select mb-2" aria-label="Default select example">
+                        <option selected>Select Merchant</option>
+                        <option value="1">Google LLC GSuite</option>
+                        <option value="2">Microsoft Azure</option>
+                      </select>
+                    </div>
+                    <div class="mb-2">
+                      <label class="col-form-label" for="type">Category:</label>
+                      <select class="form-select mb-2" aria-label="Default select example">
+                        <option selected>Select Category</option>
+                        <option value="1">Credit</option>
+                        <option value="2">Deposit</option>
+                      </select>
                     </div>
                   </form>
+
+                  <div class="row mt-4">
+                    <div class="col-lg-6 d-grid mb-2 px-2">
+                      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-merchant-modal">
+                        <i class="fas fa-plus-circle"></i> Add Merchant
+                      </button>                          
+                    </div>
+                    <div class="col-lg-6 d-grid mb-2 px-2">
+                      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-categories-modal">
+                        <i class="fas fa-plus-circle"></i> Add Category
+                      </button>
+                    </div>                    
+                  </div>
                 </div>
               </div>
               <div class="modal-footer">
@@ -567,6 +588,33 @@
                         <option value="2">Deposit</option>
                       </select>
                     </div>
+
+                    <div class="mb-3">
+                      <label class="col-form-label text-800" for="type">Apply Merchant and Category Name change to:</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio-1" checked>
+                        <label class="form-check-label mb-0" for="radio-1"> only this transaction </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio-2">
+                        <label class="form-check-label mb-0" for="radio-2">
+                          this transaction + all past and future transactions which would have the current Category "Travel & Transportation" 
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio-3">
+                        <label class="form-check-label mb-0" for="radio-3">
+                          this transaction + all past and future transactions which would have the current Merchant "Uberbv Uber Pending" 
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio-4">
+                        <label class="form-check-label mb-0" for="radio-4">
+                          this transaction + all past and future transactions which would have the current Merchant and Category combination pair: Merchant as "Uberbv Uber Pending" and Category as "Travel & Transportation" 
+                        </label>
+                      </div>                                            
+                    </div>
+
                     <div class="mb-3">
                       <label class="col-form-label" for="type">Reviewed:</label>
                       <select class="form-select" aria-label="Default select example">
@@ -585,7 +633,7 @@
                     </div>
                     <div class="mb-3">
                       <label class="form-label">Tags:</label>
-                      <input type="text" class="form-control">
+                      <a href="" data-bs-toggle="modal" data-bs-target="#manage-tags-modal">Add/Edit</a>
                     </div>
                     <div class="mb-3">
                       <label class="form-label">Memo</label>
@@ -704,30 +752,15 @@
         </div>
         <!-- Delete Transaction Modal Ends -->
 
-
-        <!-- Free Trial -->
-        <div class="modal fade" id="free-trial-modal" tabindex="-1" role="dialog" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 900px;">
-            <div class="modal-content position-relative">
-              <div class="modal-body text-center p-lg-5" style="background-color: #031c4a;color: white">
-                <h5 class="mb-3" style="color: white">Start your 15 day FREE TRIAL to gain full access to all features. Start monitoring your Finances
-                  and Creating Budgets with a snap.
-                </h5>
-                <p>"Our users have reported an average of $5K+ positive impact on their personal finances."</p>
-                <div class="row justify-content-center mt-4">
-                  <div class="col-lg-4 mb-3"><a class="btn btn-primary" href="accounts.html">Visit Accounts</a></div>
-                  <div class="col-lg-4 mb-3"><button class="btn btn-primary">Subscribe to our free trial</button></div>
-                  <div class="col-lg-4 mb-3"><a class="btn btn-primary" href="settings.html">Visit Settings</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Free Trial Ends -->
         <!-- Manage Merchants -->
         <div class="modal fade" id="manage-merchants-modal" tabindex="-1" role="dialog" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
             <div class="modal-content position-relative">
+              <div class="position-absolute top-0 end-0 mt-2 me-2 z-index-1">
+                <a class="btn btn-circle" data-bs-dismiss="modal">
+                  <i class="fa fa-lg fa-times" style="color: white"></i>
+                </a>
+              </div> 
               <div class="modal-body p-0">
                 <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
                   <h5 class="mb-1 text-white">Manage Merchants</h5>
@@ -736,9 +769,18 @@
                   <p><i class="fas fa-info-circle"></i> If you want to edit existing Merchant name, please use 'edit' option next to merchant name.</p>
                   <p><i class="fas fa-info-circle"></i> If you want to add a new merchant name then click on 'Add new merchant'. </p>
                   <p><i class="fas fa-info-circle"></i> When you delete a merchant name, all transactions associated with this merchant will have merchant name as 'NA'.</p>
-                  <div class="text-end my-4">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-merchant-modal"><i class="fas fa-plus-circle"></i> Add New Merchant</button>
+
+                  <div class="row my-4">
+                    <div class="col-lg-6 d-grid mb-2 px-2">
+                      <a class="btn btn-primary" href="/transaction-rules.html">View Merchant Rules</a>
+                    </div>
+                    <div class="col-lg-6 d-grid mb-2 px-2">
+                      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-merchant-modal">
+                        <i class="fas fa-plus-circle"></i> Add Merchant Rule
+                      </button>
+                    </div>                    
                   </div>
+
                   <div class="table-responsive">
                     <table class="table table-bordered table-hover text-center">
                       <thead class="bg-200 text-900">
@@ -751,7 +793,7 @@
                         <tr>
                           <td>1&1 Internet</td>
                           <td>
-                            <i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-merchant-modal"></i>
+                            <i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-merchant-modal"></i> &nbsp;
                             <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-merchant-modal"></i>
                           </td>
                         </tr>
@@ -835,22 +877,298 @@
         <!-- Delete Merchant Modal Ends -->
 
 
-        <!-- Manage Categories -->
-        <div class="modal fade" id="manage-categories-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Manage Tags Rules -->
+        <div class="modal fade" id="manage-tagrules-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="position-absolute top-0 end-0 mt-2 me-2 z-index-1">
+                <a class="btn btn-circle" data-bs-dismiss="modal">
+                  <i class="fa fa-lg fa-times" style="color: white"></i>
+                </a>
+              </div>              
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Manage Tags</h5>
+                </div>
+                <div class="p-4 pb-2">
+                  <p><i class="fas fa-info-circle"></i> Add Tag Rule will assign the tag to each occurrence of the merchant or category you have assigned the tag to.</p>
+                  <p><i class="fas fa-info-circle"></i> Edit/Delete a Tag at a global level (for all transactions) </p>
+
+                  <div class="row my-4">
+                    <div class="col-lg-6 d-grid mb-2 px-2">
+                      <a class="btn btn-primary" href="tag-rules.html">View Tag Rules</a>
+                    </div>
+                    <div class="col-lg-6 d-grid mb-2 px-2">
+                      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-tagrule-modal">
+                        <i class="fas fa-plus-circle"></i> Add Tag Rule
+                      </button>
+                    </div>                    
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-hover text-center">
+                      <thead class="bg-200 text-900">
+                        <tr>
+                          <th scope="col">List of Existing Tags</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>My Tag 1</td>
+                          <td>
+                            <i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-tags-modal"></i> &nbsp;
+                            <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-tags-modal"></i>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Manage Tags Rules Ends -->
+        <!-- Manage Tags -->
+        <div class="modal fade" id="manage-tags-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="position-absolute top-0 end-0 mt-2 me-2 z-index-1">
+                <a class="btn btn-circle" data-bs-dismiss="modal">
+                  <i class="fa fa-lg fa-times" style="color: white"></i>
+                </a>
+              </div>                
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Add Custom Tags</h5>
+                </div>
+                <div class="p-4 pb-2">
+                  <p class="text-danger">
+                    When you delete a category, all transactions assUncategorized
+                  </p>
+
+                  <form class="row g-3">
+                    <div class="col-lg-8">
+                      <input type="password" class="form-control" placeholder="Add Tag">
+                    </div>
+                    <div class="col-lg-4">
+                      <button type="submit" class="btn btn-primary mb-3">Save</button>
+                    </div>
+                  </form>
+
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-hover text-center">
+                      <thead class="bg-200 text-900">
+                        <tr>
+                          <th scope="col">List of Existing Tags</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>My Tag 1</td>
+                          <td>
+                            <i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-tags-modal"></i> &nbsp;
+                            <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-tags-modal"></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td>
+                            <i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-tags-modal"></i> &nbsp;
+                            <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-tags-modal"></i>
+                          </td>
+                        </tr>                                                                      
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="row my-4">
+                    <div class="col-lg-6 d-grid mb-2 px-2">
+                      <a class="btn btn-primary" href="/tag-rules.html">View Tag Rules</a>
+                    </div>
+                    <div class="col-lg-6 d-grid mb-2 px-2">
+                      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#manage-tagrules-modal">
+                        <i class="fas fa-plus-circle"></i> Manage Tags
+                      </button>
+                    </div>                    
+                  </div>                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Manage Tags Ends -->        
+        <!-- Add Tags -->
+        <div class="modal fade" id="add-tags-modal" tabindex="-1" role="dialog" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
             <div class="modal-content position-relative">
               <div class="modal-body p-0">
                 <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
-                  <h5 class="mb-1 text-white">Manage Merchants</h5>
+                  <h5 class="mb-1 text-white">Add Tag</h5>
                 </div>
                 <div class="p-4 pb-0">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Tag:</label>
+                      <input type="text" class="form-control"></input>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Save</button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Add Tags Ends -->
+        <!-- Edit Tags -->
+        <div class="modal fade" id="edit-tags-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Edit Tag</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Current Tag:</label>
+                      <input type="text" class="form-control" value="My Tag 1" readonly></input>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Change To:</label>
+                      <input type="text" class="form-control"></input>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Apply Changes </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Edit Tags Ends -->
+        <!-- Add Tag Rules -->
+        <div class="modal fade" id="add-tagrule-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Add New Tags Rule</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Rule Type:</label>
+                      <select class="form-select">
+                        <option value="1">Click to select from list</option>
+                        <option value="2">Merchant</option>
+                        <option value="5">Category</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Rule For:</label>
+                      <input type="text" class="form-control"></input>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Tags:</label>
+                      <input type="text" class="form-control"></input>
+                    </div>
+                  </form>
+
+                  <div class="alert alert-warning border-2 d-flex align-items-center" role="alert">
+                    <div class="bg-warning me-3 icon-item"><span class="fas fa-info fs-3"></span></div>
+                    <p class="mb-0 flex-1" id="notification-alert">    Use Comma(,) as a separator to add multiple tags.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Save</button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Add Tags Rules -->  
+        
+        <!-- Edit Tag Rule -->
+        <div class="modal fade" id="edit-tagrule-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Edit Rule</h5>
+                </div>
+                <div class="p-4 pb-0">
+                  <div class="row mb-3">
+                    <div class="col-6">
+                      <label class="form-label">Rule Type</label>
+                      <input class="form-control" type="text" value="Merchant" disabled>
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label">Rule For</label>
+                      <input class="form-control" type="text" value="Paypal" disabled>
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label">Paired With</label>
+                      <input class="form-control" type="text" disabled>
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label">Tags</label>
+                      <input class="form-control" type="text" value="Online Payment">
+                    </div>
+                  </div>
+                  <div class="alert alert-warning border-2 d-flex align-items-center" role="alert">
+                    <div class="bg-warning me-3 icon-item"><span class="fas fa-info fs-3"></span></div>
+                    <p class="mb-0 flex-1" id="notification-alert"> Use Comma(,) as a separator to add multiple tags</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Update </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Edit Tag Rule Ends -->
+
+
+        <!-- Manage Categories -->
+        <div class="modal fade" id="manage-categories-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="position-absolute top-0 end-0 mt-2 me-2 z-index-1">
+                <a class="btn btn-circle" data-bs-dismiss="modal">
+                  <i class="fa fa-lg fa-times" style="color: white"></i>
+                </a>
+              </div>               
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Manage Merchants</h5>
+                </div>
+                <div class="p-4 pb-2">
                   <p><i class="fas fa-info-circle"></i> If you want to merge multiple categories into one single category, 
                     please use the "Add Category Rule" option. For example, if you want to merge "Restaurant" category into "Food" category, 
                     you can use the "Add Category Rule" option to create a rule that will move all transactions from category "Restaurant" to category "Food".</p>
                   <p><i class="fas fa-info-circle"></i> When you delete a category, all transactions associated with this category will have category name as 'Uncategorized'.</p>
-                  <div class="text-end my-4">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-categories-modal"><i class="fas fa-plus-circle"></i> Add New Category</button>
-                  </div>
+
+                  <div class="row gap-0 my-4">
+                    <div class="col-lg-6 d-grid mb-2 px-2">
+                      <a class="btn btn-primary" href="/transaction-rules.html">View Category Rules</a>
+                    </div>
+                    <div class="col-lg-6 d-grid mb-2 px-2">
+                      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-categories-modal">
+                        <i class="fas fa-plus-circle"></i> Add Category Rule
+                      </button>
+                    </div>                    
+                  </div>     
+
                   <div class="table-responsive">
                     <table class="table table-bordered table-hover text-center">
                       <thead class="bg-200 text-900">
@@ -863,7 +1181,7 @@
                         <tr>
                           <td>1&1 Internet</td>
                           <td>
-                            <i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-categories-modal"></i>
+                            <i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#edit-categories-modal"></i> &nbsp;
                             <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#delete-categories-modal"></i>
                           </td>
                         </tr>
@@ -962,5 +1280,10 @@
     <script src="./vendors/list.js/list.min.js"></script>
     <script src="./vendors/pulltorefresh/index.umd.min.js"></script>
     <script src="./assets/js/theme.js"></script>
+    <script>
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+      console.log(tooltipTriggerList)
+    </script>
   </body>
 </html>

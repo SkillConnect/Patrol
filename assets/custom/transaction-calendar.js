@@ -1,5 +1,5 @@
 var events = [{
-  start: "2022-08-20",
+  start: "2022-12-20",
   title: "Income",
   transactions: [{
     institution: "Discover Card (All Account Types) : DMC - (xxxx9324)",
@@ -17,7 +17,7 @@ var events = [{
   total: "$100",
   className: 'bg-soft-primary'
 },{
-  start: "2022-08-04",
+  start: "2022-12-04",
   title: "Expense",
   transactions: [{
     institution: "Discover Card (All Account Types) : DMC - (xxxx9324)",
@@ -45,7 +45,7 @@ var appCalendarInit = function appCalendarInit() {
     DATA_EVENT: '[data-event]',
     DATA_VIEW_TITLE: '[data-view-title]',
     EVENT_DETAILS_MODAL: '#eventDetailsModal',
-    EVENT_DETAILS_MODAL_CONTENT: '#eventDetailsModal .modal-content',
+    EVENT_DETAILS_MODAL_CONTENT: '#eventDetailsModal .modal-body',
     EVENT_START_DATE: '#addEventModal [name="startDate"]',
     INPUT_TITLE: '[name="title"]'
   };
@@ -143,35 +143,37 @@ var appCalendarInit = function appCalendarInit() {
 
 
 function getModalContent(event) {
-  return `
-    <div class="modal-header bg-light ps-card pe-5 border-bottom-0 ${event.classNames[0]}">
-      <div> <h5 class="modal-title mb-0"> ${event.extendedProps.total} ${event.title} on ${event.start.toDateString()} </h5> </div>
-    </div>
-    <div class="modal-body">
-      <div class="table-responsive">
-        <table class="table table-bordered table-hover">
-          <thead class="table-light">
-            <tr>
-              <th scope="col">Date</th>
-              <th scope="col">Merchant</th>
-              <th scope="col">Category</th>
-              <th scope="col">Institution</th>
-              <th scope="col">Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${getModalTableBody(event.start, event.extendedProps.transactions)}
-          </tbody>
-        </table>
+//   <div class="modal-header bg-dark ps-card pe-5 border-bottom-0 ${event.classNames}">
+//   <div> <h5 class="mb-0"> ${event.extendedProps.total} ${event.title} on ${event.start.toDateString()} </h5> </div>
+// </div>
+  return ` 
+      <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+        <h5 class="mb-1 text-white">${event.extendedProps.total} ${event.title} on ${event.start.toDateString()}</h5>
+      </div>     
+      <div class="p-3">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead class="bg-200 text-900">
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Merchant</th>
+                <th scope="col">Category</th>
+                <th scope="col">Institution</th>
+                <th scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${getModalTableBody(event.start, event.extendedProps.transactions)}
+            </tbody>
+          </table>
+        </div>
+        <div class="float-end mb-3">
+          <button class="btn btn-outline-dark" disabled="disabled">Transactions: ${event.extendedProps.transactions.length}</button>
+          &nbsp;
+          <button class="btn btn-outline-dark" disabled="disabled">Total: ${event.extendedProps.total}</button>
+        </div>
       </div>
-      <div class="float-end">
-        <button class="btn btn-outline-dark" disabled="disabled">Transactions: ${event.extendedProps.transactions.length}</button>
-        <button class="btn btn-outline-dark" disabled="disabled">Total: ${event.extendedProps.total}</button>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
-    </div>`
+    `
 }
 
 function getModalTableBody(date, transactions) {

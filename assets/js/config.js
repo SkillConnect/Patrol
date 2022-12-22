@@ -9,7 +9,7 @@ var CONFIG = {
   isNavbarVerticalCollapsed: false,
   theme: 'light',
   isRTL: false,
-  isFluid: false,
+  isFluid: false,    // toggle when sidenav is required
   navbarStyle: 'transparent',
   navbarPosition: 'vertical'
 };

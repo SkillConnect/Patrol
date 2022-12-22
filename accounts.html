@@ -97,7 +97,7 @@
                   <button class="btn btn-dark rounded-pill text-center" style="width: 100%;"><i class="fa fa-plus-circle"></i>&nbsp; Link Account via Finicity</button>
                 </div>
                 <div class="col-lg-4 mb-3">
-                  <button class="btn btn-dark rounded-pill text-center" style="width: 100%;"><i class="fa fa-plus-circle"></i>&nbsp; Link Account via MIX</button>
+                  <button class="btn btn-dark rounded-pill text-center" style="width: 100%;"><i class="fa fa-plus-circle"></i>&nbsp; Link Account via MX</button>
                 </div>
                 <div class="col-lg-4 mb-3">
                   <button class="btn btn-dark rounded-pill text-center" style="width: 100%;"><i class="fa fa-plus-circle"></i>&nbsp; Link Account via Yodlee</button>
@@ -117,11 +117,27 @@
                 Your following account(s) have not successfully refreshed in the last few days. Please click on the edit icon for these institutions and enter the id/password in the pop-up to reestablish the connection for these accounts.
                 American Express Credit Card : Amex Card. (American Express Credit Card) 
               </p>
-              <p class="px-3 mb-5">
-                - American Express Credit Card : Amex Card. (American Express Credit Card)
-                <br>
-                - Wells Fargo : Mortgage WF (Wells Fargo) 
-              </p>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <p class="px-3 mb-5">
+                    - American Express Credit Card linked via FINICITY <br>
+                    - Bank of America linked via FINICITY <br>
+                    - Capital One linked via FINICITY <br>
+                    - Chase linked via FINICITY <br>
+                    - Fidelity Investments linked via FINICITY <br>
+                  </p>
+                </div>
+                <div class="col-lg-6">
+                  <p class="px-3 mb-5">
+                    - Macys Credit Card linked via FINICITY <br>
+                    - US Bank linked via FINICITY <br>
+                    - Venmo linked via FINICITY <br>
+                    - Wells Fargo linked via FINICITY <br>
+                  </p>
+                </div>
+              </div>
+
 
               <!-- Three boxes starts -->
               <div class="row g-2 justify-content-center mb-5">
@@ -229,8 +245,8 @@
                       <tr>
                         <td>Credit Card</td>
                         <td>xxxx 0077</td>
-                        <td>CREDIT</td>
-                        <td>Personal</td>
+                        <td>CREDIT &nbsp;<i class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#change-account-type-modal"></i></td>
+                        <td>Personal &nbsp;<i class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#change-account-label-modal"></i></td>
                         <td>Sat, Jan 29</td>
                         <td>49 seconds ago</td>
                         <td>INACTIVE</td>
@@ -632,6 +648,69 @@
           </div>
         </div>
         <!-- Delete Account Modal ends --> 
+
+        <!-- Change Account type -->
+        <div class="modal fade" id="change-account-type-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Change Account Type</h5>
+                </div>
+                <div class="p-4">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Account Name:</label>
+                      <input type="text" class="form-control" disabled value="Bhusahan Lengade 200X(1003)">
+                    </div>
+                    <div class="mb-1">
+                      <label class="form-label">Account Type:</label>
+                      <select class="form-select">
+                        <option selected>CHECKING</option>
+                        <option value="1">SAVINGS</option>
+                        <option value="2">INVESTMENTS</option>
+                      </select>                       
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Save </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Change Account type Ends -->
+        <!-- Change Account label -->
+        <div class="modal fade" id="change-account-label-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+            <div class="modal-content position-relative">
+              <div class="modal-body p-0">
+                <div class="rounded-top-lg py-3 ps-4 pe-6 bg-dark text-center">
+                  <h5 class="mb-1 text-white">Change Account Label</h5>
+                </div>
+                <div class="p-4">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Account Name:</label>
+                      <input type="text" class="form-control" disabled value="Bhusahan Lengade 200X(1003)">
+                    </div>
+                    <div class="mb-1">
+                      <label class="form-label">Account Label:</label>
+                      <input type="text" class="form-control" placeholder="Amex Plaid">
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Save </button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Change Account label Ends -->
 
       </div>
     </main>

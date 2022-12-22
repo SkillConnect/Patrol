@@ -10521,3 +10521,26 @@ function identifyCurrentPage() {
   console.log(pageName, elements, elements[0])
   elements[0].classList.add('current');
 }
+
+// Start Free Trial Modal every X minutes
+const freeTrial = () => {
+  const RESTRICTED_PAGES = ['settings', 'membership']
+  for (let i=0; i < RESTRICTED_PAGES.length; i++) {
+    if (document.location.href.includes(RESTRICTED_PAGES[i])) return
+  }
+
+  const freeTrialModal = new bootstrap.Modal('#free-trial-modal')
+  const TIMER = 5*60*1000
+
+  const toggleModal = () => { freeTrialModal.hide(); freeTrialModal.show() }
+  let freeTrialInterval = setInterval(toggleModal, TIMER)
+  
+  // Restart timer after the modal is closed
+  const myModal = document.getElementById('free-trial-modal')
+  myModal.addEventListener('hide.bs.modal', event => {
+    clearInterval(freeTrialInterval);
+    freeTrialInterval = setInterval(toggleModal, TIMER)
+  })
+}
+// Start after a delay to allow modal loading
+setTimeout(freeTrial, 1000)
