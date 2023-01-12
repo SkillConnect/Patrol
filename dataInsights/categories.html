@@ -64,7 +64,7 @@
         </script>
 
         <div class="content mt-4">
-          <h5 class="block-title page-title text-center">All Categories - Txns and Trends</h5>
+          <h5 class="block-title page-title text-center">Category Insights</h5>
           <div class="card overflow-hidden" style="min-height: 60vh">
             <div class="card-body px-lg-5">
 
@@ -132,13 +132,23 @@
                     <div class="spend-share-merchants" style="min-height: 300px;" data-echart-responsive="true"></div>
                   </div>
 
+                  <div class="p-3 border card mb-4">
+                    <h5 class="text-center mb-3">Spend Share by Merchant</h5>
+                    <div class="vertical-bar2" style="min-height: 320px;" data-echart-responsive="true"></div>
+                    <div class="text-center mt-2">
+                      <span class="badge bg-secondary">Spend: $20</span>
+                      <span class="badge bg-secondary">Transaction: 1</span>
+                      <span class="badge bg-secondary">Average Spend in previous Months: $0</span>
+                    </div>
+                  </div>
+
                   <!-- Charts Ends -->
                 </div>
                 <div class="col-lg-6 px-lg-4">
                   <!-- Table -->
                   <div class="p-3 border card mb-4">
                     <h5 class="text-center mb-3">Transactions</h5>
-                    <div id="merchants1" data-list='{"valueNames":["merchants","number","amount", "share"],"page":5,"pagination":true}'>
+                    <div id="merchants1" data-list='{"valueNames":["merchants","number","amount", "share"],"page":15,"pagination":true}'>
                       <!-- Search -->
                       <div class="row pl-2 my-3">
                         <div class="col-lg-6 text-start mb-2">
@@ -277,15 +287,6 @@
                   </div>
                   <!-- Table Ends -->
 
-                  <div class="p-3 border card mb-4">
-                    <h5 class="text-center mb-3">Spend Share by Merchant</h5>
-                    <div class="vertical-bar2" style="min-height: 320px;" data-echart-responsive="true"></div>
-                    <div class="text-center mt-2">
-                      <span class="badge bg-secondary">Spend: $20</span>
-                      <span class="badge bg-secondary">Transaction: 1</span>
-                      <span class="badge bg-secondary">Average Spend in previous Months: $0</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

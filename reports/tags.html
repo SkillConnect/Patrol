@@ -67,113 +67,353 @@
           <h5 class="block-title page-title text-center">All Tags</h5>
           <div class="card overflow-hidden" style="min-height: 60vh">
             <div class="card-body px-lg-5">
-              <!-- Dropdown -->
-              <div class="row justify-content-center mb-5">
-                <div class="col-lg-6 text-center mb-2">
-                  <div class="input-group input-group-sm">
-                    <label class="input-group-text mb-0">Time Period</label>
-                    <select class="form-select">
-                      <option value="1">Feb 2022</option>
-                      <option value="2">Jan 2022</option>
-                      <option value="3">Dec 2021</option>
-                    </select>
+              <!-- Four boxes starts -->
+              <div class="row g-2 mb-4">
+                <div class="col-lg-3 mb-2 d-flex align-items-stretch">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto">
+                          <i class="fas fa-calendar-alt fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Time Range</div>
+                          <p class="card-text">Last 30 Days</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="col-lg-6 text-center">
-                  <div class="input-group input-group-sm">
-                    <label class="input-group-text mb-0">Spend Share by Amount</label>
-                    <select class="form-select">
-                      <option value="1">Top 25</option>
-                      <option value="2">Category</option>
-                      <option value="3">Merchant</option>
-                    </select>
+                <div class="col-lg-3 mb-2 d-flex align-items-stretch">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto">
+                          <i class="fas fa-shopping-bag fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Total Tags</div>
+                          <p class="card-text">29</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 mb-2 d-flex align-items-stretch">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto">
+                          <i class="fas fa-money-bill fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Top Spent</div>
+                          <p class="card-text">$2,499 in Debit</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 mb-2 d-flex align-items-stretch">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto">
+                          <i class="fas fa-chart-line fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Top Transactions</div>
+                          <p class="card-text">29 Txns in Groceries</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <!-- Dropdown Ends -->
+              <!-- Four boxes ends -->
 
-              <div class="row my-4">
-                <div class="col-lg-6 px-3 mb-5">
+              <div class="row mb-5">
+                <div class="col-lg-6 px-3 mb-2">
+                  <div class="row justify-content-center mb-4">
+                    <div class="col-12 text-center mb-2">
+                      <div class="input-group input-group-sm">
+                        <label class="input-group-text mb-0">Time Period</label>
+                        <select class="form-select">
+                          <option value="1">Feb 2022</option>
+                          <option value="2">Jan 2022</option>
+                          <option value="3">Dec 2021</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-12 text-center">
+                      <div class="input-group input-group-sm">
+                        <label class="input-group-text mb-0">Spend by Amount</label>
+                        <select class="form-select">
+                          <option value="1">Top 25</option>
+                          <option value="2">Category</option>
+                          <option value="3">Merchant</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
                   <div class="p-3 border card mb-4">
                     <!-- Charts -->
                     <div class="spend-share-amount" style="min-height: 300px;" data-echart-responsive="true"></div>
-                    <div class="spend-share-tags" style="min-height: 300px;" data-echart-responsive="true"></div>
+                    <div class="spend-share-categories" style="min-height: 300px;" data-echart-responsive="true"></div>
                     <!-- Charts Ends -->
                   </div>
                 </div>
                 <div class="col-lg-6 px-lg-4">
                   <!-- Table -->
-                  <div id="transactions-summary-table" data-list='{"valueNames":["tags", "number", "total"],"page":5,"pagination":true}'>
-                    <!-- Search -->
-                    <div class="row pl-2 mb-3">
-                      <div class="col-lg-6 text-start mb-2">
-                        <div class="input-group input-group-sm">
-                          <label class="input-group-text mb-0">Show</label>
-                          <select class="itemCount form-select">
-                            <option value="1">1</option>
-                            <option selected value="2">2</option>
-                            <option value="5">5</option>
-                            <option value="10">10</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 float-end">
-                        <form>
-                          <div class="input-group">
-                            <input class="form-control form-control-sm shadow-none fuzzy-search" type="search" placeholder="Search" aria-label="search">
-                            <div class="input-group-text bg-transparent"><span class="fa fa-search fs--1 text-600"></span></div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                    <!-- Search Ends -->
+                  <div id="categories1" data-list='{"valueNames":["category","number","amount"],"page":15,"pagination":true}'>
                     <div class="table-responsive scrollbar">
-                      <table class="table table-bordered table-hover text-center">
+                      <table class="table table-bordered table-striped fs--1 mb-0">
                         <thead class="bg-200 text-900">
                           <tr>
-                            <th class="sort" data-sort="tags">Tag</th>
-                            <th class="sort" data-sort="number"># of Txns</th>
-                            <th class="sort" data-sort="total">Total Amount</th>
+                            <th class="sort" data-sort="category">Tags</th>
+                            <th class="sort" data-sort="number"># of Transactions</th>
+                            <th class="sort" data-sort="amount">Total Amount</th>
                           </tr>
                         </thead>
                         <tbody class="list">
                           <tr>
-                            <td class="tags">Books</td>
-                            <td class="number">17</td>
-                            <td class="total">$12</td>
+                            <td class="category">Anna</td>
+                            <td class="number">anna@example.com</td>
+                            <td class="amount">18</td>
                           </tr>
                           <tr>
-                            <td class="tags">Clothes</td>
-                            <td class="number">6</td>
-                            <td class="total">$25</td>
+                            <td class="category">Homer</td>
+                            <td class="number">homer@example.com</td>
+                            <td class="amount">35</td>
                           </tr>
                           <tr>
-                            <td class="tags">Books</td>
-                            <td class="number">2</td>
-                            <td class="total">$13</td>
+                            <td class="category">Oscar</td>
+                            <td class="number">oscar@example.com</td>
+                            <td class="amount">52</td>
                           </tr>
                           <tr>
-                            <td class="tags">Food</td>
-                            <td class="number">12</td>
-                            <td class="total">$14</td>
+                            <td class="category">Emily</td>
+                            <td class="number">emily@example.com</td>
+                            <td class="amount">30</td>
                           </tr>
                           <tr>
-                            <td class="tags">Books</td>
-                            <td class="number">56</td>
-                            <td class="total">$15</td>
+                            <td class="category">Jara</td>
+                            <td class="number">jara@example.com</td>
+                            <td class="amount">25</td>
+                          </tr>
+                          <tr>
+                            <td class="category">Clark</td>
+                            <td class="number">clark@example.com</td>
+                            <td class="amount">39</td>
+                          </tr>
+                          <tr>
+                            <td class="category">Jennifer</td>
+                            <td class="number">jennifer@example.com</td>
+                            <td class="amount">52</td>
+                          </tr>
+                          <tr>
+                            <td class="category">Tony</td>
+                            <td class="number">tony@example.com</td>
+                            <td class="amount">30</td>
+                          </tr>
+                          <tr>
+                            <td class="category">Tom</td>
+                            <td class="number">tom@example.com</td>
+                            <td class="amount">25</td>
+                          </tr>
+                          <tr>
+                            <td class="category">Michael</td>
+                            <td class="number">michael@example.com</td>
+                            <td class="amount">39</td>
+                          </tr>
+                          <tr>
+                            <td class="category">Antony</td>
+                            <td class="number">antony@example.com</td>
+                            <td class="amount">39</td>
+                          </tr>
+                          <tr>
+                            <td class="category">Raymond</td>
+                            <td class="number">raymond@example.com</td>
+                            <td class="amount">52</td>
+                          </tr>
+                          <tr>
+                            <td class="category">Marie</td>
+                            <td class="number">marie@example.com</td>
+                            <td class="amount">30</td>
+                          </tr>
+                          <tr>
+                            <td class="category">Cohen</td>
+                            <td class="number">cohen@example.com</td>
+                            <td class="amount">25</td>
+                          </tr>
+                          <tr>
+                            <td class="category">Rowen</td>
+                            <td class="number">rowen@example.com</td>
+                            <td class="amount">39</td>
                           </tr>
                         </tbody>
                       </table>
                     </div>
-                    <div class="d-flex justify-content-center mt-3">
-                      <button class="btn btn-sm btn-falcon-default me-1" type="button" title="Previous" data-list-pagination="prev"><span class="fas fa-chevron-left"></span></button>
-                      <ul class="pagination mb-0"></ul>
-                      <button class="btn btn-sm btn-falcon-default ms-1" type="button" title="Next" data-list-pagination="next"><span class="fas fa-chevron-right"> </span></button>
+                    <div class="row align-items-center mt-3">
+                      <div class="pagination d-none"></div>
+                      <div class="col">
+                        <p class="mb-0 fs--1">
+                          <span class="d-none d-sm-inline-block" data-list-info="data-list-info"></span>
+                          <span class="d-none d-sm-inline-block"> &mdash; </span>
+                          <a class="fw-semi-bold" href="#!" data-list-view="*">View all<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a><a class="fw-semi-bold d-none" href="#!" data-list-view="less">View Less<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
+                        </p>
+                      </div>
+                      <div class="col-auto d-flex">
+                        <button class="btn btn-sm btn-primary" type="button" data-list-pagination="prev"><span>Previous</span></button>
+                        <button class="btn btn-sm btn-primary px-4 ms-2" type="button" data-list-pagination="next"><span>Next</span></button>
+                      </div>
                     </div>
                   </div>
                   <!-- Table Ends -->
                 </div>
               </div>
+
+              <!-- Four boxes starts -->
+              <div class="row g-2 mb-4">
+                <div class="col-lg-3 mb-2 d-flex align-items-stretch">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto">
+                          <i class="fas fa-calendar-alt fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Time Range</div>
+                          <p class="card-text">Nov 2022 - Jan 2022</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 mb-2 d-flex align-items-stretch">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto">
+                          <i class="fas fa-shopping-bag fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Total Tags</div>
+                          <p class="card-text">29</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 mb-2 d-flex align-items-stretch">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto">
+                          <i class="fas fa-money-bill fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Top Spent</div>
+                          <p class="card-text">$2,499 in Investments</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 mb-2 d-flex align-items-stretch">
+                  <div class="card card-hover-zoom text-white bg-primary">
+                    <div class="card-body text-center">
+                      <div class="row">
+                        <div class="col-2 my-auto">
+                          <i class="fas fa-chart-line fa-2x"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title">Top Transactions</div>
+                          <p class="card-text">29 Txns in Groceries</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Four boxes ends -->
+
+              <!-- Table -->
+              <div id="categories2" data-list='{"valueNames":["category","3","2","1","total"],"page":2,"pagination":true}'>
+                <div class="row pl-3 my-3">
+                  <div class="col-lg-3 mb-3">
+                    <h6>Time Period:</h6>
+                    <select class="form-select" aria-label="Time Period">
+                      <option value="1">Last 30 days</option>
+                      <option value="2">3 months</option>
+                      <option value="3">6 months</option>
+                      <option value="3">1 year</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-3 col-0 mb-3"></div>
+                  <div class="col-lg-3 mb-2">
+                    <h6>Show Transactions</h6>
+                    <select class="form-select itemCount">
+                      <option value="1">1</option>
+                      <option value="2" selected>2</option>
+                      <option value="5">5</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-3">
+                    <h6>Search</h6>
+                    <input class="form-control fuzzy-search" placeholder="Search" />
+                  </div>
+                </div>
+                <div class="table-responsive scrollbar">
+                  <table class="table table-bordered table-striped fs--1 mb-0">
+                    <thead class="bg-200 text-900">
+                      <tr>
+                        <th class="sort" data-sort="category">Category</th>
+                        <th class="sort" data-sort="3">Dec-2021</th>
+                        <th class="sort" data-sort="2">Jan-2022</th>
+                        <th class="sort" data-sort="1">Feb-2022</th>
+                        <td class="sort" data-sort="total">Total (Last 3 months)</td>
+                      </tr>
+                    </thead>
+                    <tbody class="list">
+                      <tr>
+                        <td class="category">Investments</td>
+                        <td class="3">$3,641 (1)</td>
+                        <td class="2">$89</td>
+                        <td class="1">$9 (1)</td>
+                        <td class="total">$650</td>
+                      </tr>
+                      <tr>
+                        <td class="category">Credit</td>
+                        <td class="3">$3,641 (1)</td>
+                        <td class="2">$89</td>
+                        <td class="1">$9 (1)</td>
+                        <td class="total">$3,650</td>
+                      </tr>
+                      <tr>
+                        <td class="category">Debit</td>
+                        <td class="3">$3 (1)</td>
+                        <td class="2">$819</td>
+                        <td class="1">$129 (1)</td>
+                        <td class="total">$3478</td>
+                      </tr>
+                      <tr>
+                        <td class="category">Investments</td>
+                        <td class="3">$3,641 (1)</td>
+                        <td class="2">$89</td>
+                        <td class="1">$900 (1)</td>
+                        <td class="total">$350</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="d-flex justify-content-center mt-3">
+                  <button class="btn btn-sm btn-falcon-default me-1" type="button" title="Previous" data-list-pagination="prev"><span class="fas fa-chevron-left"></span></button>
+                  <ul class="pagination mb-0"></ul>
+                  <button class="btn btn-sm btn-falcon-default ms-1" type="button" title="Next" data-list-pagination="next"><span class="fas fa-chevron-right"> </span></button>
+                </div>
+              </div>
+              <!-- Table Ends -->
             </div>
           </div>
         </div>
@@ -195,6 +435,6 @@
     <script src="../vendors/list.js/list.min.js"></script>
     <script src="../vendors/pulltorefresh/index.umd.min.js"></script>
     <script src="../assets/js/theme.js"></script>
-    <script src="../assets/custom/reports/tags.js"></script>
+    <script src="../assets/custom/reports/categories.js"></script>
   </body>
 </html>
