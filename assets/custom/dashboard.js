@@ -150,6 +150,7 @@ var dashboardInsightsSpendByCategoryInit = function dashboardInsightsSpendByCate
         return {
           legend: {
             bottom: 0,
+            // type: 'scroll',
             textStyle: {
               color: utils.getGrays()['600']
             }
@@ -157,41 +158,25 @@ var dashboardInsightsSpendByCategoryInit = function dashboardInsightsSpendByCate
           series: [{
             type: 'pie',
             radius: window.innerWidth < 530 ? '45%' : '60%',
-            label: {
-              color: utils.getGrays()['700']
-            },
+            label: { show: false },
             center: ['50%', '55%'],
-            data: [{
-              value: 1048,
-              name: 'Facebook',
-              itemStyle: {
-                color: utils.getColor('primary')
-              }
-            }, {
-              value: 735,
-              name: 'Youtube',
-              itemStyle: {
-                color: utils.getColor('danger')
-              }
-            }, {
-              value: 580,
-              name: 'Twitter',
-              itemStyle: {
-                color: utils.getColor('info')
-              }
-            }, {
-              value: 484,
-              name: 'Linkedin',
-              itemStyle: {
-                color: utils.getColor('success')
-              }
-            }, {
-              value: 300,
-              name: 'Github',
-              itemStyle: {
-                color: utils.getColor('warning')
-              }
-            }],
+            data: [
+              {value: 1048,name: 'Facebook'}, 
+              {value: 735, name: 'Youtube'}, 
+              {value: 580, name: 'Twitter'}, 
+              {value: 484, name: 'Linkedin'}, 
+              {value: 300, name: 'Github'},
+              {value: 1048,name: 'Facebook1'}, 
+              {value: 735, name: 'Youtube1'}, 
+              {value: 580, name: 'Twitter1'}, 
+              {value: 484, name: 'Linkedin1'}, 
+              {value: 300, name: 'Github1'},
+              {value: 1048,name: 'Facebook2'}, 
+              {value: 735, name: 'Youtube2'}, 
+              {value: 580, name: 'Twitter2'}, 
+              {value: 484, name: 'Linkedin2'}, 
+              {value: 300, name: 'Github2'},                            
+            ],
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,
@@ -663,7 +648,7 @@ var dashboardCreditLimitChartInit = function dashboardCreditLimitChartInit() {
               fontSize: 20
             },
             detail: {
-              fontSize: 20,
+              fontSize: 18,
               offsetCenter: [0, '0%'],
               valueAnimation: true,
               formatter: function (value) {

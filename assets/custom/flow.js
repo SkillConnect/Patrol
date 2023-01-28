@@ -219,7 +219,7 @@ var flowFirstRight = function flowFirstRight() {
             type: 'bar',
             stack: 'Total',
             label: {
-              show: true,
+              show: false,
               position: 'top',
               color: utils.getGrays()['600']
             },
@@ -234,7 +234,7 @@ var flowFirstRight = function flowFirstRight() {
             type: 'bar',
             stack: 'Total',
             label: {
-              show: true,
+              show: false,
               position: 'bottom',
               color: utils.getGrays()['600']
             },

@@ -92,7 +92,6 @@ var expenseBudget = function expenseBudget() {
           right: 15,
           left: (screen.width < 992) ? '35%' : '20%',
           bottom: '10%',
-          top: 5
         }
       };
     };

@@ -187,3 +187,9 @@ td {padding: 6px 8px !important;}
 .form-select, .input-group-text, .form-control-sm, tr {
     font-size: 13px !important;
 }
+
+.sticky-sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 3rem;
+}
